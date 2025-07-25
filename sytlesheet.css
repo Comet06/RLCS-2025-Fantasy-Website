@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #002761; /* a subtle bluish-gray */
+}
+header {
+  background-color: #343a40;
+  padding: 15px;
+  width: 100%;
+}
+main {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+footer{
+  color: white;
+  float: left;
+  padding: 20px;
+
+}
+button{
+  /* background-color: grey; */
+  font-size: medium;
+  padding: 2px;
+}
+h1{
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+#group_tag{
+  color: white;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Push children to far left and far right */
+  align-items: center;            /* Vertically center both items */
+  width: 100%;
+  min-width: 1500px;
+}
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #cedfef;
+  background-color: #071cff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.rlcs {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+.forms{
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+
+}
+#rules{
+  color: white;
+  text-align: left;
+  margin-left: 30px;
+}
+#draft{
+  text-align: center;
+  display: inline-flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* Tables and Charts */
+table{
+  border-collapse: separate;
+  text-indent: initial;
+  text-align: center;
+  border-spacing: 1px;
+  border: solid 2px black;
+  width: 100%;
+}
+#rank_table{
+  color: black;
+  background-color: white;
+  width: 350px;
+}
+#home_tables{
+  color: black;
+  background-color: white;
+  min-width: 1500px;
+}
+#player_data_table{
+  color: black;
+  background-color: white;
+  min-width: 1500px;
+}
+#prize_pool{
+  background-color: grey;
+  width: 750px;
+  margin: 0px auto;
+}
+#team1{
+  color: #ffffff;
+  background-color: #037120;
+}
+#team2{
+  color: #ffffff;
+  background-color: #01063f;
+}
+#team3{
+  color: #ffffff;
+  background-color: #710303;
+}
+#team4{
+  color: #000000;
+  background-color: #d8db4b;
+}
+#team5{
+  color: #000000;
+  background-color: #32d2d7;
+}
+#team6{
+  color: #ffffff;
+  background-color: #9302f4;
+}
+#team7{
+  color: #ffffff;
+  background-color: #f47702;
+}
+#split1{
+  color: #ffffff;
+  background-color: #065100;
+}
+#split2{
+  color: #ffffff;
+  background-color: #740000;
+}
+#championship{
+  color: #000000;
+  background-color: #00d0ff;
+}
+#charts{
+  display: flex;
+}
+tr{
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  padding: 10%;
+}
+#table-border{
+  border: solid 2px, black;
+}
+/* Bracket styles */
+.bracket {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  border: solid 4px black;
+  width: 1200px;
+  padding: 20px;
+}
+.final_bracket {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  border: solid 4px black;
+  width: 1500px;
+  padding: 20px;
+}
+#group_stage{
+  justify-content: space-between;
+  color: white;
+}
+.round {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.round h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 5px;
+}
+.match {
+  display: flex;
+  justify-content: space-between;
+  background: #1e1e2f;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.match_win {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background: #009d03;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.match_lose {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  background: #ff0000;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.team {
+  font-weight: bold;
+}
+.score {
+  font-size: 1.2rem;
+  color: #00ffcc;
+}

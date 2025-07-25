@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RLCS Fantasy</title>
+  <link rel="stylesheet" href="sytlesheet.css"/>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <p class="rlcs">RLCS 2025 Fantasy League</p>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bracket_form.html">Fill out Brackets</a></li>
+        <li><a href="players_stats.html">Player Stats</a></li>
+        <li><a href="teams_stats.html">Team Stats</a></li>
+        <li><a href="bracket.html">RLCS Bracket</a></li>
+        <li><a href="drafting.html">Draft/Swap Players</a></li>
+        <li><a href="info.html">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <form action="" method="post" autocomplete="on">
+      <div id="draft">
+        <div>
+          <h2>Drop Player</h2>
+          <br>
+            <label id="label">Player 1</label>
+            <input id="input" player1="firstname" type="text" required="required"><br>
+          <br>
+          <br>
+            <label id="label">Player 2</label>
+            <input id="input" player1="firstname" type="text"><br>
+          <br>
+          <br>
+            <label id="label">Player 3</label>
+            <input id="input" player1="firstname" type="text"><br>
+        </div>
+        <div>
+          <h2>Pick Up Player</h2>
+          <br>
+            <label id="label">Player 1</label>
+            <input id="input" player1="firstname" type="text" required="required"><br>
+          <br>
+          <br>
+            <label id="label">Player 2</label>
+            <input id="input" player1="firstname" type="text"><br>
+          <br>
+          <br>
+            <label id="label">Player 3</label>
+            <input id="input" player1="firstname" type="text"><br>
+        </div>
+      </div>
+      <div id="button">
+        <button type="submit" onclick="sendRosterChange()">Draft-Swap</button>
+        <button type="reset">Clear All</button>
+      </div>
+    </form>
+  </main>
+</body>
+<script src="main.js"></script>
+<footer>
+  <p>©Comet Productions. All Rights Reserved.</p>
+</footer>
+</html>
