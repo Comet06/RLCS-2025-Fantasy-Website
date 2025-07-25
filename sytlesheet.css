@@ -107,7 +107,8 @@ table{
 #home_tables{
   color: black;
   background-color: white;
-  min-width: 1500px;
+  width: 1300px;
+  min-width: 1200px;
 }
 #player_data_table{
   color: black;
