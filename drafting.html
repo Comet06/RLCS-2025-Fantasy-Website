@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RLCS Fantasy</title>
+  <title>RLCS Fantasy 2025</title>
   <link rel="stylesheet" href="sytlesheet.css"/>
 </head>
 <body>
@@ -12,56 +12,60 @@
       <p class="rlcs">RLCS 2025 Fantasy League</p>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="bracket_form.html">Fill out Brackets</a></li>
-        <li><a href="players_stats.html">Player Stats</a></li>
-        <li><a href="teams_stats.html">Team Stats</a></li>
-        <li><a href="bracket.html">RLCS Bracket</a></li>
         <li><a href="drafting.html">Draft/Swap Players</a></li>
-        <li><a href="info.html">Info</a></li>
+        <li class="dropdown">
+          <a href="#">Stats and Brackets</a>
+            <div class="dropdown-content">
+              <a href="players_stats.html">Player Stats</a>
+              <a href="teams_stats.html">Team Stats</a>
+              <a href="bracket.html">RLCS Bracket</a>
+              <a href="bracket_form.html">RLCS Bracket Form</a>
+            </div>
+        </li>
+        <li><a href="info.html">Info and Rules</a></li>
       </ul>
     </nav>
   </header>
   
   <main>
     <form action="" method="post" autocomplete="on">
+      <input team="teamName" type="text" required="required" placeholder="Your Team Name"><br>
       <div id="draft">
         <div>
           <h2>Drop Player</h2>
           <br>
-            <label id="label">Player 1</label>
-            <input id="input" player1="firstname" type="text" required="required"><br>
+            <input id="player1drop" type="text" placeholder="Player 1" required="required"><br>
           <br>
           <br>
-            <label id="label">Player 2</label>
-            <input id="input" player1="firstname" type="text"><br>
+            <input id="player2drop" type="text" placeholder="Player 2"><br>
           <br>
           <br>
-            <label id="label">Player 3</label>
-            <input id="input" player1="firstname" type="text"><br>
+            <input id="player3drop" type="text" placeholder="Player 3"><br>
         </div>
         <div>
           <h2>Pick Up Player</h2>
           <br>
-            <label id="label">Player 1</label>
-            <input id="input" player1="firstname" type="text" required="required"><br>
+            <input id="player1pickup" type="text" placeholder="Player 1" required="required"><br>
           <br>
           <br>
-            <label id="label">Player 2</label>
-            <input id="input" player1="firstname" type="text"><br>
+            <input id="player2pickup" type="text" placeholder="Player 2"><br>
           <br>
           <br>
-            <label id="label">Player 3</label>
-            <input id="input" player1="firstname" type="text"><br>
+            <input id="player3pickup" type="text" placeholder="Player 3"><br>
         </div>
       </div>
       <div id="button">
-        <button type="submit" onclick="sendRosterChange()">Draft-Swap</button>
-        <button type="reset">Clear All</button>
+        <button type="submit" onclick="sendRosterChange()">Confirm</button>
+        <button type="reset" onclick="alert('Fields have been cleared.')">Clear</button>
       </div>
     </form>
   </main>
 </body>
-<script src="main.js"></script>
+<script>
+  function sendRosterChange(){
+    alert('Form has been sent to administrator.');
+  }
+</script>
 <footer>
   <p>©Comet Productions. All Rights Reserved.</p>
 </footer>

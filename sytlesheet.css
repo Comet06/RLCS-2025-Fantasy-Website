@@ -10,7 +10,7 @@ body {
 header {
   background-color: #343a40;
   padding: 15px;
-  min-width: fit-content;
+  min-width:fit-content;
 }
 main {
   padding: 20px;
@@ -37,13 +37,12 @@ h1{
   color: white;
   padding: 20px;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between; /* Push children to far left and far right */
   align-items: center;            /* Vertically center both items */
   width: 100%;
-  min-width: 1500px;
+  min-width: 1080px;
 }
 .nav-links {
   list-style: none;
@@ -72,6 +71,36 @@ h1{
   font-size: 30px;
   font-weight: bold;
 }
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #343a40;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  min-width: 160px;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.dropdown-content a:hover {
+  background-color: #ffc107;
+  color: #343a40;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Forms */
 .forms{
   text-align: center;
   background-color: white;
@@ -107,13 +136,14 @@ table{
 #home_tables{
   color: black;
   background-color: white;
-  width: 1300px;
-  min-width: 1200px;
+  width: 100%;
+  min-width: 1300px;
 }
 #player_data_table{
   color: black;
   background-color: white;
-  min-width: 1500px;
+  width: 100%;
+  min-width: 1080px;
 }
 #prize_pool{
   background-color: grey;
@@ -172,6 +202,7 @@ tr{
 #table-border{
   border: solid 2px, black;
 }
+
 /* Bracket styles */
 .bracket {
   color: white;
