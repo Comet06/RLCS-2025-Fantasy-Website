@@ -241,9 +241,9 @@ tr{
   }
 }
 @media screen and (max-width: 789px) {
-  body{
+  /*body{
     background-color: grey;
-  }
+  }*/
   .nav-links{
     font-size: 12px;
     gap: 5px;
