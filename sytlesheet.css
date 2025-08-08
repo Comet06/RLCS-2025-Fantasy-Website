@@ -4,14 +4,11 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: #002761; /* a subtle bluish-gray */
+  font-family: 'Istok Web', sans-serif;
+  min-height: 100%;
+  margin: 0;
 }
-/* header {
-  background-color: #343a40;
-  padding: 15px;
-  min-width:fit-content;
-} */
 main {
   padding: 20px;
   text-align: center;
@@ -28,9 +25,12 @@ button{
   font-size: medium;
   padding: 2px;
 }
+header{
+  padding:0px 0px 60px
+}
 h1{
   color: white;
-  padding: 20px;
+  /* padding: 20px; */
   text-align: left;
 }
 h2{
@@ -44,8 +44,9 @@ h2{
   justify-content: space-between; /* Push children to far left and far right */
   align-items: center;            /* Vertically center both items */
   width: 100%;
-  padding: 5px;
+  padding: 20px;
   min-width: fit-content;
+  z-index: 100;
 }
 .nav-links {
   list-style: none;
@@ -131,12 +132,12 @@ table{
   color: black;
   background-color: white;
   width: 350px;
+  height: 30px;
 }
 #home_tables{
   color: black;
   background-color: white;
-  width: 100%;
-  min-width: 1080px;
+  /* width: 100%; */
 }
 #player_data_table{
   color: black;
@@ -177,6 +178,33 @@ table{
   color: #ffffff;
   background-color: #f47702;
 }
+#split_table{
+  max-width: 700px;
+}
+#champ_table{
+  max-width: 400px;
+}
+#win_table{
+  max-width: 700px;
+}
+#players_table{
+  max-width: 800px;
+}
+
+/* Buttons */
+#import_button :hover{
+  color: white;
+  background-color: black;
+}
+
+/* Rankings page */
+.points{
+  display: flex;
+  padding-bottom: 30px;
+}
+.rankings{
+  display: flex;
+}
 #split1{
   color: #ffffff;
   background-color: #065100;
@@ -190,7 +218,7 @@ table{
   background-color: #00d0ff;
 }
 #charts{
-  display: flex;
+  display: block;
 }
 tr{
   display: table-row;
@@ -202,79 +230,56 @@ tr{
   border: solid 2px, black;
 }
 
-/* Bracket styles */
-.bracket {
-  color: white;
-  background-color: #2d3930;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  border: solid 4px black;
-  border-radius: 30px;
-  width: 1200px;
-  padding: 20px;
+/* @media screen and (max-width: 1200px) {
+  body{
+    background-color: green;
+  }
+} */
+@media screen and (max-width: 1100px) {
+  #charts{
+    display: block;
+  }
 }
-.final_bracket {
-  color: white;
-  background-color: #2d3930;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  border: solid 4px black;
-  border-radius: 30px;
-  width: 1500px;
-  padding: 20px;
+@media screen and (max-width: 789px) {
+  body{
+    background-color: grey;
+  }
+  .nav-links{
+    font-size: 12px;
+    gap: 5px;
+  }
+  .points{
+    display: block;
+  }
+  .rankings{
+    display: block;
+  }
+  #prize_pool{
+    width: 500px;
+  }
 }
-#group_stage{
-  justify-content: space-between;
-  color: white;
+@media screen and (max-width: 665px) {
+  /* body{
+    background-color: navajowhite;
+  } */
+  header{
+    padding-bottom: 90px;
+  }
 }
-.round {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.round h2 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  border-bottom: 2px solid #444;
-  padding-bottom: 5px;
-}
-.match {
-  display: flex;
-  justify-content: space-between;
-  background: #1e1e2f;
-  padding: 12px 20px;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.match_win {
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  background: #009d03;
-  padding: 12px 20px;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.match_lose {
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  background: #ff0000;
-  padding: 12px 20px;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.team {
-  font-weight: bold;
-}
-.score {
-  font-size: 1.2rem;
-  color: #00ffcc;
+@media screen and (max-width: 657px) {
+  /* body{
+    background-color: orangered;
+  } */
+  header{
+    padding-bottom: 90px;
+  }
+  #split_table{
+    min-width: 630px;
+  }
+  #win_table{
+    min-width: 630px;
+  }
+  #players_table{
+    min-width: 630px;
+  }
 }

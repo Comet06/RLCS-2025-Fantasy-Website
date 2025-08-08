@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RLCS Fantasy 2025</title>
   <link rel="stylesheet" href="sytlesheet.css"/>
@@ -12,12 +13,13 @@
       <h1>RLCS 2025 Fantasy League</h1>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="drafting.html">Draft/Swap Players</a></li>
+        <li><a href="drafting.html">Drafting</a></li>
         <li class="dropdown">
           <a href="#">Stats</a>
             <div class="dropdown-content">
               <a href="players_stats.html">Player Stats</a>
               <a href="teams_stats.html">Team Stats</a>
+              <a href="teams_rankings.html">Team Rankings</a>
             </div>
         </li>
         <li class="dropdown">
@@ -27,22 +29,22 @@
               <a href="bracket_form.html">RLCS Bracket Form</a>
             </div>
         </li>
-        <li><a href="info.html">Info and Rules</a></li>
+        <li><a href="info.html">Rules</a></li>
       </ul>
     </nav>
   </header>
   
-  <main>
+  <main id="main_page">
     <h1>Split 1</h1>
-    <div>
+    <div id="split_table">
       <table id="home_tables">
         <tbody>
           <tr>
             <th></th>
-            <th>Regional 1</th>
-            <th>Regional 2</th>
-            <th>Regional 3</th>
-            <th>Major 1</th>
+            <th>Reg. 1</th>
+            <th>Reg. 2</th>
+            <th>Reg. 3</th>
+            <th>Maj. 1</th>
             <th>Total</th>
           </tr>
           <tr id="team1">
@@ -97,15 +99,15 @@
       </table>
     </div>
     <h1>Split 2</h1>
-    <div>
+    <div id="split_table">
       <table id="home_tables">
         <tbody>
           <tr>
             <th></th>
-            <th>Regional 4</th>
-            <th>Regional 5</th>
-            <th>Regional 6</th>
-            <th>Major 2</th>
+            <th>Reg. 4</th>
+            <th>Reg. 5</th>
+            <th>Reg. 6</th>
+            <th>Maj. 2</th>
             <th>Total</th>
           </tr>
           <tr id="team1">
@@ -159,25 +161,63 @@
         </tbody>
       </table>
     </div>
+    <h1>Championship</h1>
+    <div id="champ_table">
+      <table id="home_tables">
+        <tbody>
+          <tr>
+            <th>Team</th>
+            <th>Championship</th>
+            <th>Total</th>
+          </tr>
+          <tr id="team1">
+            <td>Flip Lord</td>
+            <td>0</td>
+            <td>205673</td>
+          </tr>
+          <tr id="team2">
+            <td>Doofenschmirtz Inc.</td>
+            <td>0</td>
+            <td>224547</td>
+          </tr>
+          <tr id="team3">
+            <td>Goofy Goobers</td>
+            <td>0</td>
+            <td>144237</td>
+          </tr>
+          <tr id="team4">
+            <td>24 Karat Gold</td>
+            <td>0</td>
+            <td>167517</td>
+          </tr>
+          <tr id="team5">
+            <td>Skibideeznuts</td>
+            <td>0</td>
+            <td>177019</td>
+          </tr>
+          <tr id="team6">
+            <td>Team Canada</td>
+            <td>0</td>
+            <td>156900</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <h1>Winnings</h1>
-    <div>
+    <div id="win_table">
       <table id="home_tables">
         <tbody>
             <tr>
-              <th></th>
-              <th>Championship Pts</th>
-              <th>Total Pts</th>
-              <th>Split 1 Winnings</th>
-              <th>Split 2 Winnings</th>
-              <th>Championship Winnings</th>
+              <th>Team</th>
+              <th>Split 1</th>
+              <th>Split 2</th>
+              <th>Championship</th>
               <th>Total Winnings</th>
             </tr>
         </tbody>
         <tbody id="team1">
           <tr>
             <td>Flip Lord</td>
-            <td>0</td>
-            <td>205673</td>
             <td>$36.38</td>
             <td>$42.80</td>
             <td>$0.00</td>
@@ -187,8 +227,6 @@
         <tbody id="team2">
           <tr>
             <td>Doofenschmirtz Inc.</td>
-            <td>0</td>
-            <td>224547</td>
             <td>$53.50</td>
             <td>$53.50</td>
             <td>$0.00</td>
@@ -198,8 +236,6 @@
         <tbody id="team3">
           <tr>
             <td>Goofy Goobers</td>
-            <td>0</td>
-            <td>144237</td>
             <td>$25.68</td>
             <td>$25.68</td>
             <td>$0.00</td>
@@ -209,8 +245,6 @@
         <tbody id="team4">
           <tr>
             <td>24 Karat Gold</td>
-            <td>0</td>
-            <td>167517</td>
             <td>$21.40</td>
             <td>$36.38</td>
             <td>$0.00</td>
@@ -220,8 +254,6 @@
         <tbody id="team5">
           <tr>
             <td>Skibideeznuts</td>
-            <td>0</td>
-            <td>177019</td>
             <td>$42.80</td>
             <td>$34.24</td>
             <td>$0.00</td>
@@ -231,8 +263,6 @@
         <tbody id="team6">
           <tr>
             <td>Team Canada</td>
-            <td>0</td>
-            <td>156900</td>
             <td>$34.24</td>
             <td>$21.40</td>
             <td>$0.00</td>
@@ -242,7 +272,7 @@
       </table>
     </div>
     <h1>Players</h1>
-    <div>
+    <div id="players_table">
       <table id="home_tables">
         <tbody>
             <tr>
