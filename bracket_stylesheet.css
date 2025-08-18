@@ -142,7 +142,7 @@ h2{
 .upper-semi-finals .matchup {margin:0; height: 20px;padding: 60px 0px;}
 .upper-qualify .matchup {margin:0; height: 60px; padding: 60px 0px;}
 .lower .matchup {margin:0; height: 20px;padding: 40px 0px;}
-.finals .matchup {margin:0; height: 60px; padding: 80px 0px;}
+.finals .matchup {margin:0; height: 60px; padding: 60px 0px;}
 
 .score {
   font-size: 11px;
