@@ -1,42 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background-color: #002761; /* a subtle bluish-gray */
-  font-family: 'Istok Web', sans-serif;
-  min-height: 100%;
-  margin: 0;
-}
-main {
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-footer{
-  color: white;
-  float: left;
-  padding: 20px;
-
-}
-button{
-  /* background-color: grey; */
-  font-size: medium;
-  padding: 2px;
-}
-header{
-  padding:0px 0px 40px
-}
-h1{
-  color: white;
-  /* padding: 20px; */
-  text-align: left;
-}
-h2{
-  color: white;
-  padding: 20px;
-}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {background-color:rgba(225,225,225,0.9);font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
+main {padding: 20px;text-align: center;color: black;}
+footer{color: white;background-color: #002761;padding: 20px;}
+/* footer{color: white;background-color: #002761;padding: 20px; ;position: absolute; bottom: 0; width: 100%;} */
+button{font-size: medium;padding: 2px;}
+header{padding:0px 0px 40px}
+h1{text-align: left;}
+h2{padding: 20px;}
+.navbar h1{color: white;}
 .navbar {
   display: flex;
   background-color: #343a40;
@@ -48,110 +19,25 @@ h2{
   min-width: fit-content;
   z-index: 100;
 }
-.nav-links {
-  list-style: none;
-  display: inline-flex;
-  gap: 20px;
-}
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: transparent;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-.nav-links li a:hover {
-  color: #cedfef;
-  background-color: #071cff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-.dropdown {
-  position: relative;
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 5px;
-  background-color: #343a40;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  min-width: 160px;
-  z-index: 1;
-}
-.dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease;
-}
-.dropdown-content a:hover {
-  background-color: #ffc107;
-  color: #343a40;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+.nav-links {list-style: none;display: inline-flex;gap: 20px;}
+.nav-links li a {color: white;text-decoration: none;font-weight: bold;padding: 10px;border-radius: 5px;background-color: transparent;position: relative;overflow: hidden;transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
+.nav-links li a:hover {color: #cedfef;background-color: #071cff;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
+.dropdown {position: relative;}
+.dropdown-content {display: none;position: absolute;top: 100%;right: 0;padding: 5px;background-color: #343a40;box-shadow: 0px 8px 16px rgba(0,0,0,0.2);border-radius: 5px;min-width: 160px;z-index: 1;}
+.dropdown-content a {color: white;padding: 10px 16px;text-decoration: none;display: block;transition: background-color 0.3s ease;}
+.dropdown-content a:hover {background-color: #ffc107;color: #343a40;}
+.dropdown:hover .dropdown-content {display: block;}
 
 /* Brackets */
-#bracket {
-  overflow:hidden;
-  background-color: #e1e1e1;
-  background-color:rgba(225,225,225,0.9);
-  font-size: 12px;
-  padding: 50px 0 30px;}
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;}
-.playin {
-  display:block;
-  float:left;
-  display:flex;
-  width: 42%;}
-.matchup {
-  margin:0;
-  width: 100%;
-  padding: 20px 0;
-  height:60px;}
-.round {
-  display:block;
-  float:left;
-  display:flex;
-  flex-direction:column;
-  width:95%;
-  margin: 0 2.5% 0 0;}
-.round-details {
-  font-size: 13px;
-  color: #2C7399;
-  text-transform: uppercase;
-  text-align: center;
-  height: 40px;
-  padding-top: 5px;}
-.round li {color: white;background-color: #1e1e2f;box-shadow: none; opacity: 0.45;}
-
-.upper-quarter-finals .matchup {margin:0; height: 20px;padding: 30px 0px;}
-.upper-semi-finals .matchup {margin:0; height: 20px;padding: 60px 0px;}
-.upper-qualify .matchup {margin:0; height: 60px; padding: 60px 0px;}
-.lower .matchup {margin:0; height: 20px;padding: 40px 0px;}
-.finals .matchup {margin:0; height: 60px; padding: 80px 0px;}
-
+.matchup{margin-top:3px;margin-bottom:3px;height: 60px;}
 .score {
-  font-size: 11px;
   text-transform: uppercase;
   float: right;
   color: #00ffcc;
   font-weight: bold;
   position: absolute;
-  right: 5px;}
+  right: 5px;
+}
 .team {
   padding: 0 5px;
   margin: 3px 0;
@@ -159,36 +45,54 @@ h2{
   line-height: 25px;
   white-space: nowrap;
   overflow: hidden;
-  position: relative;}
-.current li {opacity: 1;}
-.date {font-size: 10px; letter-spacing: 2px;font-family: 'Istok Web', sans-serif;color:#3F915F;}
+  position: relative;
+  color: white;
+  background-color: #1e1e2f;
+}
+#bracket_round {
+  display:block;
+  float:left;
+  display:flex;
+  width: 42%;
+  flex-direction:column;
+  width:95%;
+  margin: 0 2.5% 0 0;
+}
 
+#win {color: white;background-color: #248635;} /* id="win" */
+#lose {color: white;background-color: #9c2438;} /* id="lose" */
+#bracket {padding:20px 0px;border: solid 2px black;}
+#playin {margin-top: 20px;margin-bottom: 20px;}
+#group_stage {margin-top: 20px;margin-bottom: 20px;}
+#playoffs {margin-top: 20px;margin-bottom: 20px;}
+
+
+.upper {max-width: 1100px;margin: 0 auto;display: flex;flex-direction: row;}
+.lower {max-width: 1100px;margin: 0 auto;display: flex;flex-direction: row;}
+.quarterfinals .matchup {padding: 20px 0px;}
+.semifinals .matchup {padding: 60px 0px;}
+.quals .matchup {padding: 60px 0px;}
+.lower .matchup {padding: 20px 0px;}
+.final .matchup {padding: 55px 0px;}
+
+
+#playoffs .upper .matchup{padding: 35px 0px;}
+#playoffs .upper .semifinals{width: 42%;}
+
+
+.round-details {color: #2C7399;text-transform: uppercase;text-align: center;height: 40px;padding-top: 10px;}
+.date {font-size: 10px; letter-spacing: 2px;font-family: 'Istok Web', sans-serif;color:#3F915F;}
 
 @media screen and (max-width: 789px) {
   .nav-links{
     font-size: 12px;
     gap: 5px;
-  }
-}
+  }}
 @media screen and (max-width: 665px) {
   header{
     padding-bottom: 90px;
-  }
-}
+  }}
 @media screen and (max-width: 657px) {
   header{
     padding-bottom: 90px;
-  }
-}
-
-
-/* 
-
-*/
-
-/* 
-padding: 10px; (applies 10px padding to all four sides)
-padding: 10px 20px; (applies 10px to top/bottom, 20px to left/right)
-padding: 10px 20px 30px; (applies 10px to top, 20px to left/right, 30px to bottom)
-padding: 10px 20px 30px 40px; (applies 10px to top, 20px to right, 30px to bottom, 40px to left)
- */
+  }}

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="bracket_stylesheet.css"/>
-  <title>RLCS Bracket Form</title>
+  <title>RLCS Bracket</title>
 </head>
 <body>
   <header>
@@ -34,11 +34,11 @@
     </nav>
   </header>
   <!-- START OF PLAYIN -->
-  <section id="bracket">
-    <h1 style="color: black; text-align: center;">Play-in</h1>
-    <div class="container">
-      <div class="playin">
-        <div class="round upper-quarter-finals current">
+  <div id="bracket">
+    <section id="playin">
+      <h1 style="color: black; text-align: center;">Play-in</h1>
+      <div class="upper">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 10th</span></div>
           <ul class="matchup">
             <li class="team">Ex-Corinthians<span class="score">&nbsp;</span></li>
@@ -57,36 +57,31 @@
             <li class="team">TSM<span class="score">&nbsp;</span></li>
           </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-semi-finals current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Semifinals<br/><span class="date">September 10th</span></div>     
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
             </ul> 
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
             </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-qualify current">
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">September 10th</span></div>     
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
             </ul>
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
             </ul>
         </div>
       </div>
-  </section>
-  <section id="bracket">
-      <div class="container">
-      <div class="playin">
-        <div class="round lower current">
+    </section>
+    <section id="playin">
+      <div class="lower">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Lower Quarterfinals<br/><span class="date">September 10th</span></div>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Play-in Loser of UQF 1"><span class="score">&nbsp;</span></li>
@@ -97,88 +92,79 @@
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Play-in Loser of UQF 4"><span class="score">&nbsp;</span></li>
           </ul>              
         </div>
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">September 10th</span></div>  
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Play-in Loser of USF 2"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Winner of LQF 1"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Play-in Loser of USF 1"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Winner of LQF 2"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score"></span></li>
           </ul>  
-        </div>               
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        </div>
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">September 10th</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Winner of USF 1"><span class="score">&nbsp;</span></li>
-            </ul>
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Winner of USF 2"><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
+          </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 <!-- END OF PLAYIN -->
 <!-- GROUP A -->
-  <section id="bracket">
-    <h1 style="color: black; text-align: center;">Group Stage: Group A</h1>
-    <div class="container">
-      <div class="playin">
-        <div class="round upper-quarter-finals current">
+  <div id="bracket">
+    <section id="group_stage">
+      <h1 style="color: black; text-align: center;">Group Stage: Group A</h1>
+      <div class="upper">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">TBD</span></div>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-semi-finals current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Semifinals<br/><span class="date">TBD</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul> 
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul> 
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-qualify current">
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">TBD</span></div>     
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
             </ul>
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
             </ul>
         </div>
       </div>
-  </section>
-  <section id="bracket">
-      <div class="container">
-      <div class="playin">
-        <div class="round lower current">
+    </section>
+    <section id="group_stage">
+      <div class="lower">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Lower Quarterfinals<br/><span class="date">TBD</span></div>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of UQF 1"><span class="score">&nbsp;</span></li>
@@ -189,88 +175,79 @@
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of UQF 4"><span class="score">&nbsp;</span></li>
           </ul>              
         </div>
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">TBD</span></div>  
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of A USF 2"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of A USF 1"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>  
-        </div>               
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        </div>
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">TBD</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 <!-- END OF GROUP A -->
 <!-- START OF GROUP B -->
-  <section id="bracket">
-    <h1 style="color: black; text-align: center;">Group Stage: Group B</h1>
-    <div class="container">
-      <div class="playin">
-        <div class="round upper-quarter-finals current">
+  <div id="bracket">
+    <section id="group_stage">
+      <h1 style="color: black; text-align: center;">Group Stage: Group B</h1>
+      <div class="upper">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">TBD</span></div>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
-            <li class="team">TBD<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team">&nbsp;<span class="score">&nbsp;</span></li>
           </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-semi-finals current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Semifinals<br/><span class="date">TBD</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul> 
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul> 
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round upper-qualify current">
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">TBD</span></div>     
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
             </ul>
             <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+              <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
             </ul>
         </div>
       </div>
-  </section>
-  <section id="bracket">
-      <div class="container">
-      <div class="playin">
-        <div class="round lower current">
+    </section>
+    <section id="group_stage">
+      <div class="lower">
+        <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Lower Quarterfinals<br/><span class="date">TBD</span></div>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of UQF 1"><span class="score">&nbsp;</span></li>
@@ -281,107 +258,96 @@
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of UQF 4"><span class="score">&nbsp;</span></li>
           </ul>              
         </div>
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">TBD</span></div>  
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of B USF 2"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Loser of B USF 1"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>  
-        </div>               
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        </div>
+        <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/><span class="date">TBD</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 <!-- END OF GROUP B -->
 <!-- START OF PLAYOFFS -->
-  <section id="bracket">
-    <h1 style="color: black; text-align: center;">Playoffs</h1>
-    <div class="container">
-      <div class="playin" style="width: 33%;">
-        <div class="round upper-semi-finals current">
+  <div id="bracket">
+    <section id="playoffs">
+      <h1 style="color: black; text-align: center;">Playoffs</h1>
+      <div class="upper" style="width: 33%;">
+        <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 13th</span></div>     
-            <ul class="matchup">
-              <li class="team">GSL Group A - UB Higher Seed<span class="score">&nbsp;</span></li>
-              <li class="team">GSL Group B - UB Lower Seed<span class="score">&nbsp;</span></li>
-            </ul> 
-            <ul class="matchup">
-              <li class="team">GSL Group B - UB Higher Seed<span class="score">&nbsp;</span></li>
-              <li class="team">GSL Group A - UB Lower Seed<span class="score">&nbsp;</span></li>
-            </ul>
-        </div>
-      </div>
-  </section>
-  <section id="bracket">
-      <div class="container">
-      <div class="playin">
-        <div class="round lower current">
-          <div class="round-details">Round 1<br/><span class="date">September 13th</span></div>
           <ul class="matchup">
-            <li class="team">GSL Group A - LB Higher Seed<span class="score">&nbsp;</span></li>
-            <li class="team">GSL Group B - LB Lower Seed<span class="score">&nbsp;</span></li>
+            <li class="team">Group A - UB Higher Seed<span class="score">&nbsp;</span></li>
+            <li class="team">Group B - UB Lower Seed<span class="score">&nbsp;</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="team">GSL Group B - LB Higher Seed<span class="score">&nbsp;</span></li>
-            <li class="team">GSL Group A - LB Lower Seed<span class="score">&nbsp;</span></li>
-          </ul>              
+            <li class="team">Group B - UB Higher Seed<span class="score">&nbsp;</span></li>
+            <li class="team">Group A - UB Lower Seed<span class="score">&nbsp;</span></li>
+          </ul>
         </div>
       </div>
-      <div class="playin">
-        <div class="round lower current">
-          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 14th</span></div>  
+    </section>
+    <section id="playoffs">
+      <div class="lower">
+        <div class="semifinals" id="bracket_round">
+          <div class="round-details">Round 1<br/><span class="date">September 13th</span></div>
+          <ul class="matchup">
+            <li class="team">Group A - LB Higher Seed<span class="score">&nbsp;</span></li>
+            <li class="team">Group B - LB Lower Seed<span class="score">&nbsp;</span></li>
+          </ul> 
+          <ul class="matchup">
+            <li class="team">Group B - LB Higher Seed<span class="score">&nbsp;</span></li>
+            <li class="team">Group A - LB Lower Seed<span class="score">&nbsp;</span></li>
+          </ul>              
+        </div>
+        <div class="semifinals" id="bracket_round">
+          <div class="round-details">Quarterfinals<br/><span class="date">September 14th</span></div>  
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Loser of UQF 1"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>
           <ul class="matchup">
             <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Loser of UQF 2"><span class="score">&nbsp;</span></li>
-            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
           </ul>  
-        </div>               
-      </div>
-      <div class="playin">
-        <div class="round lower current">
+        </div>
+        <div class="quals" id="bracket_round">
           <div class="round-details">Semifinals<br/><span class="date">September 14th</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Winner of UQF 2"><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Winner of UQF 1"><span class="score">&nbsp;</span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score">&nbsp;</span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Winner of UQF 2"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text" placeholder="Playoff Winner of UQF 1"><span class="score">&nbsp;</span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score">&nbsp;</span></li>
+          </ul>
         </div>
-      </div>
-      <div class="playin">
-        <div class="round finals current">
+        <div class="final" id="bracket_round">
           <div class="round-details">Finals<br/><span class="date">September 14th</span></div>     
-            <ul class="matchup">
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score"><input id="input" style="width: 35px;" type="text" placeholder="Score"></span></li>
-              <li class="team"><input id="input" style="width: 80%;" type="text" placeholder=""><span class="score"><input id="input" style="width: 35px;" type="text" placeholder="Score"></span></li>
-            </ul>
+          <ul class="matchup">
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score"><input id="input" style="width: 40px;" type="text" placeholder="score"></span></li>
+            <li class="team"><input id="input" style="width: 80%;" type="text"><span class="score"><input id="input" style="width: 40px;" type="text" placeholder="score"></span></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 <!-- END OF PLAYOFFS -->
 </body>
-<footer>
-  <p>©Comet Productions. All Rights Reserved.</p>
-</footer>
+  <footer>
+    <p>©Comet Productions. All Rights Reserved.</p>
+  </footer>
 </html>

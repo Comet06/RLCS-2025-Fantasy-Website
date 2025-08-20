@@ -1,42 +1,14 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background-color: #002761; /* a subtle bluish-gray */
-  font-family: 'Istok Web', sans-serif;
-  min-height: 100%;
-  margin: 0;
-}
-main {
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-footer{
-  color: white;
-  float: left;
-  padding: 20px;
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {background-color:rgba(225,225,225,0.9);font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
+main {padding: 20px;text-align: center;}
+footer{color: white;background-color: #002761;padding: 20px; width: 100%;}
+/* footer{color: white;background-color: #002761;padding: 20px;position: absolute; bottom: 0; width: 100%;} */
+button{font-size: medium;padding: 2px;}
+header{padding:0px 0px 60px}
+h1{color: black;text-align: left;}
+h2{color: black;padding: 20px;}
 
-}
-button{
-  /* background-color: grey; */
-  font-size: medium;
-  padding: 2px;
-}
-header{
-  padding:0px 0px 60px
-}
-h1{
-  color: white;
-  /* padding: 20px; */
-  text-align: left;
-}
-h2{
-  color: white;
-  padding: 20px;
-}
+.navbar h1{color: white;}
 .navbar {
   display: flex;
   background-color: #343a40;
@@ -48,11 +20,7 @@ h2{
   min-width: fit-content;
   z-index: 100;
 }
-.nav-links {
-  list-style: none;
-  display: inline-flex;
-  gap: 20px;
-}
+.nav-links {list-style: none;display: inline-flex;gap: 20px;}
 .nav-links li a {
   color: white;
   text-decoration: none;
@@ -70,9 +38,7 @@ h2{
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
-.dropdown {
-  position: relative;
-}
+.dropdown {position: relative;}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -92,31 +58,21 @@ h2{
   display: block;
   transition: background-color 0.3s ease;
 }
-.dropdown-content a:hover {
-  background-color: #ffc107;
-  color: #343a40;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+.dropdown-content a:hover {background-color: #ffc107;color: #343a40;}
+.dropdown:hover .dropdown-content {display: block;}
 
 /* Forms */
-.forms{
-  text-align: center;
-  background-color: white;
-  padding: 10px;
+.forms{text-align: center;background-color: white;padding: 10px;}
+#rules{text-align: left;margin-left: 30px;}
+#draft{text-align: center;display: inline-flex;padding: 30px;gap: 30px;}
 
-}
-#rules{
-  color: white;
-  text-align: left;
-  margin-left: 30px;
-}
-#draft{
-  text-align: center;
-  display: inline-flex;
-  padding: 30px;
-  gap: 30px;
+.pick{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  margin: 3px 0;
+  height: 25px;
+  line-height: 25px;
 }
 
 /* Tables and Charts */
@@ -128,122 +84,45 @@ table{
   border: solid 2px black;
   width: 100%;
 }
-#rank_table{
-  color: black;
-  background-color: white;
-  width: 350px;
-  height: 30px;
-}
-#home_tables{
-  color: black;
-  background-color: white;
-  /* width: 100%; */
-}
-#player_data_table{
-  color: black;
-  background-color: white;
-  width: 100%;
-  min-width: 1080px;
-}
-#prize_pool{
-  background-color: grey;
-  width: 750px;
-  margin: 0px auto;
-}
-#team1{
-  color: #ffffff;
-  background-color: #037120;
-}
-#team2{
-  color: #ffffff;
-  background-color: #01063f;
-}
-#team3{
-  color: #ffffff;
-  background-color: #710303;
-}
-#team4{
-  color: #000000;
-  background-color: #d8db4b;
-}
-#team5{
-  color: #000000;
-  background-color: #32d2d7;
-}
-#team6{
-  color: #ffffff;
-  background-color: #9302f4;
-}
-#team7{
-  color: #ffffff;
-  background-color: #f47702;
-}
-#split_table{
-  max-width: 700px;
-}
-#champ_table{
-  max-width: 400px;
-}
-#win_table{
-  max-width: 700px;
-}
-#players_table{
-  max-width: 800px;
-}
+#rank_table{color: black;background-color: white;width: 350px;height: 30px;}
+#home_tables{background-color: white;}
+#player_data_table{color: black;background-color: white;width: 100%;min-width: 1080px;}
+#prize_pool{background-color: grey;width: 750px;margin: 0px auto;}
+
+
+/* Home Page */
+#team1{color: #ffffff;background-color: #037120;}
+#team2{color: #ffffff;background-color: #01063f;}
+#team3{color: #ffffff;background-color: #710303;}
+#team4{color: #000000;background-color: #d8db4b;}
+#team5{color: #000000;background-color: #32d2d7;}
+#team6{color: black;background-color: #c062ff;}
+#team7{color: #ffffff;background-color: #f47702;}
+#split_table{max-width: 700px;}
+#champ_table{max-width: 400px;}
+#win_table{max-width: 700px;}
+#players_table{max-width: 800px;}
 
 /* Buttons */
-#import_button :hover{
-  color: white;
-  background-color: black;
-}
+#import_button :hover{color: white;background-color: black;}
 
 /* Rankings page */
-.points{
-  display: flex;
-  padding-bottom: 30px;
-}
-.rankings{
-  display: flex;
-}
-#split1{
-  color: #ffffff;
-  background-color: #065100;
-}
-#split2{
-  color: #ffffff;
-  background-color: #740000;
-}
-#championship{
-  color: #000000;
-  background-color: #00d0ff;
-}
-#charts{
-  display: block;
-}
-tr{
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-  padding: 10%;
-}
-#table-border{
-  border: solid 2px, black;
-}
+.points{display: flex;padding-bottom: 30px;}
+.rankings{display: flex;}
+#split1{color: #000000;background-color: #00d0ff;}
+#split2{color: #000000;background-color: #00d0ff;}
+#championship{color: #000000;background-color: #00d0ff;}
+#charts{display: block;}
 
-/* @media screen and (max-width: 1200px) {
-  body{
-    background-color: green;
-  }
-} */
+tr{display: table-row;vertical-align: inherit;border-color: inherit;padding: 10%;}
+#table-border{border: solid 2px, black;}
+
+
 @media screen and (max-width: 1100px) {
   #charts{
     display: block;
-  }
-}
+  }}
 @media screen and (max-width: 789px) {
-  /*body{
-    background-color: grey;
-  }*/
   .nav-links{
     font-size: 12px;
     gap: 5px;
@@ -256,20 +135,12 @@ tr{
   }
   #prize_pool{
     width: 500px;
-  }
-}
+  }}
 @media screen and (max-width: 665px) {
-  /* body{
-    background-color: navajowhite;
-  } */
   header{
     padding-bottom: 90px;
-  }
-}
+  }}
 @media screen and (max-width: 657px) {
-  /* body{
-    background-color: orangered;
-  } */
   header{
     padding-bottom: 90px;
   }
@@ -281,5 +152,4 @@ tr{
   }
   #players_table{
     min-width: 630px;
-  }
-}
+  }}
