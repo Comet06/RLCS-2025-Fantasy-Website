@@ -82,7 +82,7 @@ tr{display: table-row;vertical-align: inherit;border-color: inherit;padding: 10%
 #table-border{border: solid 2px, black;}
 
 .top_rated{
-  font-size: 20px; /* Testing to see if the font-size will fix */
+  font-size: 20px;
   margin: auto;
   width: 200px;
   text-align: center;
