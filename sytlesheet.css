@@ -82,11 +82,10 @@ tr{display: table-row;vertical-align: inherit;border-color: inherit;padding: 10%
 #table-border{border: solid 2px, black;}
 
 .top_rated{
-  font-size: 20px;
+  font-size: 50px;
   margin: auto;
   width: 200px;
   text-align: center;
-  /* overflow: hidden; */
 }
 
 #socials{
