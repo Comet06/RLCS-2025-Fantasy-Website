@@ -35,12 +35,12 @@
   
   <main>
     <form action="" method="post" autocomplete="on">
-      <input team="teamName" type="text" required="required" placeholder="Your Team Name"><br>
+      <input team="teamName" type="text" required="required" placeholder="Your Team Name(Required)"><br>
       <div id="draft">
         <div>
           <h2>Drop</h2>
           <ul>
-            <li class="pick"><input id="player1drop" type="text" placeholder="Player 1" required="required"></li>
+            <li class="pick"><input id="player1drop" type="text" placeholder="Player 1(Required)" required="required"></li>
             <li class="pick"><input id="player2drop" type="text" placeholder="Player 2"></li>
             <li class="pick"><input id="player3drop" type="text" placeholder="Player 3"></li>
           </ul>
@@ -48,7 +48,7 @@
         <div>
           <h2>Pick Up</h2>
           <ul>
-            <li class="pick"><input id="player1pickup" type="text" placeholder="Player 1" required="required"></li>
+            <li class="pick"><input id="player1pickup" type="text" placeholder="Player 1(Required)" required="required"></li>
             <li class="pick"><input id="player2pickup" type="text" placeholder="Player 2"></li>
             <li class="pick"><input id="player3pickup" type="text" placeholder="Player 3"></li>
         </ul>
@@ -60,6 +60,21 @@
       </div>
     </form>
   </main>
+  <h2 style="text-align: center;">Top Rated Available players</h2>
+  <div class="top_rated">
+    <ol>
+      <li>Lostt</li>
+      <li>Rise</li>
+      <li>Drufinho</li>
+      <li>Chronic</li>
+      <li>Cheese</li>
+      <li>Stizzy</li>
+      <li>Joreuz</li>
+      <li>KV1</li>
+      <li>Motta</li>
+      <li>Majicbear</li>
+    </ol>
+  </div>
 </body>
 <script>
   function sendRosterChange(){

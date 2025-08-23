@@ -1,0 +1,77 @@
+/* General Styles */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {background-color:rgba(225,225,225,0.9);font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
+main {padding: 20px;text-align: center;}
+footer{color: white;background-color: #1e1e2f;padding: 20px; width: 100%;}
+button{font-size: medium;padding: 2px;}
+header{padding:0px 0px 60px}
+h1{color: black;text-align: left;}
+/* h2{color: black;padding: 20px;} */
+
+.navbar h1{color: white;}
+.navbar {
+  display: flex;
+  background-color: #1e1e2f;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  min-width: fit-content;
+  z-index: 100;}
+.nav-links {list-style: none;display: inline-flex;gap: 20px;}
+.nav-links li a {
+  color: white;text-decoration: none;font-weight: bold;padding: 10px;
+  border-radius: 5px;background-color: transparent;position: relative;
+  overflow: hidden;transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
+.nav-links li a:hover {
+  color: #cedfef;background-color: #071cff;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
+.dropdown {position: relative;}
+.dropdown-content {
+  display: none;position: absolute;top: 100%;right: 0;padding: 5px;
+  background-color: #343a40;box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;min-width: 160px;z-index: 1;}
+.dropdown-content a {
+  color: white;padding: 10px 16px;text-decoration: none;
+  display: block;transition: background-color 0.3s ease;}
+.dropdown-content a:hover {background-color: #ffc107;color: #343a40;}
+.dropdown:hover .dropdown-content {display: block;}
+
+
+table{
+  border-collapse: separate;
+  text-indent: initial;
+  text-align: center;
+  border-spacing: 1px;
+  border: solid 2px black;
+  width: 100%;}
+#player_data_table{color: black;background-color: white;width: 100%;min-width: 1080px;}
+
+@media screen and (max-width: 1100px) {
+  #charts{
+    display: block;
+  }}
+@media screen and (max-width: 820px) {
+  header{
+    padding-bottom: 150px;
+  }
+  .points{
+    display: block;
+  }
+  .rankings{
+    display: block;
+  }
+  #prize_pool{
+    width: 500px;
+  }}
+@media screen and (max-width: 657px) {
+  #split_table{
+    min-width: 630px;
+  }
+  #win_table{
+    min-width: 630px;
+  }
+  #players_table{
+    min-width: 630px;
+  }}

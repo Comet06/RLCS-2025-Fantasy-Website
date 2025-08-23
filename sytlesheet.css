@@ -1,79 +1,48 @@
+/* General Styles */
 * {margin: 0;padding: 0;box-sizing: border-box;}
 body {background-color:rgba(225,225,225,0.9);font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
 main {padding: 20px;text-align: center;}
-footer{color: white;background-color: #002761;padding: 20px; width: 100%;}
-/* footer{color: white;background-color: #002761;padding: 20px;position: absolute; bottom: 0; width: 100%;} */
+footer{display:flex; color: white;background-color: #1e1e2f;padding: 20px; width: 100%;}
 button{font-size: medium;padding: 2px;}
 header{padding:0px 0px 60px}
-h1{color: black;text-align: left;}
-h2{color: black;padding: 20px;}
+h1{text-align: left;}
 
 .navbar h1{color: white;}
 .navbar {
   display: flex;
-  background-color: #343a40;
+  background-color: #1e1e2f;
   position: fixed;
-  justify-content: space-between; /* Push children to far left and far right */
-  align-items: center;            /* Vertically center both items */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 20px;
   min-width: fit-content;
-  z-index: 100;
-}
+  z-index: 100;}
 .nav-links {list-style: none;display: inline-flex;gap: 20px;}
 .nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: transparent;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
+  color: white;text-decoration: none;font-weight: bold;padding: 10px;
+  border-radius: 5px;background-color: transparent;position: relative;
+  overflow: hidden;transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
 .nav-links li a:hover {
-  color: #cedfef;
-  background-color: #071cff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
+  color: #cedfef;background-color: #071cff;box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;}
 .dropdown {position: relative;}
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 5px;
-  background-color: #343a40;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  min-width: 160px;
-  z-index: 1;
-}
+  display: none;position: absolute;top: 100%;right: 0;padding: 5px;
+  background-color: #343a40;box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 5px;min-width: 160px;z-index: 1;}
 .dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease;
-}
+  color: white;padding: 10px 16px;text-decoration: none;
+  display: block;transition: background-color 0.3s ease;}
 .dropdown-content a:hover {background-color: #ffc107;color: #343a40;}
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Forms */
 .forms{text-align: center;background-color: white;padding: 10px;}
 #rules{text-align: left;margin-left: 30px;}
+#rules ol{margin-left: 30px;}
 #draft{text-align: center;display: inline-flex;padding: 30px;gap: 30px;}
-
-.pick{
-  display: flex;
-  flex-direction: column;
-  padding: 0 5px;
-  margin: 3px 0;
-  height: 25px;
-  line-height: 25px;
-}
+.pick{display: flex;flex-direction: column;padding: 0 5px;margin: 3px 0;height: 25px;line-height: 25px;}
 
 /* Tables and Charts */
 table{
@@ -82,15 +51,22 @@ table{
   text-align: center;
   border-spacing: 1px;
   border: solid 2px black;
-  width: 100%;
-}
+  width: 100%;}
+
 #rank_table{color: black;background-color: white;width: 350px;height: 30px;}
-#home_tables{background-color: white;}
-#player_data_table{color: black;background-color: white;width: 100%;min-width: 1080px;}
-#prize_pool{background-color: grey;width: 750px;margin: 0px auto;}
+#home_tables{background-color: rgba(225,225,225,0.9);}
+#prize_pool{background-color: grey;width: 750px;margin: 30px auto 0 30px;}
 
+#split_table{max-width: 700px;}
+#champ_table{max-width: 400px;}
+#win_table{max-width: 700px;}
+#players_table{max-width: 800px;}
 
-/* Home Page */
+#split1{color: #000000;background-color: #00d0ff;}
+#split2{color: #000000;background-color: #00d0ff;}
+#championship{color: #000000;background-color: #00d0ff;}
+#charts{display: block;}
+
 #team1{color: #ffffff;background-color: #037120;}
 #team2{color: #ffffff;background-color: #01063f;}
 #team3{color: #ffffff;background-color: #710303;}
@@ -98,34 +74,33 @@ table{
 #team5{color: #000000;background-color: #32d2d7;}
 #team6{color: black;background-color: #c062ff;}
 #team7{color: #ffffff;background-color: #f47702;}
-#split_table{max-width: 700px;}
-#champ_table{max-width: 400px;}
-#win_table{max-width: 700px;}
-#players_table{max-width: 800px;}
 
-/* Buttons */
-#import_button :hover{color: white;background-color: black;}
-
-/* Rankings page */
 .points{display: flex;padding-bottom: 30px;}
 .rankings{display: flex;}
-#split1{color: #000000;background-color: #00d0ff;}
-#split2{color: #000000;background-color: #00d0ff;}
-#championship{color: #000000;background-color: #00d0ff;}
-#charts{display: block;}
-
+#import_button :hover{color: white;background-color: black;}
 tr{display: table-row;vertical-align: inherit;border-color: inherit;padding: 10%;}
 #table-border{border: solid 2px, black;}
 
+.top_rated{
+  font-size: 20px;
+  margin: auto;
+  width: 200px;
+  text-align: center;
+  /* overflow: hidden; */
+}
 
+#socials{
+  display: flex;
+  margin-left: auto;
+}
+/* Media Screens */
 @media screen and (max-width: 1100px) {
   #charts{
     display: block;
   }}
-@media screen and (max-width: 789px) {
-  .nav-links{
-    font-size: 12px;
-    gap: 5px;
+@media screen and (max-width: 820px) {
+  header{
+    padding-bottom: 150px;
   }
   .points{
     display: block;
@@ -136,14 +111,7 @@ tr{display: table-row;vertical-align: inherit;border-color: inherit;padding: 10%
   #prize_pool{
     width: 500px;
   }}
-@media screen and (max-width: 665px) {
-  header{
-    padding-bottom: 90px;
-  }}
 @media screen and (max-width: 657px) {
-  header{
-    padding-bottom: 90px;
-  }
   #split_table{
     min-width: 630px;
   }
