@@ -80,7 +80,7 @@ h2{padding: 20px;}
 .semifinals .matchup {padding: 55px 0px;} /* All SF matches */
 .quals .matchup {padding: 55px 0px;} /* All Qual boxes(match semifinals matches) */
 .lower .matchup {padding: 20px 0px;} /* All lower matches */
-.final .matchup {padding: 55px 0px;} /* Only the final matche */
+.final .matchup {padding: 30px 0px;} /* Only the final matche */
 
 /* Specialty Styles */
 #playoffs .upper .matchup{padding: 15px 0px;margin: 0 0 15px; width: 210px;} /* adds padding in between the matchups, and sizes the width to match the other matchups */
