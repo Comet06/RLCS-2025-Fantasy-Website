@@ -39,31 +39,31 @@
       <div class="quarterfinals" id="bracket_round">
         <div class="round-details">Upper Quarterfinals<br/><span class="date">September 10th</span></div>
         <ul class="matchup">
-          <li class="team" onclick="puqfm1('Ex-Corinthians','Gen.G Mobile1 Racing')">Ex-Corinthians<span class="score">&nbsp;</span></li>
-          <li class="team" onclick="puqfm1('Gen.G Mobile1 Racing','Ex-Corinthians')">Gen.G Mobil1 Racing<span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm1('Ex-Corinthians','Gen.G Mobile1 Racing')">Ex-Corinthians</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm1('Gen.G Mobile1 Racing','Ex-Corinthians')">Gen.G Mobil1 Racing</button><span class="score">&nbsp;</span></li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm2('ROC Esports','FUT Esports')">ROC Esports<span class="score">&nbsp;</span></li>
-          <li class="team" onclick="puqfm2('FUT Esports','ROC Esports')">FUT Esports<span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm2('ROC Esports','FUT Esports')">ROC Esports</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm2('FUT Esports','ROC Esports')">FUT Esports</button><span class="score">&nbsp;</span></li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm3('Shopify Rebellion','Virtus.pro')">Shopify Rebellion<span class="score">&nbsp;</span></li>
-          <li class="team" onclick="puqfm3('Virtus.pro','Shopify Rebellion')">Virtus.pro<span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm3('Shopify Rebellion','Virtus.pro')">Shopify Rebellion</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm3('Virtus.pro','Shopify Rebellion')">Virtus.pro</button><span class="score">&nbsp;</span></li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm4('Ninjas in Pyjamas','TSM')">Ninjas in Pyjamas<span class="score">&nbsp;</span></li>
-          <li class="team" onclick="puqfm4('TSM','Ninjas in Pyjamas')">TSM<span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm4('Ninjas in Pyjamas','TSM')">Ninjas in Pyjamas</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button onclick="puqfm4('TSM','Ninjas in Pyjamas')">TSM</button><span class="score">&nbsp;</span></li>
         </ul>
       </div>
       <div class="semifinals" id="bracket_round">
         <div class="round-details">Upper Semifinals<br/><span class="date">September 10th</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_puqfm1" onclick="pusfm1(winnerPuqfm1,winnerPuqfm2)">&nbsp;<span class="score">&nbsp;</span></li>
-            <li class="team" id="winner_puqfm2" onclick="pusfm1(winnerPuqfm2,winnerPuqfm1)">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team"><button id="winner_puqfm1" onclick="pusfm1(winnerPuqfm1,winnerPuqfm2)">&nbsp;</button><span class="score">&nbsp;</span></li>
+            <li class="team"><button id="winner_puqfm2" onclick="pusfm1(winnerPuqfm2,winnerPuqfm1)">&nbsp;</button><span class="score">&nbsp;</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="winner_puqfm3" onclick="pusfm2(winnerPuqfm3,winnerPuqfm4)">&nbsp;<span class="score">&nbsp;</span></li>
-            <li class="team" id="winner_puqfm4" onclick="pusfm2(winnerPuqfm4,winnerPuqfm3)">&nbsp;<span class="score">&nbsp;</span></li>
+            <li class="team"><button id="winner_puqfm3" onclick="pusfm2(winnerPuqfm3,winnerPuqfm4)">&nbsp;</button><span class="score">&nbsp;</span></li>
+            <li class="team"><button id="winner_puqfm4" onclick="pusfm2(winnerPuqfm4,winnerPuqfm3)">&nbsp;</button><span class="score">&nbsp;</span></li>
           </ul>
       </div>
       <div class="quals" id="bracket_round">
@@ -80,23 +80,23 @@
       <div class="quarterfinals" id="bracket_round">
         <div class="round-details">Lower Quarterfinals<br/><span class="date">September 10th</span></div>
         <ul class="matchup">
-          <li class="team" id="loser_puqfm1" onclick="plqfm1(loserPuqfm1,loserPuqfm2)">Play-in Loser of UQF 1<span class="score">&nbsp;</span></li>
-          <li class="team" id="loser_puqfm2" onclick="plqfm1(loserPuqfm2,loserPuqfm1)">Play-in Loser of UQF 2<span class="score">&nbsp;</span></li>
+          <li class="team"><button id="loser_puqfm1" onclick="plqfm1(loserPuqfm1,loserPuqfm2)">Play-in Loser of UQF 1</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button id="loser_puqfm2" onclick="plqfm1(loserPuqfm2,loserPuqfm1)">Play-in Loser of UQF 2</button><span class="score">&nbsp;</span></li>
         </ul> 
         <ul class="matchup">
-          <li class="team" id="loser_puqfm3" onclick="plqfm2(loserPuqfm3,loserPuqfm4)">Play-in Loser of UQF 3<span class="score">&nbsp;</span></li>
-          <li class="team" id="loser_puqfm4" onclick="plqfm2(loserPuqfm4,loserPuqfm3)">Play-in Loser of UQF 4<span class="score">&nbsp;</span></li>
+          <li class="team"><button id="loser_puqfm3" onclick="plqfm2(loserPuqfm3,loserPuqfm4)">Play-in Loser of UQF 3</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button id="loser_puqfm4" onclick="plqfm2(loserPuqfm4,loserPuqfm3)">Play-in Loser of UQF 4</button><span class="score">&nbsp;</span></li>
         </ul>              
       </div>
       <div class="semifinals" id="bracket_round">
         <div class="round-details">Lower Semifinals<br/><span class="date">September 10th</span></div>  
         <ul class="matchup">
-          <li class="team" id="loser_pusfm2" onclick="plsfm1(loserPusfm2,winnerPlqfm1)">Play-in Loser of USF 2<span class="score">&nbsp;</span></li>
-          <li class="team" id="winner_plqfm1" onclick="plsfm1(winnerPlqfm1,loserPusfm2)">&nbsp;<span class="score">&nbsp;</span></li>
+          <li class="team"><button id="loser_pusfm2" onclick="plsfm1(loserPusfm2,winnerPlqfm1)">Play-in Loser of USF 2</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button id="winner_plqfm1" onclick="plsfm1(winnerPlqfm1,loserPusfm2)">&nbsp;</button><span class="score">&nbsp;</span></li>
         </ul>
         <ul class="matchup">
-          <li class="team" id="loser_pusfm1" onclick="plsfm2(loserPusfm1,winnerPlqfm2)">Play-in Loser of USF 1<span class="score">&nbsp;</span></li>
-          <li class="team" id="winner_plqfm2" onclick="plsfm2(winnerPlqfm2,loserPusfm1)">&nbsp;<span class="score"></span></li>
+          <li class="team"><button id="loser_pusfm1" onclick="plsfm2(loserPusfm1,winnerPlqfm2)">Play-in Loser of USF 1</button><span class="score">&nbsp;</span></li>
+          <li class="team"><button id="winner_plqfm2" onclick="plsfm2(winnerPlqfm2,loserPusfm1)">&nbsp;</button><span class="score"></span></li>
         </ul>  
       </div>
       <div class="quals" id="bracket_round">
@@ -329,4 +329,5 @@
   <footer>
     <p>©Comet Productions. All Rights Reserved.</p>
   </footer>
+
 </html>
