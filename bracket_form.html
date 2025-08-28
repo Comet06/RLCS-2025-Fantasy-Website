@@ -4,14 +4,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="bracket_stylesheet.css"/>
-  <title>RLCS Bracket</title>
+  <link rel="stylesheet" href="css/sytlesheet.css"/>
+  <link rel="stylesheet" href="css/stats.css"/>
+  <link rel="stylesheet" href="css/bracket_stylesheet.css"/>
+  <title>RLCS Bracket Form</title>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <h1>RLCS 2025 Fantasy League</h1>
       <ul class="nav-links">
+        <li onclick="dark()" id="mode" style="color: white; font-weight: bold;">Dark Mode</li>
         <li><a href="index.html">Home</a></li>
         <li><a href="drafting.html">Drafting</a></li>
         <li class="dropdown">
@@ -33,6 +36,7 @@
       </ul>
     </nav>
   </header>
+  <h1 style="text-align: center; margin: 20px 0 20px;">Bracket Form</h1>
   <div id="playin">
     <h1 style="color: black; text-align: center; margin-bottom: 10px;">Play-in</h1>
     <div class="upper">
@@ -67,7 +71,7 @@
           </ul>
       </div>
       <div class="quals" id="bracket_round">
-        <div class="round-details">Qualified<br/><span class="date">September 10th</span></div>     
+        <div class="round-details">Qualified<br/>&nbsp;</div>     
           <ul class="matchup">
             <li class="team" id="winner_pusfm1">&nbsp;</li>
           </ul>
@@ -111,11 +115,11 @@
     </div>
   </div>
   <div class="group_stage">
-    <div id="group">
+    <div id="groupA">
       <h1 style="color: black; text-align: center; margin-bottom: 10px;">Group Stage: Group A</h1>
       <div class="upper">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Upper Quarterfinals<br/><span class="date">TBD</span></div>
+          <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
             <li class="team" onclick="gauqfm1('Karmine Corp',ps4)">Karmine Corp</li>
             <li class="team" id="ps4" onclick="gauqfm1(ps4,'Karmine Corp')">Play-in Seed #4</li>
@@ -134,7 +138,7 @@
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Upper Semifinals<br/><span class="date">TBD</span></div>     
+          <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
           <ul class="matchup">
             <li class="team" id="winner_gauqfm1" onclick="gausfm1(winnerGAuqfm1,winnerGAuqfm2)"></li>
             <li class="team" id="winner_gauqfm2" onclick="gausfm1(winnerGAuqfm2,winnerGAuqfm1)"></li>
@@ -156,7 +160,7 @@
       </div>
       <div class="lower">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Lower Quarterfinals<br/><span class="date">TBD</span></div>
+          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
             <li class="team" id="loser_gauqfm1" onclick="galqfm1(loserGAuqfm1)">Loser of UQF 1</li>
             <li class="team" id="loser_gauqfm2" onclick="galqfm1(loserGAuqfm2)">Loser of UQF 2</li>
@@ -167,7 +171,7 @@
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Lower Semifinals<br/><span class="date">TBD</span></div>  
+          <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
             <li class="team" id="loser_gausfm2" onclick="galsfm1(loserGAusfm2)">Loser of A USF 2</li>
             <li class="team" id="winner_galqfm1" onclick="galsfm1(winnerGAlqfm1)"></li>
@@ -188,11 +192,11 @@
         </div>
       </div>
     </div>
-    <div id="group">
+    <div id="groupB">
       <h1 style="color: black; text-align: center; margin-bottom: 10px;">Group Stage: Group B</h1>
       <div class="upper">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Upper Quarterfinals<br/><span class="date">TBD</span></div>
+          <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
             <li class="team" onclick="gbuqfm1('Team Falcons',ps3)">Team Falcons</li>
             <li class="team" id="ps3" onclick="gbuqfm1(ps3,'Team Falcons')">Play-in Seed #3</li>
@@ -211,7 +215,7 @@
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Upper Semifinals<br/><span class="date">TBD</span></div>     
+          <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
           <ul class="matchup">
             <li class="team" id="winner_gbuqfm1" onclick="gbusfm1(winnerGBuqfm1,winnerGBuqfm2)"></li>
             <li class="team" id="winner_gbuqfm2" onclick="gbusfm1(winnerGBuqfm2,winnerGBuqfm1)"></li>
@@ -233,7 +237,7 @@
       </div>
       <div class="lower">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Lower Quarterfinals<br/><span class="date">TBD</span></div>
+          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
             <li class="team" id="loser_gbuqfm1" onclick="gblqfm1(loserGBuqfm1)">Loser of UQF 1</li>
             <li class="team" id="loser_gbuqfm2" onclick="gblqfm1(loserGBuqfm2)">Loser of UQF 2</li>
@@ -244,7 +248,7 @@
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Lower Semifinals<br/><span class="date">TBD</span></div>  
+          <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
             <li class="team" id="loser_gbusfm2" onclick="gblsfm1(loserGBusfm2)">Loser of B USF 2</li>
             <li class="team" id="winner_gblqfm1" onclick="gblsfm1(winnerGBlqfm1)"></li>
@@ -327,8 +331,17 @@
     </div>
   </div>
 </body>
-<script src="main.js"></script>
-  <footer>
-    <p>©Comet Productions. All Rights Reserved.</p>
-  </footer>
+<script src="js/main.js"></script>
+<script src="js/bracket.js"></script>
+<script src="js/drafting.js"></script>
+<footer>
+  <p>©Comet Productions. All Rights Reserved.</p>
+  <div id="socials">
+    <p>Socials: </p>
+    <a href="https://www.discord.gg/Tn5a63K">Discord</a>
+    <a href="https://x.com/rlcomet">Twitter</a>
+    <a href="https://www.youtube.com/@iacomet">YouTube</a>
+    <a href="https://www.twitch.tv/iacomet">Twitch</a>
+  </div>
+</footer>
 </html>
