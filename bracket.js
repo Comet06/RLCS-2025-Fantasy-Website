@@ -303,5 +303,4 @@ function polsfm2(winner){
 
 function finalWinner(winner){
   document.getElementById("tourneyWinner").innerHTML=winner;
-
 }
