@@ -14,7 +14,6 @@
     <nav class="navbar">
       <h1>RLCS 2025 Fantasy League</h1>
       <ul class="nav-links">
-        <li onclick="dark()" id="mode" style="color: white; font-weight: bold;">Dark Mode</li>
         <li><a href="index.html">Home</a></li>
         <li><a href="drafting.html">Drafting</a></li>
         <li class="dropdown">
@@ -33,23 +32,19 @@
             </div>
         </li>
         <li class="dropdown">
-          <a href="#">Split 1 Events</a>
+          <a href="#">Events</a>
             <div class="dropdown-content">
               <a href="regional_1.html">Regional 1</a>
               <a href="regional_2.html">Regional 2</a>
               <a href="regional_3.html">Regional 3</a>
               <a href="major_1.html">Major 1</a>
-            </div>
-        </li><li class="dropdown">
-          <a href="#">Split 2 Events</a>
-            <div class="dropdown-content">
               <a href="regional_4.html">Regional 4</a>
               <a href="regional_5.html">Regional 5</a>
               <a href="regional_6.html">Regional 6</a>
               <a href="major_2.html">Major 2</a>
+              <a href="championship.html">Championship</a>
             </div>
         </li>
-        <li><a href="championship.html">Championship Event</a></li>
         <li><a href="info.html">Rules</a></li>
       </ul>
     </nav>
@@ -139,16 +134,16 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm1('Karmine Corp',ps4)">Karmine Corp</li>
-            <li class="team" id="ps4" onclick="gauqfm1(ps4,'Karmine Corp')">Play-in Seed #4</li>
+            <li class="team" onclick="gauqfm1('Karmine Corp','')">Karmine Corp</li>
+            <li class="team" onclick="gauqfm1('','Karmine Corp')">Play-in Seed #4</li>
           </ul>
           <ul class="matchup">
             <li class="team" onclick="gauqfm2('The Ultimates','Geekay Esports')">The Ultimates</li>
             <li class="team" onclick="gauqfm2('Geekay Esports','The Ultimates')">Geekay Esports</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm3('Dignitas',ps1)">Dignitas</li>
-            <li class="team" id="ps1" onclick="gauqfm3(ps1,'Dignitas')">Play-in Seed #1</li>
+            <li class="team" onclick="gauqfm3('Dignitas','')">Dignitas</li>
+            <li class="team" onclick="gauqfm3('','Dignitas')">Play-in Seed #1</li>
           </ul>
           <ul class="matchup">
             <li class="team" onclick="gauqfm4('Furia Esports','Wildcard')">Furia Esports</li>
@@ -216,16 +211,16 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm1('Team Falcons',ps3)">Team Falcons</li>
-            <li class="team" id="ps3" onclick="gbuqfm1(ps3,'Team Falcons')">Play-in Seed #3</li>
+            <li class="team" onclick="gbuqfm1('Team Falcons','')">Team Falcons</li>
+            <li class="team" onclick="gbuqfm1('','Team Falcons')">Play-in Seed #3</li>
           </ul>
           <ul class="matchup">
             <li class="team" onclick="gbuqfm2('Team Vitality','Spacestation Gaming')">Team Vitality</li>
             <li class="team" onclick="gbuqfm2('Spacestation Gaming','Team Vitality')">Spacestation Gaming</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm3('NRG',ps2)">NRG</li>
-            <li class="team" id="ps2" onclick="gbuqfm3(ps2,'NRG')">Play-in Seed #2</li>
+            <li class="team" onclick="gbuqfm3('NRG','')">NRG</li>
+            <li class="team" onclick="gbuqfm3('','NRG')">Play-in Seed #2</li>
           </ul>
           <ul class="matchup">
             <li class="team" onclick="gbuqfm4('Twisted Minds','Team Secret')">Twisted Minds</li>

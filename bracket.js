@@ -28,10 +28,6 @@ let loserPuqfm3 = '';
 let loserPuqfm4 = '';
 let loserPusfm1 = '';
 let loserPusfm2 = '';
-let ps1 = '';
-let ps2 = '';
-let ps3 = '';
-let ps4 = '';
 
 function puqfm1(winner, loser){
   document.getElementById("winner_puqfm1").innerHTML=winner;
@@ -63,7 +59,6 @@ function pusfm1(winner, loser){
   document.getElementById("loser_pusfm1").innerHTML=loser;
   winnerPusfm1 = winner;
   loserPusfm1 = loser;
-  ps1 =  winner;
 }
 function pusfm2(winner, loser){
   document.getElementById("winner_pusfm2").innerHTML=winner;
@@ -71,7 +66,6 @@ function pusfm2(winner, loser){
   document.getElementById("loser_pusfm2").innerHTML=loser;
   winnerPusfm2 = winner;
   loserPusfm2 = loser;
-  ps2 = winner
 }
 function plqfm1(winner){
   document.getElementById("winner_plqfm1").innerHTML=winner;
@@ -85,13 +79,11 @@ function plsfm1(winner){
   document.getElementById("winner_plsfm1").innerHTML=winner;
   document.getElementById("ps3").innerHTML=winner;
   winnerPlsfm1 = winner;
-  ps3 = winner
 }
 function plsfm2(winner){
   document.getElementById("winner_plsfm2").innerHTML=winner;
   document.getElementById("ps4").innerHTML=winner;
   winnerPlsfm2 = winner;
-  ps4 = winner
 }
 
 // GROUP STAGE

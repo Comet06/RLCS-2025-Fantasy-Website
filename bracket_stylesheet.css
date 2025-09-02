@@ -42,7 +42,6 @@
 
 .lower {height: 190px;margin: auto;display: flex;} /* All lower sections */
 
-/* Matchup styles */
 .matchup{margin: 0 2.5% 0 2.5%;height: 60px;}
 .quarterfinals .matchup {padding: 20px 0px;} /* All QF matches */
 .semifinals .matchup {padding: 55px 0px;} /* All SF matches */
@@ -50,12 +49,10 @@
 .lower .matchup {padding: 20px 0px;} /* All lower matches */
 .final .matchup {padding: 30px 0px;} /* Only the final matche */
 
-/* Specialty Styles */
 #playoffs .upper .matchup{padding: 15px 0px;margin: 0 0 15px; width: 210px;} /* adds padding in between the matchups, and sizes the width to match the other matchups */
 #playoffs .upper{height:200px;margin-left: 230px;} /* Moves the bracket boxes to right 230px */
 #playoffs .upper .round-details{margin-right: auto;} /* Moves the upperquarterfinals text to the left */
 
-/* Simple Styles */
 .round-details {min-width:200px;color: #2C7399;text-transform: uppercase;text-align: center;}
 .date {font-size: 10px; letter-spacing: 2px;font-family: 'Istok Web', sans-serif;color:#3F915F;}
 .score {float: right;color: #00ffcc;font-weight: bold;position: absolute;right: 5px;}
@@ -84,6 +81,11 @@
     margin-left: auto;
   }
 }
+
+
+
+
+
 
 /*
 General

@@ -1,34 +1,78 @@
 .horizontal_container{
   display: flex;
   gap: 10px;
+  width: 100%;
+  justify-content: center;
+  padding: 30px;
 }
-h1{
-  margin-bottom: 5px;
-}
-.team_box{
+.title_box{
   display: flex;
   flex-direction: column;
-  border: solid black 2px;
   text-align: center;
-  align-content: center;
-  padding: 0 30px;
-  margin-left: auto;
-}
-.tops_data_box{
-  display: flex;
-  text-align: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-.tops_box{
-  display: flex;
-  flex-direction: column;
-  border: solid black 2px;
-  margin-right: auto;
-  padding: 0 30px;
+  padding: 30px;
 }
 
-#section{
-  margin: 10px;
-  padding: 0 10px;
+.data_box{
+  display: flex;
+  border: solid black 2px;
+  justify-content: center;
+  width: 100%;
 }
+#section{
+  width: 300px;
+  text-align: left;
+  margin: 10px;
+  padding: 0 5px;
+  overflow: hidden;
+}
+
+.horizontal_container #section{width: 150px;}
+
+.team{position: relative;}
+#points{float: right;position: absolute;right: 5px;}
+
+
+.na{background-color: #ff5b5b;}
+#nrg{background-color: orangered;}
+#ssg{background-color: #ffc400;}
+#nine{background-color: #b8b8b8;}
+#col{color: white;background-color: #700000;}
+#del{color: white;background-color: purple;}
+#tu{color: white;background-color: #700000;}
+#geng{background-color: gold;}
+#poab{color: white;background-color: blue;}
+#shop{color: white;background-color: black;}
+
+.eu{background-color: #73ffa9;}
+#kcorp{background-color: #0787ff;}
+#vit{background-color: yellow;}
+#onehundred{background-color: lightblue;}
+#nip{background-color: #cbf11e;}
+#dig{color: #b13c80;background-color: yellow;}
+#m8{background-color: #ff0095;}
+#geek{color: yellow;background-color: #262677;}
+
+.mena{background-color: orange;}
+#flcn{background-color: green;}
+#twis{background-color: #e48494;}
+#roc{color: white; background-color: purple;}
+
+.sam{color: white; background-color: green;}
+#fur{color: white;background-color: black;}
+#ts{color: white;background-color: #242020;}
+#cori{background-color: red;}
+
+.oce{background-color: blue;}
+#wild{background-color: #ec3131;}
+#hel{background-color: lightblue;}
+#tsm{color: white;background-color: black;}
+#pwr{background-color: yellow;}
+#gzg{background-color: green;}
+
+.apac{color:white; background-color: purple;}
+#virt{background-color: orange;}
+#elv{color: red;background-color: black;}
+
+.ssa{background-color: yellow;}
+#lim{color: white;background-color: black;}
+#fut{color: white;background-color: black;}
