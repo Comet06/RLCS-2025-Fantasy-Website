@@ -55,14 +55,12 @@ function puqfm4(winner, loser){
 }
 function pusfm1(winner, loser){
   document.getElementById("winner_pusfm1").innerHTML=winner;
-  document.getElementById("ps1").innerHTML=winner;
   document.getElementById("loser_pusfm1").innerHTML=loser;
   winnerPusfm1 = winner;
   loserPusfm1 = loser;
 }
 function pusfm2(winner, loser){
   document.getElementById("winner_pusfm2").innerHTML=winner;
-  document.getElementById("ps2").innerHTML=winner;
   document.getElementById("loser_pusfm2").innerHTML=loser;
   winnerPusfm2 = winner;
   loserPusfm2 = loser;
@@ -305,4 +303,5 @@ function polsfm2(winner){
 
 function finalWinner(winner){
   document.getElementById("tourneyWinner").innerHTML=winner;
+
 }
