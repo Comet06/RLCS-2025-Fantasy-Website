@@ -5,7 +5,7 @@ main {padding: 20px;text-align: center;}
 footer{display:flex; color: white;background-color: #1e1e2f;padding: 20px; width: 100%;}
 button{font-size: medium;padding: 2px;}
 h1{text-align: left;}
-
+button :hover{color: white; background-color: #525252;}
 .navbar h1{color: white;}
 .navbar {
   display: flex;

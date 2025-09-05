@@ -25,6 +25,7 @@
   padding: 0 5px;
   overflow: hidden;
 }
+.champ{background-color: #afafaf;}
 
 .horizontal_container #section{width: 150px;}
 
@@ -42,6 +43,9 @@
 #geng{background-color: gold;}
 #poab{color: white;background-color: blue;}
 #shop{color: white;background-color: black;}
+#qtpg{color: white; background-color: #998200;}
+#neth{color: white; background-color: #7a0000;}
+#l8{color: white; background-color: black;}
 
 .eu{background-color: #73ffa9;}
 #kcorp{background-color: #0787ff;}
@@ -51,7 +55,7 @@
 #dig{color: #b13c80;background-color: yellow;}
 #m8{background-color: #ff0095;}
 #geek{color: yellow;background-color: #262677;}
-
+/* start, asce, jjr, cali, stg, f4wd, nom, red, rrg, sick, smok, syn, atom, dec, bds, dopa, bsk*/
 .mena{background-color: orange;}
 #flcn{background-color: green;}
 #twis{background-color: #e48494;}
@@ -60,8 +64,8 @@
 .sam{color: white; background-color: green;}
 #fur{color: white;background-color: black;}
 #ts{color: white;background-color: #242020;}
-#cori{background-color: red;}
-
+#mibr{color: white; background-color: #000000;}
+/* god */
 .oce{background-color: blue;}
 #wild{background-color: #ec3131;}
 #hel{background-color: lightblue;}
@@ -72,6 +76,7 @@
 .apac{color:white; background-color: purple;}
 #virt{background-color: orange;}
 #elv{color: red;background-color: black;}
+#lum{background-color: lightblue;}
 
 .ssa{background-color: yellow;}
 #lim{color: white;background-color: black;}
