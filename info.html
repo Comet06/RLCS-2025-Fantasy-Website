@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="sytlesheet.css"/>
   <link rel="stylesheet" href="stats.css"/>
   <link rel="stylesheet" href="bracket_stylesheet.css"/>
+  <link rel="stylesheet" href="event_styles.css"/>
   <title>Info and Rules</title>
 </head>
 <body>
@@ -20,8 +21,8 @@
           <a href="#">Stats</a>
             <div class="dropdown-content">
               <a href="players_stats.html">Player Stats</a>
-              <a href="teams_stats.html">Team Stats</a>
-              <a href="teams_rankings.html">Team Rankings</a>
+              <a href="Points/Team_stats.html">Team Stats</a>
+              <a href="Points/Team_rankings.html">Team Rankings</a>
             </div>
         </li>
         <li class="dropdown">
@@ -53,7 +54,7 @@
     <div id="rules">
       <h2>Overall Rules</h2>
       <ol>
-        <li>Prizes will be distributed based on the teams total points at the end of each split and after the championship(3 total, $200 per major, $500 for Championship, Plus additions from contributing players).</li>
+        <li>Prizes will be distributed based on the Points/Team total points at the end of each split and after the championship(3 total, $200 per major, $500 for Championship, Plus additions from contributing players).</li>
         <li>Prize pool TBD at the beginning of each season and subject to change.</li>
         <li>Any issues with the prize pool can be sent to a league administrator.</li>
         <li>Any issues with the website, submission issues, or data tables used for stat tracking or any other documents provided by the league can be submitted to a league administrator for review.</li>
@@ -65,89 +66,122 @@
         <li>Redraft may occur due to additional members joining the league after Each major and before worlds.</li>
         <li>All drafted players will need to be from different rank levels 'S' through 'F'.</li>
         <li>Player trades, swaps and all other changes must be made before Both of the regions in question have already played, or have not played yet.</li>
-        <li>Teams and positions will need to be submitted before the teams regionals have started in order for the changes to take effect, if no submission is made, previous submissions will be in effect.</li>
+        <li>Points/Team and positions will need to be submitted before the Points/Team regionals have started in order for the changes to take effect, if no submission is made, previous submissions will be in effect.</li>
         <li>Championship bracket will need to be submitted before the first kickoff of the first matches.</li>
-        <li>If there are any issues with the bracket and placements of teams, the admin will make a decision on when brackets can be submitted.</li>
+        <li>If there are any issues with the bracket and placements of Points/Team, the admin will make a decision on when brackets can be submitted.</li>
       </ol><br>
       <h2>Matchup Rules</h2>
       <ol>
         <li>Each event you will go up against a different random member in the group.</li>
         <li>Each matchup will have a cash prize. (listed below)</li>
-        <li>Teams with the most points after each major wins that split.</li>
+        <li>Points/Team with the most points after each major wins that split.</li>
         <li>Each major and worlds top seed will play bottom seed, second top seed vs the second bottom seed, etc. (seeds are based by points earned that split and are not cumulative).</li>
         <li>Ties are settled by point values of the players on each team.</li>
         <li>Championship prize pool will be a cumulative score over both splits and the chamionship bracket.</li>
         <li>Bracket points are determined by the chart below.</li>
       </ol>
     </div>
-    <table id="prize_pool">
-      <tbody>
-        <tr>
-          <th colspan="3">Prize Pool(Season 2025)</th>
-          <th>Teams: 6</th>
-        </tr>
-        <tr>
-          <th>Place</th><th>Prize(Maj.)</th><th>Prize(Champ.)</th><th>% of Prize Pool</th>
-        </tr>
-        <tr>
-          <th>1</th><th>$56.00</th><th>$141.82</th><th>26%</th>
-        </tr>
-        <tr>
-          <th>2</th><th>$41.02</th><th>$103.88</th><th>19%</th>
-        </tr>
-        <tr>
-          <th>3</th><th>$32.46</th><th>$82.20</th><th>15%</th>
-        </tr>
-        <tr>
-          <th>4</th><th>$30.32</th><th>$76.78</th><th>14%</th>
-        </tr>
-        <tr>
-          <th>5</th><th>$28.18</th><th>$71.36</th><th>13%</th>
-        </tr>
-        <tr>
-          <th>6</th><th>$26.04</th><th>$65.94</th><th>12%</th>
-        </tr>
-        <tr>
-          <th>7</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>8</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>9</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>10</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>11</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>12</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>13</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>14</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>15</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th>16</th><th>$0</th><th>$0</th><th>0%</th>
-        </tr>
-        <tr>
-          <th colspan="4">Match-up prizes</th>
-        </tr>
-        <tr>
-          <th colspan="4">$10.00 /matchup</th>
-        </tr>
-        <tr>
-          <th>Total</th><th>$214</th><th>$542</th><th>100%</th>
-        </tr>
-      </tbody>
-    </table>
+    <div class="hori_container">
+      <table id="prize_pool">
+        <tbody>
+          <tr>
+            <th colspan="3">Prize Pool(Season 2025)</th>
+            <th>Points/Team: 6</th>
+          </tr>
+          <tr>
+            <th>Place</th><th>Regional</th><th>Major</th><th>Championship</th>
+          </tr>
+          <tr>
+            <td>1</td><td>$56.00</td><td>$141.82</td><td>26%</td>
+          </tr>
+          <tr>
+            <td>2</td><td>$41.02</td><td>$103.88</td><td>19%</td>
+          </tr>
+          <tr>
+            <td>3</td><td>$32.46</td><td>$82.20</td><td>15%</td>
+          </tr>
+          <tr>
+            <td>4</td><td>$30.32</td><td>$76.78</td><td>14%</td>
+          </tr>
+          <tr>
+            <td>5</td><td>$28.18</td><td>$71.36</td><td>13%</td>
+          </tr>
+          <tr>
+            <td>6</td><td>$26.04</td><td>$65.94</td><td>12%</td>
+          </tr>
+          <tr>
+            <td>7</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>8</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>9</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>10</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>11</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>12</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>13</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>14</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>15</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td>16</td><td>$0</td><td>$0</td><td>0%</td>
+          </tr>
+          <tr>
+            <td colspan="4">Match-up prizes</td>
+          </tr>
+          <tr>
+            <td colspan="4">$10.00 /matchup</td>
+          </tr>
+          <tr>
+            <th>Total</th><th>$214</th><th>$542</th><th>100%</th>
+          </tr>
+        </tbody>
+      </table>
+      <table id="bracket_points">
+        <tbody>
+          <tr>
+            <th colspan="2">Event</th><th>Quarterfinals</th><th>Semifinals</th><th>Qualified/Finals</th><th>Total Points earned</th>
+          </tr>
+          <tr>
+            <th colspan="2">Team spots/Event round</th><th>4</th><th>8</th><th>2</th><th>&nbsp;</th>
+          </tr>
+          <tr>
+            <td>Play-in</td><td>Points/Team</td><td>50</td><td>50</td><td>100</td><td>1,300</td>
+          </tr>
+          <tr>
+            <td>Group-A</td><td>Points/Team</td><td>75</td><td>75</td><td>150</td><td>1,700</td>
+          </tr>
+          <tr>
+            <td>Group-B</td><td>Points/Team</td><td>75</td><td>75</td><td>150</td><td>1,700</td>
+          </tr>
+          <tr>
+            <td>Playoffs</td><td>Points/Team</td><td>150</td><td>150</td><td>300</td><td>2,300</td>
+          </tr>
+          <tr>
+            <td colspan="4" rowspan="3">&nbsp;</td><th>Total</th><th>2300</th>
+          </tr>
+          <tr>
+            <th>Multiplier</th><th>5X</th>
+          </tr>
+          <tr>
+            <th>Total Points Available</th><th>35,000</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 </body>
 <script src="main.js"></script>
@@ -157,7 +191,7 @@
   <p>©Comet Productions. All Rights Reserved.</p>
   <div id="socials">
     <p>Socials: </p>
-    <a href="https://docs.google.com/spreadsheets/d/1VX88nwF8hyuLGzL1hR3VxapMK8PjjnDXaDrnpXPjxKw/edit?usp=sharing">Spreadsheet</a>
+    <a href="https://docs.google.com/spreadsheets/">Spreadsheet</a>
     <a href="https://www.discord.gg/Tn5a63K">Discord</a>
     <a href="https://x.com/rlcomet">Twitter</a>
     <a href="https://www.youtube.com/@iacomet">YouTube</a>
