@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="sytlesheet.css"/>
-  <link rel="stylesheet" href="stats.css"/>
-  <link rel="stylesheet" href="bracket_stylesheet.css"/>
+  <link rel="stylesheet" href="team_region.css"/>
   <title>RLCS Bracket Form</title>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <h1>RLCS 2025 Fantasy League</h1>
-      <ul class="nav-links">
+      <h1>RLCS 2025</h1>
+      <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
         <li><a href="drafting.html">Drafting</a></li>
         <li class="dropdown">
@@ -21,16 +20,10 @@
             <div class="dropdown-content">
               <a href="players_stats.html">Player Stats</a>
               <a href="teams_stats.html">Team Stats</a>
-              <a href="teams_rankings.html">Team Rankings</a>
+              <a href="teams_rankings.html">Rankings</a>
             </div>
         </li>
-        <li class="dropdown">
-          <a href="#">Brackets</a>
-            <div class="dropdown-content">
-              <a href="bracket.html">RLCS Bracket</a>
-              <a href="bracket_form.html">RLCS Bracket Form</a>
-            </div>
-        </li>
+        <li><a href="bracket_form.html">Bracket</a></li>
         <li class="dropdown">
           <a href="#">Events</a>
             <div class="dropdown-content">
@@ -47,49 +40,52 @@
         </li>
         <li><a href="info.html">Rules</a></li>
       </ul>
+      <div class="menu-icon">
+          <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+      </div>
     </nav>
   </header>
-  <h1 style="text-align: center; margin: 20px 0 20px;">Bracket Form</h1>
+
   <div id="playin">
-    <h1 style="color: black; text-align: center; margin-bottom: 10px;">Play-in</h1>
+    <h1 class="bracket_titles">Play-in</h1>
     <div class="upper">
       <div class="quarterfinals" id="bracket_round">
         <div class="round-details">Upper Quarterfinals<br/><span class="date">September 10th</span></div>
         <ul class="matchup">
-          <li class="team" onclick="puqfm1('MIBR','Gen.G Mobile1 Racing')">MIBR</li>
-          <li class="team" onclick="puqfm1('Gen.G Mobile1 Racing','MIBR')">Gen.G Mobil1 Racing</li>
+          <li class="bracket_team" onclick="puqfm1('MIBR','Gen.G Mobile1 Racing')">MIBR</li>
+          <li class="bracket_team" onclick="puqfm1('Gen.G Mobile1 Racing','MIBR')">Gen.G Mobil1 Racing</li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm2('ROC Esports','FUT Esports')">ROC Esports</li>
-          <li class="team" onclick="puqfm2('FUT Esports','ROC Esports')">FUT Esports</li>
+          <li class="bracket_team" onclick="puqfm2('ROC Esports','FUT Esports')">ROC Esports</li>
+          <li class="bracket_team" onclick="puqfm2('FUT Esports','ROC Esports')">FUT Esports</li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm3('Shopify Rebellion','Virtus.pro')">Shopify Rebellion</li>
-          <li class="team" onclick="puqfm3('Virtus.pro','Shopify Rebellion')">Virtus.pro</li>
+          <li class="bracket_team" onclick="puqfm3('Shopify Rebellion','Virtus.pro')">Shopify Rebellion</li>
+          <li class="bracket_team" onclick="puqfm3('Virtus.pro','Shopify Rebellion')">Virtus.pro</li>
         </ul>
         <ul class="matchup">
-          <li class="team" onclick="puqfm4('Ninjas in Pyjamas','TSM')">Ninjas in Pyjamas</li>
-          <li class="team" onclick="puqfm4('TSM','Ninjas in Pyjamas')">TSM</li>
+          <li class="bracket_team" onclick="puqfm4('Ninjas in Pyjamas','TSM')">Ninjas in Pyjamas</li>
+          <li class="bracket_team" onclick="puqfm4('TSM','Ninjas in Pyjamas')">TSM</li>
         </ul>
       </div>
       <div class="semifinals" id="bracket_round">
         <div class="round-details">Upper Semifinals<br/><span class="date">September 10th</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_puqfm1" onclick="pusfm1(winnerPuqfm1,winnerPuqfm2)">&nbsp;</li>
-            <li class="team" id="winner_puqfm2" onclick="pusfm1(winnerPuqfm2,winnerPuqfm1)">&nbsp;</li>
+            <li class="bracket_team" id="winner_puqfm1" onclick="pusfm1(winnerPuqfm1,winnerPuqfm2)">&nbsp;</li>
+            <li class="bracket_team" id="winner_puqfm2" onclick="pusfm1(winnerPuqfm2,winnerPuqfm1)">&nbsp;</li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="winner_puqfm3" onclick="pusfm2(winnerPuqfm3,winnerPuqfm4)">&nbsp;</li>
-            <li class="team" id="winner_puqfm4" onclick="pusfm2(winnerPuqfm4,winnerPuqfm3)">&nbsp;</li>
+            <li class="bracket_team" id="winner_puqfm3" onclick="pusfm2(winnerPuqfm3,winnerPuqfm4)">&nbsp;</li>
+            <li class="bracket_team" id="winner_puqfm4" onclick="pusfm2(winnerPuqfm4,winnerPuqfm3)">&nbsp;</li>
           </ul>
       </div>
       <div class="quals" id="bracket_round">
         <div class="round-details">Qualified<br/>&nbsp;</div>     
           <ul class="matchup">
-            <li class="team" id="winner_pusfm1">&nbsp;</li>
+            <li class="bracket_team" id="winner_pusfm1">&nbsp;</li>
           </ul>
           <ul class="matchup">
-            <li class="team" id="winner_pusfm2">&nbsp;</li>
+            <li class="bracket_team" id="winner_pusfm2">&nbsp;</li>
           </ul>
       </div>
     </div>
@@ -97,77 +93,77 @@
       <div class="quarterfinals" id="bracket_round">
         <div class="round-details">Lower Quarterfinals<br/><span class="date">September 10th</span></div>
         <ul class="matchup">
-          <li class="team" id="loser_puqfm1" onclick="plqfm1(loserPuqfm1)">Play-in Loser of UQF 1</li>
-          <li class="team" id="loser_puqfm2" onclick="plqfm1(loserPuqfm2)">Play-in Loser of UQF 2</li>
+          <li class="bracket_team" id="loser_puqfm1" onclick="plqfm1(loserPuqfm1)">Play-in Loser of UQF 1</li>
+          <li class="bracket_team" id="loser_puqfm2" onclick="plqfm1(loserPuqfm2)">Play-in Loser of UQF 2</li>
         </ul> 
         <ul class="matchup">
-          <li class="team" id="loser_puqfm3" onclick="plqfm2(loserPuqfm3)">Play-in Loser of UQF 3</li>
-          <li class="team" id="loser_puqfm4" onclick="plqfm2(loserPuqfm4)">Play-in Loser of UQF 4</li>
+          <li class="bracket_team" id="loser_puqfm3" onclick="plqfm2(loserPuqfm3)">Play-in Loser of UQF 3</li>
+          <li class="bracket_team" id="loser_puqfm4" onclick="plqfm2(loserPuqfm4)">Play-in Loser of UQF 4</li>
         </ul>              
       </div>
       <div class="semifinals" id="bracket_round">
         <div class="round-details">Lower Semifinals<br/><span class="date">September 10th</span></div>  
         <ul class="matchup">
-          <li class="team" id="loser_pusfm2" onclick="plsfm1(loserPusfm2)">Play-in Loser of USF 2</li>
-          <li class="team" id="winner_plqfm1" onclick="plsfm1(winnerPlqfm1)">&nbsp;</li>
+          <li class="bracket_team" id="loser_pusfm2" onclick="plsfm1(loserPusfm2)">Play-in Loser of USF 2</li>
+          <li class="bracket_team" id="winner_plqfm1" onclick="plsfm1(winnerPlqfm1)">&nbsp;</li>
         </ul>
         <ul class="matchup">
-          <li class="team" id="loser_pusfm1" onclick="plsfm2(loserPusfm1)">Play-in Loser of USF 1</li>
-          <li class="team" id="winner_plqfm2" onclick="plsfm2(winnerPlqfm2)">&nbsp;<span class="score"></span></li>
+          <li class="bracket_team" id="loser_pusfm1" onclick="plsfm2(loserPusfm1)">Play-in Loser of USF 1</li>
+          <li class="bracket_team" id="winner_plqfm2" onclick="plsfm2(winnerPlqfm2)">&nbsp;<span class="score"></span></li>
         </ul>  
       </div>
       <div class="quals" id="bracket_round">
         <div class="round-details">Qualified<br/>&nbsp;</span></div>     
         <ul class="matchup">
-          <li class="team" id="winner_plsfm1">&nbsp;</li>
+          <li class="bracket_team" id="winner_plsfm1">&nbsp;</li>
         </ul>
         <ul class="matchup">
-          <li class="team" id="winner_plsfm2">&nbsp;</li>
+          <li class="bracket_team" id="winner_plsfm2">&nbsp;</li>
         </ul>
       </div>
     </div>
   </div>
   <div class="group_stage">
     <div id="groupA">
-      <h1 style="color: black; text-align: center; margin-bottom: 10px;">Group Stage: Group A</h1>
+      <h1 class="bracket_titles">Group Stage: Group A</h1>
       <div class="upper">
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm1('Karmine Corp','')">Karmine Corp</li>
-            <li class="team" onclick="gauqfm1('','Karmine Corp')">Play-in Seed #4</li>
+            <li class="bracket_team" onclick="gauqfm1('Karmine Corp','')">Karmine Corp</li>
+            <li class="bracket_team" onclick="gauqfm1('','Karmine Corp')">Play-in Seed #4</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm2('The Ultimates','Geekay Esports')">The Ultimates</li>
-            <li class="team" onclick="gauqfm2('Geekay Esports','The Ultimates')">Geekay Esports</li>
+            <li class="bracket_team" onclick="gauqfm2('The Ultimates','Geekay Esports')">The Ultimates</li>
+            <li class="bracket_team" onclick="gauqfm2('Geekay Esports','The Ultimates')">Geekay Esports</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm3('Dignitas','')">Dignitas</li>
-            <li class="team" onclick="gauqfm3('','Dignitas')">Play-in Seed #1</li>
+            <li class="bracket_team" onclick="gauqfm3('Dignitas','')">Dignitas</li>
+            <li class="bracket_team" onclick="gauqfm3('','Dignitas')">Play-in Seed #1</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gauqfm4('Furia Esports','Wildcard')">Furia Esports</li>
-            <li class="team" onclick="gauqfm4('Wildcard','Furia Esports')">Wildcard</li>
+            <li class="bracket_team" onclick="gauqfm4('Furia Esports','Wildcard')">Furia Esports</li>
+            <li class="bracket_team" onclick="gauqfm4('Wildcard','Furia Esports')">Wildcard</li>
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_gauqfm1" onclick="gausfm1(winnerGAuqfm1,winnerGAuqfm2)"></li>
-            <li class="team" id="winner_gauqfm2" onclick="gausfm1(winnerGAuqfm2,winnerGAuqfm1)"></li>
+            <li class="bracket_team" id="winner_gauqfm1" onclick="gausfm1(winnerGAuqfm1,winnerGAuqfm2)"></li>
+            <li class="bracket_team" id="winner_gauqfm2" onclick="gausfm1(winnerGAuqfm2,winnerGAuqfm1)"></li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="winner_gauqfm3" onclick="gausfm2(winnerGAuqfm3,winnerGAuqfm4)"></li>
-            <li class="team" id="winner_gauqfm4" onclick="gausfm2(winnerGAuqfm4,winnerGAuqfm3)"></li>
+            <li class="bracket_team" id="winner_gauqfm3" onclick="gausfm2(winnerGAuqfm3,winnerGAuqfm4)"></li>
+            <li class="bracket_team" id="winner_gauqfm4" onclick="gausfm2(winnerGAuqfm4,winnerGAuqfm3)"></li>
           </ul>
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
             <ul class="matchup">
-              <li class="team" id="winner_gausfm1"></li>
+              <li class="bracket_team" id="winner_gausfm1"></li>
             </ul>
             <ul class="matchup">
-              <li class="team" id="winner_gausfm2"></li>
+              <li class="bracket_team" id="winner_gausfm2"></li>
             </ul>
         </div>
       </div>
@@ -175,76 +171,76 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" id="loser_gauqfm1" onclick="galqfm1(loserGAuqfm1)">Loser of UQF 1</li>
-            <li class="team" id="loser_gauqfm2" onclick="galqfm1(loserGAuqfm2)">Loser of UQF 2</li>
+            <li class="bracket_team" id="loser_gauqfm1" onclick="galqfm1(loserGAuqfm1)">Loser of UQF 1</li>
+            <li class="bracket_team" id="loser_gauqfm2" onclick="galqfm1(loserGAuqfm2)">Loser of UQF 2</li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="loser_gauqfm3" onclick="galqfm2(loserGAuqfm3)">Loser of UQF 3</li>
-            <li class="team" id="loser_gauqfm4" onclick="galqfm2(loserGAuqfm4)">Loser of UQF 4</li>
+            <li class="bracket_team" id="loser_gauqfm3" onclick="galqfm2(loserGAuqfm3)">Loser of UQF 3</li>
+            <li class="bracket_team" id="loser_gauqfm4" onclick="galqfm2(loserGAuqfm4)">Loser of UQF 4</li>
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
-            <li class="team" id="loser_gausfm2" onclick="galsfm1(loserGAusfm2)">Loser of A USF 2</li>
-            <li class="team" id="winner_galqfm1" onclick="galsfm1(winnerGAlqfm1)"></li>
+            <li class="bracket_team" id="loser_gausfm2" onclick="galsfm1(loserGAusfm2)">Loser of A USF 2</li>
+            <li class="bracket_team" id="winner_galqfm1" onclick="galsfm1(winnerGAlqfm1)"></li>
           </ul>
           <ul class="matchup">
-            <li class="team" id="loser_gausfm1" onclick="galsfm2(loserGAusfm1)">Loser of A USF 1</li>
-            <li class="team" id="winner_galqfm2" onclick="galsfm2(winnerGAlqfm2)"></li>
+            <li class="bracket_team" id="loser_gausfm1" onclick="galsfm2(loserGAusfm1)">Loser of A USF 1</li>
+            <li class="bracket_team" id="winner_galqfm2" onclick="galsfm2(winnerGAlqfm2)"></li>
           </ul>  
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_galsfm1"></li>
+            <li class="bracket_team" id="winner_galsfm1"></li>
           </ul>
           <ul class="matchup">
-            <li class="team" id="winner_galsfm2"></li>
+            <li class="bracket_team" id="winner_galsfm2"></li>
           </ul>
         </div>
       </div>
     </div>
     <div id="groupB">
-      <h1 style="color: black; text-align: center; margin-bottom: 10px;">Group Stage: Group B</h1>
+      <h1 class="bracket_titles">Group Stage: Group B</h1>
       <div class="upper">
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm1('Team Falcons','')">Team Falcons</li>
-            <li class="team" onclick="gbuqfm1('','Team Falcons')">Play-in Seed #3</li>
+            <li class="bracket_team" onclick="gbuqfm1('Team Falcons','')">Team Falcons</li>
+            <li class="bracket_team" onclick="gbuqfm1('','Team Falcons')">Play-in Seed #3</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm2('Team Vitality','Spacestation Gaming')">Team Vitality</li>
-            <li class="team" onclick="gbuqfm2('Spacestation Gaming','Team Vitality')">Spacestation Gaming</li>
+            <li class="bracket_team" onclick="gbuqfm2('Team Vitality','Spacestation Gaming')">Team Vitality</li>
+            <li class="bracket_team" onclick="gbuqfm2('Spacestation Gaming','Team Vitality')">Spacestation Gaming</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm3('NRG','')">NRG</li>
-            <li class="team" onclick="gbuqfm3('','NRG')">Play-in Seed #2</li>
+            <li class="bracket_team" onclick="gbuqfm3('NRG','')">NRG</li>
+            <li class="bracket_team" onclick="gbuqfm3('','NRG')">Play-in Seed #2</li>
           </ul>
           <ul class="matchup">
-            <li class="team" onclick="gbuqfm4('Twisted Minds','Team Secret')">Twisted Minds</li>
-            <li class="team" onclick="gbuqfm4('Team Secret','Twisted Minds')">Team Secret</li>
+            <li class="bracket_team" onclick="gbuqfm4('Twisted Minds','Team Secret')">Twisted Minds</li>
+            <li class="bracket_team" onclick="gbuqfm4('Team Secret','Twisted Minds')">Team Secret</li>
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_gbuqfm1" onclick="gbusfm1(winnerGBuqfm1,winnerGBuqfm2)"></li>
-            <li class="team" id="winner_gbuqfm2" onclick="gbusfm1(winnerGBuqfm2,winnerGBuqfm1)"></li>
+            <li class="bracket_team" id="winner_gbuqfm1" onclick="gbusfm1(winnerGBuqfm1,winnerGBuqfm2)"></li>
+            <li class="bracket_team" id="winner_gbuqfm2" onclick="gbusfm1(winnerGBuqfm2,winnerGBuqfm1)"></li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="winner_gbuqfm3" onclick="gbusfm2(winnerGBuqfm3,winnerGBuqfm4)"></li>
-            <li class="team" id="winner_gbuqfm4" onclick="gbusfm2(winnerGBuqfm4,winnerGBuqfm3)"></li>
+            <li class="bracket_team" id="winner_gbuqfm3" onclick="gbusfm2(winnerGBuqfm3,winnerGBuqfm4)"></li>
+            <li class="bracket_team" id="winner_gbuqfm4" onclick="gbusfm2(winnerGBuqfm4,winnerGBuqfm3)"></li>
           </ul>
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
             <ul class="matchup">
-              <li class="team" id="winner_gbusfm1"></li>
+              <li class="bracket_team" id="winner_gbusfm1"></li>
             </ul>
             <ul class="matchup">
-              <li class="team" id="winner_gbusfm2"></li>
+              <li class="bracket_team" id="winner_gbusfm2"></li>
             </ul>
         </div>
       </div>
@@ -252,49 +248,49 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="team" id="loser_gbuqfm1" onclick="gblqfm1(loserGBuqfm1)">Loser of UQF 1</li>
-            <li class="team" id="loser_gbuqfm2" onclick="gblqfm1(loserGBuqfm2)">Loser of UQF 2</li>
+            <li class="bracket_team" id="loser_gbuqfm1" onclick="gblqfm1(loserGBuqfm1)">Loser of UQF 1</li>
+            <li class="bracket_team" id="loser_gbuqfm2" onclick="gblqfm1(loserGBuqfm2)">Loser of UQF 2</li>
           </ul> 
           <ul class="matchup">
-            <li class="team" id="loser_gbuqfm3" onclick="gblqfm2(loserGBuqfm3)">Loser of UQF 3</li>
-            <li class="team" id="loser_gbuqfm4" onclick="gblqfm2(loserGBuqfm4)">Loser of UQF 4</li>
+            <li class="bracket_team" id="loser_gbuqfm3" onclick="gblqfm2(loserGBuqfm3)">Loser of UQF 3</li>
+            <li class="bracket_team" id="loser_gbuqfm4" onclick="gblqfm2(loserGBuqfm4)">Loser of UQF 4</li>
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
-            <li class="team" id="loser_gbusfm2" onclick="gblsfm1(loserGBusfm2)">Loser of B USF 2</li>
-            <li class="team" id="winner_gblqfm1" onclick="gblsfm1(winnerGBlqfm1)"></li>
+            <li class="bracket_team" id="loser_gbusfm2" onclick="gblsfm1(loserGBusfm2)">Loser of B USF 2</li>
+            <li class="bracket_team" id="winner_gblqfm1" onclick="gblsfm1(winnerGBlqfm1)"></li>
           </ul>
           <ul class="matchup">
-            <li class="team" id="loser_gbusfm1" onclick="gblsfm2(loserGBusfm1)">Loser of B USF 1</li>
-            <li class="team" id="winner_gblqfm2" onclick="gblsfm2(winnerGBlqfm2)"></li>
+            <li class="bracket_team" id="loser_gbusfm1" onclick="gblsfm2(loserGBusfm1)">Loser of B USF 1</li>
+            <li class="bracket_team" id="winner_gblqfm2" onclick="gblsfm2(winnerGBlqfm2)"></li>
           </ul>  
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
           <ul class="matchup">
-            <li class="team" id="winner_gblsfm1"></li>
+            <li class="bracket_team" id="winner_gblsfm1"></li>
           </ul>
           <ul class="matchup">
-            <li class="team" id="winner_gblsfm2"></li>
+            <li class="bracket_team" id="winner_gblsfm2"></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
   <div id="playoffs">
-    <h1 style="color: black; text-align: center; margin-bottom: 10px;">Playoffs</h1>
+    <h1 class="bracket_titles">Playoffs</h1>
     <div class="upper">
       <div class="semifinals" id="bracket_round"> <!-- Upper Quarterfinals -->
         <div class="round-details">Upper Quarterfinals<br/><span class="date">September 13th</span></div>     
         <ul class="matchup">
-          <li class="team" id="gauhs" onclick="pouqfm1(winnerGAusfm1,winnerGBusfm2)">Group A - UB Higher Seed</li>
-          <li class="team" id="gbuls" onclick="pouqfm1(winnerGBusfm2,winnerGAusfm1)">Group B - UB Lower Seed</li>
+          <li class="bracket_team" id="gauhs" onclick="pouqfm1(winnerGAusfm1,winnerGBusfm2)">Group A - UB Higher Seed</li>
+          <li class="bracket_team" id="gbuls" onclick="pouqfm1(winnerGBusfm2,winnerGAusfm1)">Group B - UB Lower Seed</li>
         </ul> 
         <ul class="matchup">
-          <li class="team" id="gbuhs" onclick="pouqfm2(winnerGBusfm1,winnerGAusfm2)">Group B - UB Higher Seed</li>
-          <li class="team" id="gauls" onclick="pouqfm2(winnerGAusfm2,winnerGBusfm1)">Group A - UB Lower Seed</li>
+          <li class="bracket_team" id="gbuhs" onclick="pouqfm2(winnerGBusfm1,winnerGAusfm2)">Group B - UB Higher Seed</li>
+          <li class="bracket_team" id="gauls" onclick="pouqfm2(winnerGAusfm2,winnerGBusfm1)">Group A - UB Lower Seed</li>
         </ul>
       </div>
     </div>
@@ -302,43 +298,43 @@
       <div class="semifinals" id="bracket_round"> <!-- Lower Round One -->
         <div class="round-details">Round 1<br/><span class="date">September 13th</span></div>
         <ul class="matchup">
-          <li class="team" id="galhs" onclick="polrm1(winnerGAlsfm1)">Group A - LB Higher Seed</li>
-          <li class="team" id="gblls" onclick="polrm1(winnerGBlsfm2)">Group B - LB Lower Seed</li>
+          <li class="bracket_team" id="galhs" onclick="polrm1(winnerGAlsfm1)">Group A - LB Higher Seed</li>
+          <li class="bracket_team" id="gblls" onclick="polrm1(winnerGBlsfm2)">Group B - LB Lower Seed</li>
         </ul> 
         <ul class="matchup">
-          <li class="team" id="gblhs" onclick="polrm2(winnerGBlsfm1)">Group B - LB Higher Seed</li>
-          <li class="team" id="galls" onclick="polrm2(winnerGAlsfm2)">Group A - LB Lower Seed</li>
+          <li class="bracket_team" id="gblhs" onclick="polrm2(winnerGBlsfm1)">Group B - LB Higher Seed</li>
+          <li class="bracket_team" id="galls" onclick="polrm2(winnerGAlsfm2)">Group A - LB Lower Seed</li>
         </ul>              
       </div>
       <div class="semifinals" id="bracket_round"> <!-- Lower Quarterfinals -->
         <div class="round-details">Quarterfinals<br/><span class="date">September 14th</span></div>  
         <ul class="matchup">
-          <li class="team" id="loser_pouqfm1" onclick="polqfm1(loserPOuqfm1)">Loser of UQF 1</li>
-          <li class="team" id="winner_polrm1" onclick="polqfm1(winnerPOlrm1)">Winner of RO 1</li>
+          <li class="bracket_team" id="loser_pouqfm1" onclick="polqfm1(loserPOuqfm1)">Loser of UQF 1</li>
+          <li class="bracket_team" id="winner_polrm1" onclick="polqfm1(winnerPOlrm1)">Winner of RO 1</li>
         </ul>
         <ul class="matchup">
-          <li class="team" id="loser_pouqfm2" onclick="polqfm2(loserPOuqfm2)">Loser of UQF 2</li>
-          <li class="team" id="winner_polrm2" onclick="polqfm2(winnerPOlrm2)">Winner of RO 2</li>
+          <li class="bracket_team" id="loser_pouqfm2" onclick="polqfm2(loserPOuqfm2)">Loser of UQF 2</li>
+          <li class="bracket_team" id="winner_polrm2" onclick="polqfm2(winnerPOlrm2)">Winner of RO 2</li>
         </ul>  
       </div>
       <div class="quals" id="bracket_round"> <!-- Lower Semifinals -->
         <div class="round-details">Semifinals<br/><span class="date">September 14th</span></div>     
         <ul class="matchup">
-          <li class="team" id="winner_pouqfm2" onclick="polsfm1(winnerPOuqfm2)">Winner of UQF 2</li>
-          <li class="team" id="winner_polqfm1" onclick="polsfm1(winnerPOlqfm1)">Winner of LQF 1 </li>
+          <li class="bracket_team" id="winner_pouqfm2" onclick="polsfm1(winnerPOuqfm2)">Winner of UQF 2</li>
+          <li class="bracket_team" id="winner_polqfm1" onclick="polsfm1(winnerPOlqfm1)">Winner of LQF 1 </li>
         </ul>
         <ul class="matchup">
-          <li class="team" id="winner_pouqfm1" onclick="polsfm2(winnerPOuqfm1)">Winner of UQF 1</li>
-          <li class="team" id="winner_polqfm2" onclick="polsfm2(winnerPOlqfm2)">Winner of LQF 2</li>
+          <li class="bracket_team" id="winner_pouqfm1" onclick="polsfm2(winnerPOuqfm1)">Winner of UQF 1</li>
+          <li class="bracket_team" id="winner_polqfm2" onclick="polsfm2(winnerPOlqfm2)">Winner of LQF 2</li>
         </ul>
       </div>
       <div class="final" id="bracket_round"> <!-- Lower Finals -->
         <div class="round-details">Finals<br/><span class="date">September 14th</span></div>     
         <ul class="matchup">
-          <li class="team" id="winner_polsfm1" onclick="finalWinner(winnerPOlsfm1)">Winner of LSF 1</li>
-          <li class="team" id="winner_polsfm2" onclick="finalWinner(winnerPOlsfm2)">Winner of LSF 2</li>
+          <li class="bracket_team" id="winner_polsfm1" onclick="finalWinner(winnerPOlsfm1)">Winner of LSF 1</li>
+          <li class="bracket_team" id="winner_polsfm2" onclick="finalWinner(winnerPOlsfm2)">Winner of LSF 2</li>
           <li></li>
-          <li class="team" id="tourneyWinner" style="background-color: green;">Winner</li>
+          <li class="bracket_team" id="tourneyWinner" style="background-color: green;">Winner</li>
         </ul>
       </div>
     </div>
@@ -346,12 +342,13 @@
 </body>
 <script src="main.js"></script>
 <script src="bracket.js"></script>
-<script src="drafting.js"></script>
+
+<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 <footer>
-  <p>©Comet Productions. All Rights Reserved.</p>
+  <p>©Comet Productions. All Rights Reserved. (Not really though)</p>
   <div id="socials">
     <p>Socials: </p>
-    <a href="https://docs.google.com/spreadsheets/d/1VX88nwF8hyuLGzL1hR3VxapMK8PjjnDXaDrnpXPjxKw/edit?usp=sharing">Spreadsheet</a>
+    <a href="https://docs.google.com/spreadsheets/">Spreadsheet</a>
     <a href="https://www.discord.gg/Tn5a63K">Discord</a>
     <a href="https://x.com/rlcomet">Twitter</a>
     <a href="https://www.youtube.com/@iacomet">YouTube</a>

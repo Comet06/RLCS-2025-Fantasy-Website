@@ -1,16 +1,3 @@
-// function win_color(){
-//   document.addEventListener('DOMContentLoaded', () => {
-//     const teamMembers = document.querySelectorAll('.team');
-
-//     teamMembers.forEach(member => {
-//       member.addEventListener('click', () => {
-//         member.classList.toggle('highlight');
-//       });
-//     });
-
-//   });
-// }
-
 // PLAYIN
 let winnerPuqfm1 = '';
 let winnerPuqfm2 = '';
@@ -28,7 +15,6 @@ let loserPuqfm3 = '';
 let loserPuqfm4 = '';
 let loserPusfm1 = '';
 let loserPusfm2 = '';
-
 function puqfm1(winner, loser){
   document.getElementById("winner_puqfm1").innerHTML=winner;
   document.getElementById("loser_puqfm1").innerHTML=loser;
@@ -85,7 +71,6 @@ function plsfm2(winner){
 }
 
 // GROUP STAGE
-
 // GROUP A
 let winnerGAuqfm1 = ''
 let winnerGAuqfm2 = ''
@@ -107,7 +92,6 @@ let GAUH = ''
 let GAUL = ''
 let GALH = ''
 let GALL = ''
-
 function gauqfm1(winner, loser){
   document.getElementById("winner_gauqfm1").innerHTML=winner;
   document.getElementById("loser_gauqfm1").innerHTML=loser;
@@ -190,7 +174,6 @@ let GBUH = ''
 let GBUL = ''
 let GBLH = ''
 let GBLL = ''
-
 function gbuqfm1(winner, loser){
   document.getElementById("winner_gbuqfm1").innerHTML=winner;
   document.getElementById("loser_gbuqfm1").innerHTML=loser;
@@ -263,7 +246,6 @@ let winnerPOlqfm1 = '';
 let winnerPOlqfm2 = '';
 let winnerPOlsfm1 = '';
 let winnerPOlsfm2 = '';
-
 function pouqfm1(winner, loser){
   document.getElementById("winner_pouqfm1").innerHTML=winner;
   document.getElementById("loser_pouqfm1").innerHTML=loser;
@@ -300,7 +282,6 @@ function polsfm2(winner){
   document.getElementById("winner_polsfm2").innerHTML=winner;
   winnerPOlsfm2 = winner
 }
-
 function finalWinner(winner){
   document.getElementById("tourneyWinner").innerHTML=winner;
 }
