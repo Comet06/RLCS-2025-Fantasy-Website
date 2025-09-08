@@ -1,6 +1,6 @@
 /* Sitewide Styles */
 * {margin: 0;padding: 0;box-sizing: border-box;}
-body {color: black;background-color:#e1e1e1e6;font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
+body {width: 100vw;color: black;background-color:#e1e1e1e6;font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
 main {text-align: center;}
 
 .navbar h1{color: white;}
@@ -9,7 +9,7 @@ main {text-align: center;}
   background-color: #1e1e2f;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   padding: 30px;
   margin-bottom: 10px;}
 .nav-links {list-style: none;display: inline-flex;align-items: center; gap: 10px;}
