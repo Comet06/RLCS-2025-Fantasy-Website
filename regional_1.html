@@ -14,40 +14,39 @@
       <h1>RLCS 2025</h1>
       <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
-        <li><a href="drafting.html">Drafting</a></li>
         <li class="dropdown">
-          <a href="#">Stats</a>
-            <div class="dropdown-content">
-              <a href="players_stats.html">Player Stats</a>
-              <a href="teams_stats.html">Team Stats</a>
-              <a href="teams_rankings.html">Rankings</a>
-            </div>
-        </li>
-        <li><a href="bracket_form.html">Bracket</a></li>
-        <li class="dropdown">
-          <a href="#">Events</a>
+          <a href="#">Split 1</a>
             <div class="dropdown-content">
               <a href="regional_1.html">Regional 1</a>
               <a href="regional_2.html">Regional 2</a>
               <a href="regional_3.html">Regional 3</a>
               <a href="major_1.html">Major 1</a>
+            </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Split 2</a>
+            <div class="dropdown-content">
               <a href="regional_4.html">Regional 4</a>
               <a href="regional_5.html">Regional 5</a>
               <a href="regional_6.html">Regional 6</a>
               <a href="major_2.html">Major 2</a>
-              <a href="championship.html">Championship</a>
             </div>
         </li>
+        <li><a href="championship.html">Championship</a></li>
+        <li><a href="players_stats.html">Player Stats</a></li>
+        <li><a href="teams_rankings.html">Rankings</a></li>
+        <li><a href="drafting.html">Drafting</a></li>
+        <li><a href="bracket_form.html">Bracket</a></li>
         <li><a href="info.html">Rules</a></li>
       </ul>
       <div class="menu-icon">
-          <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+          <button onclick="toggleMenu()">Menu</button>
       </div>
     </nav>
   </header>
   <main>
     <h1>Regional 1</h1>
-    <div class="center_vertical_container" id="title_box"> <!--Only here for the title text-->
+    <div class="center_vertical_container"> <!--Only here for the title text-->
       <h2>Team Placements</h2>
       <div class="placements_horizontal_container" id="data_box"> <!-- columns of data displayed flex -->
         <div class="section" id="na">
@@ -61,20 +60,20 @@
             <li class="team" id="tu">The Ultimates<span id="points">5</span></li>
             <li class="team" id="geng">Gen.G Mobil1 Racing<span id="points">3</span></li>
             <li class="team" id="evo">Team Evo<span id="points">3</span></li>
-            <li class="team">G.A.S.<span id="points">2</span></li>
+            <li class="team" id="gas">G.A.S.<span id="points">2</span></li>
             <li class="team" id="omlt">Omelette<span id="points">2</span></li>
             <li class="team" id="poab">Pirates on a Boat<span id="points">2</span></li>
             <li class="team" id="shop">Shopify Rebellion<span id="points">2</span></li>
-            <li class="team">Almost Nuts<span id="points">1</span></li>
-            <li class="team">Strictly Business<span id="points">1</span></li>
-            <li class="team">Wurstlstand<span id="points">1</span></li>
-            <li class="team">Tech<span id="points">1</span></li>
+            <li class="team" id="nuts">Almost Nuts<span id="points">1</span></li>
+            <li class="team" id="strict">Strictly Business<span id="points">1</span></li>
+            <li class="team" id="wurst">Wurstlstand<span id="points">1</span></li>
+            <li class="team" id="tech">Tech<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="eu">
           <h3>EU</h3>
           <ul>
-            <li class="team" id="kcorp">Karmine Corp<span id="points">15</span></li>
+            <li class="team" id="kc">Karmine Corp<span id="points">15</span></li>
             <li class="team" id="vit">Team Vitality<span id="points">10</span></li>
             <li class="team" id="onehundred">100%<span id="points">7</span></li>
             <li class="team" id="nip">Ninjas in Pyjamas<span id="points">7</span></li>
@@ -86,10 +85,10 @@
             <li class="team" id="stg">Save the Game<span id="points">2</span></li>
             <li class="team" id="asce">Ascend<span id="points">2</span></li>
             <li class="team" id="cali">Caliente<span id="points">2</span></li>
-            <li class="team" id="">Novo Esports<span id="points">1</span></li>
+            <li class="team" id="novo">Novo Esports<span id="points">1</span></li>
             <li class="team" id="red">Redemption<span id="points">1</span></li>
             <li class="team" id="start">Startpoint<span id="points">1</span></li>
-            <li class="team" id="">Selacao<span id="points">1</span></li>
+            <li class="team" id="sel">Selacao<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="mena">
@@ -97,20 +96,20 @@
           <ul>
             <li class="team" id="flcn">Team Falcons<span id="points">15</span></li>
             <li class="team" id="twis">Twisted Minds<span id="points">10</span></li>
-            <li class="team">Al Qadsiah<span id="points">7</span></li>
-            <li class="team">Team X<span id="points">7</span></li>
-            <li class="team">AWAWA<span id="points">5</span></li>
-            <li class="team">MTS<span id="points">5</span></li>
-            <li class="team">BOV<span id="points">3</span></li>
-            <li class="team">Sleeping<span id="points">3</span></li>
-            <li class="team">Espada<span id="points">2</span></li>
-            <li class="team">Nightmare<span id="points">2</span></li>
-            <li class="team">zzzz<span id="points">2</span></li>
-            <li class="team">iNN<span id="points">2</span></li>
-            <li class="team">Infamous<span id="points">1</span></li>
-            <li class="team">Infinity<span id="points">1</span></li>
-            <li class="team">LORE<span id="points">1</span></li>
-            <li class="team">Nexus Esports<span id="points">1</span></li>
+            <li class="team" id="alqad">Al Qadsiah<span id="points">7</span></li>
+            <li class="team" id="tx">Team X<span id="points">7</span></li>
+            <li class="team" id="awaw">AWAWA<span id="points">5</span></li>
+            <li class="team" id="mts">MTS<span id="points">5</span></li>
+            <li class="team" id="bov">BOV<span id="points">3</span></li>
+            <li class="team" id="slep">Sleeping<span id="points">3</span></li>
+            <li class="team" id="espa">Espada<span id="points">2</span></li>
+            <li class="team" id="ntmr">Nightmare<span id="points">2</span></li>
+            <li class="team" id="zzzz">zzzz<span id="points">2</span></li>
+            <li class="team" id="inn">iNN<span id="points">2</span></li>
+            <li class="team" id="infm">Infamous<span id="points">1</span></li>
+            <li class="team" id="infi">Infinity<span id="points">1</span></li>
+            <li class="team" id="lore">LORE<span id="points">1</span></li>
+            <li class="team" id="nex">Nexus Esports<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="sam">
@@ -118,20 +117,20 @@
           <ul>
             <li class="team" id="fur">Furia Esports<span id="points">15</span></li>
             <li class="team" id="ts">Team Secret<span id="points">10</span></li>
-            <li class="team">Novus Aevi<span id="points">7</span></li>
+            <li class="team" id="novu">Novus Aevi<span id="points">7</span></li>
             <li class="team" id="god">Godfidence<span id="points">7</span></li>
-            <li class="team">LF Org<span id="points">5</span></li>
-            <li class="team">Shaman Esports<span id="points">5</span></li>
-            <li class="team">Corinthians Esports<span id="points">3</span></li>
-            <li class="team">Sunset<span id="points">3</span></li>
-            <li class="team">Oblivion Esports<span id="points">2</span></li>
-            <li class="team">Fear of God<span id="points">2</span></li>
-            <li class="team">Yonko<span id="points">2</span></li>
-            <li class="team">Macabros<span id="points">2</span></li>
-            <li class="team">Papo de Visao<span id="points">1</span></li>
-            <li class="team">Papel<span id="points">1</span></li>
-            <li class="team">Genesis<span id="points">1</span></li>
-            <li class="team">Leavenowitness<span id="points">1</span></li>
+            <li class="team" id="lforg">LF Org<span id="points">5</span></li>
+            <li class="team" id="shmn">Shaman Esports<span id="points">5</span></li>
+            <li class="team" id="cori">Corinthians Esports<span id="points">3</span></li>
+            <li class="team" id="snst">Sunset<span id="points">3</span></li>
+            <li class="team" id="obli">Oblivion Esports<span id="points">2</span></li>
+            <li class="team" id="fog">Fear of God<span id="points">2</span></li>
+            <li class="team" id="yonk">Yonko<span id="points">2</span></li>
+            <li class="team" id="maca">Macabros<span id="points">2</span></li>
+            <li class="team" id="pdv">Papo de Visao<span id="points">1</span></li>
+            <li class="team" id="pape">Papel<span id="points">1</span></li>
+            <li class="team" id="gene">Genesis<span id="points">1</span></li>
+            <li class="team" id="lnw">Leavenowitness<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="oce">
@@ -141,18 +140,18 @@
             <li class="team" id="hel">Helfie Chiefs<span id="points">10</span></li>
             <li class="team" id="tsm">TSM<span id="points">7</span></li>
             <li class="team" id="pwr">PWR<span id="points">7</span></li>
-            <li class="team">Oi Oi<span id="points">5</span></li>
-            <li class="team">eyeluvStrawbee<span id="points">5</span></li>
-            <li class="team">Antic x Odium<span id="points">3</span></li>
-            <li class="team">Walk in Fridge<span id="points">3</span></li>
-            <li class="team">Akimbo Esports<span id="points">2</span></li>
+            <li class="team" id="oioi">Oi Oi<span id="points">5</span></li>
+            <li class="team" id="els">eyeluvStrawbee<span id="points">5</span></li>
+            <li class="team" id="axo">Antic x Odium<span id="points">3</span></li>
+            <li class="team" id="wif">Walk in Fridge<span id="points">3</span></li>
+            <li class="team" id="akim">Akimbo Esports<span id="points">2</span></li>
             <li class="team" id="gzg">Ground Zero Gaming<span id="points">2</span></li>
-            <li class="team">Soulja's Henchmen<span id="points">2</span></li>
-            <li class="team">Sunday Drive<span id="points">2</span></li>
-            <li class="team">Abracadabra!<span id="points">1</span></li>
-            <li class="team">The Pups<span id="points">1</span></li>
-            <li class="team">unforgotten Esports<span id="points">1</span></li>
-            <li class="team">nothing better to do<span id="points">1</span></li>
+            <li class="team" id="soul">Soulja's Henchmen<span id="points">2</span></li>
+            <li class="team" id="sundr">Sunday Drive<span id="points">2</span></li>
+            <li class="team" id="abra">Abracadabra!<span id="points">1</span></li>
+            <li class="team" id="pups">The Pups<span id="points">1</span></li>
+            <li class="team" id="unfor">unforgotten Esports<span id="points">1</span></li>
+            <li class="team" id="nbtd">nothing better to do<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="apac">
@@ -160,41 +159,41 @@
           <ul>
             <li class="team" id="virt">Virtus.pro<span id="points">15</span></li>
             <li class="team" id="elv">Elevate<span id="points">10</span></li>
-            <li class="team">Dekubopdumnem<span id="points">7</span></li>
-            <li class="team">3Rats<span id="points">7</span></li>
-            <li class="team">Rounds<span id="points">5</span></li>
-            <li class="team">0Sec<span id="points">5</span></li>
-            <li class="team">Kinotrope Gaming<span id="points">3</span></li>
-            <li class="team">Senza Esports<span id="points">3</span></li>
-            <li class="team">Crazyboys<span id="points">2</span></li>
-            <li class="team">God Speed<span id="points">2</span></li>
-            <li class="team">Revenue Redeemers<span id="points">2</span></li>
-            <li class="team">Overlooked<span id="points">2</span></li>
-            <li class="team">Absolute Cinema<span id="points">1</span></li>
-            <li class="team">Al7anklees<span id="points">1</span></li>
-            <li class="team">Uhuh<span id="points">1</span></li>
-            <li class="team">Viperr<span id="points">1</span></li>
+            <li class="team" id="deku">Dekubopdumnem<span id="points">7</span></li>
+            <li class="team" id="3rat">3Rats<span id="points">7</span></li>
+            <li class="team" id="roun">Rounds<span id="points">5</span></li>
+            <li class="team" id="0sec">0Sec<span id="points">5</span></li>
+            <li class="team" id="kinot">Kinotrope Gaming<span id="points">3</span></li>
+            <li class="team" id="senza">Senza Esports<span id="points">3</span></li>
+            <li class="team" id="crazyboys">Crazyboys<span id="points">2</span></li>
+            <li class="team" id="godspeed">God Speed<span id="points">2</span></li>
+            <li class="team" id="revred">Revenue Redeemers<span id="points">2</span></li>
+            <li class="team" id="over">Overlooked<span id="points">2</span></li>
+            <li class="team" id="abscin">Absolute Cinema<span id="points">1</span></li>
+            <li class="team" id="al7">Al7anklees<span id="points">1</span></li>
+            <li class="team" id="uhuh">Uhuh<span id="points">1</span></li>
+            <li class="team" id="viperr">Viperr<span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="ssa">
           <h3>SSA</h3>
           <ul>
-            <li class="team">Maestros Del Esferico<span id="points">15</span></li>
+            <li class="team" id="">Maestros Del Esferico<span id="points">15</span></li>
             <li class="team" id="lim">Limitless<span id="points">10</span></li>
-            <li class="team">Ball Eater<span id="points">7</span></li>
-            <li class="team">Hey (with rizz)<span id="points">7</span></li>
-            <li class="team">CosmiCo Esports<span id="points">5</span></li>
-            <li class="team">Dunno Chief<span id="points">5</span></li>
-            <li class="team">GeneSix<span id="points">3</span></li>
-            <li class="team">Mustu Fluck<span id="points">3</span></li>
-            <li class="team">2 1s mains 1 Halden<span id="points">2</span></li>
-            <li class="team">Decimate Gaming<span id="points">2</span></li>
-            <li class="team">Haibo<span id="points">2</span></li>
-            <li class="team">PSV Eindhoven<span id="points">2</span></li>
-            <li class="team">Celestial Vanguard<span id="points">1</span></li>
-            <li class="team">Cristobal Colon<span id="points">1</span></li>
-            <li class="team">Tri-Fecta<span id="points">1</span></li>
-            <li class="team">choccaranilla<span id="points">1</span></li>
+            <li class="team" id="">Ball Eater<span id="points">7</span></li>
+            <li class="team" id="">Hey (with rizz)<span id="points">7</span></li>
+            <li class="team" id="">CosmiCo Esports<span id="points">5</span></li>
+            <li class="team" id="">Dunno Chief<span id="points">5</span></li>
+            <li class="team" id="">GeneSix<span id="points">3</span></li>
+            <li class="team" id="">Mustu Fluck<span id="points">3</span></li>
+            <li class="team" id="">2 1s mains 1 Halden<span id="points">2</span></li>
+            <li class="team" id="">Decimate Gaming<span id="points">2</span></li>
+            <li class="team" id="">Haibo<span id="points">2</span></li>
+            <li class="team" id="">PSV Eindhoven<span id="points">2</span></li>
+            <li class="team" id="">Celestial Vanguard<span id="points">1</span></li>
+            <li class="team" id="">Cristobal Colon<span id="points">1</span></li>
+            <li class="team" id="">Tri-Fecta<span id="points">1</span></li>
+            <li class="team" id="">Choccaranilla<span id="points">1</span></li>
           </ul>
         </div>
       </div>
@@ -204,164 +203,84 @@
         <h2>Top Players</h2>
         <div class="horizontal_container" id="data_box"> <!-- columns of data displayed flex -->
           <div class="tops_section"> <!-- full column of data -->
-            <h3>Scores</h3>
+            <h3>Overall Points</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team">Daniel<span id="points">10641</span></li>
+              <li class="team">Atomic<span id="points">9766</span></li>
+              <li class="team">Beastmode<span id="points">9725</span></li>
+              <li class="team">Frosty<span id="points">7326</span></li>
+              <li class="team">Yanxnz<span id="points">6821</span></li>
+              <li class="team">Accro<span id="points">6692</span></li>
+              <li class="team">Tjester<span id="points">6614</span></li>
+              <li class="team">Rehzzy<span id="points">6406</span></li>
+              <li class="team">Kxfyr<span id="points">6385</span></li>
+              <li class="team">Drufinho<span id="points">6342</span></li>
             </ul>
           </div>
           <div class="tops_section">
             <h3>Goals</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team">Fiberr<span id="points">41</span></li>
+              <li class="team">Tjester<span id="points">38</span></li>
+              <li class="team">Torsos<span id="points">38</span></li>
+              <li class="team">Atomic<span id="points">36</span></li>
+              <li class="team">Yanxnz<span id="points">36</span></li>
+              <li class="team">Leoro<span id="points">35</span></li>
+              <li class="team">Torres8232<span id="points">34</span></li>
+              <li class="team">Accro<span id="points">33</span></li>
+              <li class="team">Fades<span id="points">33</span></li>
+              <li class="team">Sosa<span id="points">33</span></li>
             </ul>
           </div>
           <div class="tops_section">
             <h3>Assists</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team">Leoro<span id="points">32</span></li>
+              <li class="team">VKSailen<span id="points">31</span></li>
+              <li class="team">Rezears<span id="points">30</span></li>
+              <li class="team">Tjester<span id="points">29</span></li>
+              <li class="team">Suspect<span id="points">29</span></li>
+              <li class="team">Bananahead<span id="points">28</span></li>
+              <li class="team">Mira<span id="points">28</span></li>
+              <li class="team">Daniel<span id="points">27</span></li>
+              <li class="team">Torres8232<span id="points">25</span></li>
+              <li class="team">Beastmode<span id="points">25</span></li>
             </ul>
           </div>
           <div class="tops_section">
             <h3>Saves</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team">LuiisP<span id="points">88</span></li>
+              <li class="team">Frosty<span id="points">81</span></li>
+              <li class="team">Daniel<span id="points">71</span></li>
+              <li class="team">Rehzzy<span id="points">69</span></li>
+              <li class="team">Sweaty<span id="points">69</span></li>
+              <li class="team">Kxfyr<span id="points">65</span></li>
+              <li class="team">Tjester<span id="points">60</span></li>
+              <li class="team">Mira<span id="points">60</span></li>
+              <li class="team">FNSi<span id="points">59</span></li>
+              <li class="team">Accro<span id="points">58</span></li>
             </ul>
           </div>
           <div class="tops_section">
             <h3>Shots</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="center_vertical_container"> <!--Only here for the title text-->
-        <h2>Top Players</h2>
-        <div class="horizontal_container" id="data_box"> <!-- columns of data displayed flex -->
-          <div class="tops_section"> <!-- full column of data -->
-            <h3>Scores</h3>
-            <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-            </ul>
-          </div>
-          <div class="tops_section">
-            <h3>Goals</h3>
-            <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-            </ul>
-          </div>
-          <div class="tops_section">
-            <h3>Assists</h3>
-            <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-            </ul>
-          </div>
-          <div class="tops_section">
-            <h3>Saves</h3>
-            <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-            </ul>
-          </div>
-          <div class="tops_section">
-            <h3>Shots</h3>
-            <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team">Atomic<span id="points">129</span></li>
+              <li class="team">Daniel<span id="points">119</span></li>
+              <li class="team">Beastmode<span id="points">119</span></li>
+              <li class="team">Fiberr<span id="points">113</span></li>
+              <li class="team">Yanxnz<span id="points">110</span></li>
+              <li class="team">Accro<span id="points">109</span></li>
+              <li class="team">Nass<span id="points">106</span></li>
+              <li class="team">Zen<span id="points">104</span></li>
+              <li class="team">Frosty<span id="points">102</span></li>
+              <li class="team">VKSailen<span id="points">100</span></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="vertical_container">
-        <h2>Event Title</h2>
+        <h2>&nbsp;</h2>
         <table class="regional_home_tables">
           <tbody>
               <tr>
@@ -371,86 +290,84 @@
           <tbody id="team1">
             <tr>
               <td rowspan="3">Flip Lord</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Kiileerrz</td><td>Team Falcons</td><td>MENA</td><td>4914</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Daniel</td><td>NRG</td><td>NA</td><td>10641</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Exotiik</td><td>Team Vitality</td><td>EU</td><td>3756</td>
             </tr>
           </tbody>
           <tbody id="team2">
             <tr>
               <td rowspan="3">Doofenschmirtz Inc.</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Rw9</td><td>Team Falcons</td><td>MENA</td><td>4293</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>TRK511</td><td>Team Falcons</td><td>MENA</td><td>5547</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Atomic</td><td>NRG</td><td>NA</td><td>9766</td>
             </tr>
           </tbody>
           <tbody id="team3">
             <tr>
               <td rowspan="3">Goofy Goobers</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Drufinho</td><td>Furia Esports</td><td>SAM</td><td>6342</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Seikoo</td><td>Gentle Mates Alpine</td><td>EU</td><td>2255</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Lostt</td><td>Furia Esports</td><td>SAM</td><td>6167</td>
             </tr>
           </tbody>
           <tbody id="team4">
             <tr>
               <td rowspan="3">24 Karat Gold</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>M0nkeyM00n</td><td>Team Vitality</td><td>EU</td><td>4242</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Torsos</td><td>Wildcard</td><td>OCE</td><td>6156</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>ApparentlyJack</td><td>Dignitas</td><td>EU</td><td>2917</td>
             </tr>
           </tbody>
           <tbody id="team5">
             <tr>
               <td rowspan="3">Skibideeznuts</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Beastmode</td><td>NRG</td><td>NA</td><td>9725</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Yanxnz</td><td>Furia Esports</td><td>SAM</td><td>6821</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Vatira</td><td>Karmine Corp</td><td>EU</td><td>5259</td>
             </tr>
           </tbody>
           <tbody id="team6">
             <tr>
               <td rowspan="3">Team Canada</td>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Zen</td><td>Team Vitality</td><td>EU</td><td>5191</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Dralii</td><td>Karmine Corp</td><td>EU</td><td>5675</td>
             </tr>
             <tr>
-              <td>Player</td><td>Team</td><td>Region</td><td>0</td>
+              <td>Fever</td><td>Wildcard</td><td>SAM</td><td>5570</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </main>
-  <h1 style="text-align: center;">WEBPAGE STILL IN DEVELOPMENT</h1>
 </body>
 <script src="main.js"></script>
 <script src="bracket.js"></script>
-<script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
 <footer>
-  <p>©Comet Productions. All Rights Reserved. (Not really though)</p>
+  <p>©Comet Productions.</p>
   <div id="socials">
     <p>Socials: </p>
     <a href="https://docs.google.com/spreadsheets/">Spreadsheet</a>

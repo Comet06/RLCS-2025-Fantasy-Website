@@ -1,6 +1,6 @@
 /* Sitewide Styles */
 * {margin: 0;padding: 0;box-sizing: border-box;}
-body {width: 100vw;color: black;background-color:#e1e1e1e6;font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
+body {width: 100vw; color: black;background-color:#e1e1e1e6;font-family: 'Istok Web', sans-serif;min-height: 100%;margin: 0;}
 main {text-align: center;}
 
 .navbar h1{color: white;}
@@ -10,7 +10,7 @@ main {text-align: center;}
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 10px;}
 .nav-links {list-style: none;display: inline-flex;align-items: center; gap: 10px;}
 .nav-links li a {color: white;text-decoration: none;font-weight: bold;padding: 5px;
@@ -25,13 +25,13 @@ main {text-align: center;}
 .dropdown-content a {display: block;}
 .menu-icon{display: none;}
 .menu-icon i{color: #fff;font-size: 30px;}
-footer{display:flex; color: white;background-color: #1e1e2f;padding: 20px; width: 100%;}
+footer{display:flex; color: white;background-color: #1e1e2f;padding: 20px; width: 100%;margin: 30px 0 0;}
 #socials{display: flex;margin-left: auto;}
 #socials a{padding: 0 10px; text-decoration:none; color: skyblue;}
 button{font-size: medium;padding: 2px;}
 button :hover{color: white; background-color: #525252;}
 table{border: solid 2px black;border-spacing: 1px;width: 100%;}
-
+td, th{padding: 0 5px;}
 #test_width{font-size: 50px;}
 
 
@@ -41,7 +41,6 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
 .center_horizontal_container{display: flex;justify-content: center;}
 .center_vertical_container{display: flex;flex-direction: column;align-items: center;text-align: center;}
 #hide_list{overflow: hidden;}
-/* td{font-size: 12px;} */
 
 
 /* Info page */
@@ -52,9 +51,10 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
 
 
 /* Home page Tables */
-.home_tables{margin:0 auto;width: 50%;min-width: 600px;background-color: #e1e1e1e6;}
+.home_tables{margin:0 auto;width: fit-content;background-color: #e1e1e1e6;}
 .home_center_horizontal_container{display: flex;flex-wrap: wrap;justify-content: center;gap: 20px;}
-#team1{color: #ffffff;background-color: #037120;}
+#team0{width: fit-content;}
+#team1{width: fit-content;color: #ffffff;background-color: #037120;}
 #team2{color: #ffffff;background-color: #01063f;}
 #team3{color: #ffffff;background-color: #710303;}
 #team4{color: #000000;background-color: #d8db4b;}
@@ -68,7 +68,7 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
 #split{overflow: hidden; margin: 0 20px;}
 #split_border{border: solid 2px black;}
 #rank_page_table{color: black;background-color: #b9b9b9;width: 380px;height: 30px; padding: 0;}
-#player_data_table{background-color: white;width: 100%;min-width: 1080px;}
+#player_data_table{margin: 30px auto; background-color: white;width: fit-content;}
 #import_button :hover{color: white;background-color: black;}
 
 
@@ -77,11 +77,10 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
 .regional_home_tables td{padding: 0 20px;}
 .placements_horizontal_container{display: flex; flex-wrap: wrap;}
 .tops_horizontal_container{display: flex;flex-wrap: wrap;justify-content: center; gap: 20px;}
-#title_box{text-align: center; padding: 30px;}
 #data_box{border: solid black 2px; justify-content: center;width: fit-content;}
-.team{position: relative; overflow: hidden;}
-.section{width:200px;text-align: left;margin: 10px;padding: 0 5px;}
-.tops_section{width:100px;text-align: left;margin: 10px;padding: 0 5px;} /* Data within the tops boxes */
+.team{position: relative; overflow: hidden; padding-left: 5px;}
+.section{width:260px;text-align: left;margin: 10px;padding: 0 5px;}
+.tops_section{width:160px;text-align: left;margin: 10px;padding: 0 5px;} /* Data within the tops boxes */
 #points{float: right;position: absolute;right: 5px;}
 
 
@@ -167,7 +166,7 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
   #players_table{
     min-width: 630px;
   }}
-@media (max-width:730px) {
+@media screen and (max-width:960px) {
   nav ul{
       position: absolute;
       top: 70px;
@@ -190,22 +189,20 @@ table{border: solid 2px black;border-spacing: 1px;width: 100%;}
   #menuList{
     transition: all 0.5s;
     border-radius: 10px;
-    height: 47%;
-    z-index: 1000;
+    height: 340px;
+    z-index: 10000;
   }
   .dropdown-content{
     flex-direction:row;
     margin-top: 0;
   }
-  td{
-    font-size: 12px;
-  }
-  .home_tables{
-    min-width: 480px;
+  th, td{
+    font-size: 10px;
   }
   .team{
     font-size: 12px;
-  }}
+  }
+  .section{width: 200px;}}
 
 
 
