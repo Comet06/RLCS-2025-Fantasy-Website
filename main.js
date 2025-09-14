@@ -1,12 +1,4 @@
-function loginFunction(){
-    document.getElementById("test").innerHTML = "This text can change!!";
-  }
-
-function test(){
-  console.log('test')
-}
-
-
+// Menu button
 let menuList = document.getElementById("menuList")
 menuList.style.maxHeight = "0px";
 function toggleMenu(){

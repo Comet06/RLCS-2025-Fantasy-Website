@@ -1,4 +1,5 @@
-let numberOfTeams = document.getElementById("numOfTeams").innerText;
+export let numberOfTeams = 6;
+document.getElementById("numOfTeams").innerHTML = numberOfTeams
 let num1 = document.getElementById("first").innerText;
 let num2 = document.getElementById("second").innerText;
 let num3 = document.getElementById("third").innerText;
@@ -21,31 +22,13 @@ const spreadSumList = [];
 let spreadSum1 = 0;
 let spreadSum = 0;
 
-let spread1 = .20;
-let spread2 = .13;
-let spread3 = .09;
-let spread4 = .08;
-let spread5 = .07;
-let spread6 = .06;
-let spread7 = .06;
-let spread8 = .05;
-let spread9 = .05;
-let spread10 = .04;
-let spread11 = .04;
-let spread12 = .03;
-let spread13 = .03;
-let spread14 = .03;
-let spread15 = .02;
-let spread16 = .02;
-let spreadDiff = 0;
-
 const amtAdded = 70;
 
-const percentDistRegional = .2;
-const percentDistMajor = .3;
-const percentDistChampionship = .5;
+const percentDistRegional = .0;
+const percentDistMajor = .4;
+const percentDistChampionship = .6;
 
-let amountForAllMajor = (amtAdded*percentDistMajor)+200;
+let amountForAllMajor = (amtAdded*percentDistMajor)+400;
 let amountPerMajor = amountForAllMajor/2;
 let amountForChampionship = (amtAdded*percentDistChampionship)+500;
 
@@ -64,8 +47,6 @@ let spreadToAdd = spreadSum/numberOfTeams
 for (let i = 0; i<=(numberOfTeams-1); i++) {
     spread[i] += spreadToAdd;
 }
-
-
 
 document.getElementById('first_prize_major').innerHTML = "$" + (spread[0]*amountPerMajor).toFixed(2)
 document.getElementById('second_prize_major').innerHTML = "$" + (spread[1]*amountPerMajor).toFixed(2)
@@ -117,3 +98,43 @@ document.getElementById('thirteenth_prize_percent').innerHTML = (100*spread[12])
 document.getElementById('fourteenth_prize_percent').innerHTML = (100*spread[13]).toFixed(2) + "%"
 document.getElementById('fifteenth_prize_percent').innerHTML = (100*spread[14]).toFixed(2) + "%"
 document.getElementById('sixteenth_prize_percent').innerHTML = (100*spread[15]).toFixed(2) + "%"
+
+
+// For points calculation
+const playinSemifinal = 200
+const playInQualify = 300
+
+const groupASemifinal = 300
+const groupAQualify = 400
+
+const groupBSemifinal = 300
+const groupBQualify = 400
+
+const playoffSemifinal = 400
+const playoffFinal = 600
+
+let semiFinal = 6
+let qualify = 4
+let final = 3
+
+let playinTotal = playinSemifinal*semiFinal + playInQualify*qualify
+let groupATotal = groupASemifinal*semiFinal + groupAQualify*qualify
+let groupBTotal = groupBSemifinal*semiFinal + groupBQualify*qualify
+let playoffTotal = playoffSemifinal*semiFinal + playoffFinal*final
+
+document.getElementById('playinSemi').innerHTML = playinSemifinal
+document.getElementById('playinQualify').innerHTML = playInQualify
+document.getElementById('groupASemi').innerHTML = groupASemifinal
+document.getElementById('groupAQualify').innerHTML = groupAQualify
+document.getElementById('groupBSemi').innerHTML = groupBSemifinal
+document.getElementById('groupBQualify').innerHTML = groupBQualify
+document.getElementById('playoffSemi').innerHTML = playoffSemifinal
+document.getElementById('playoffQualify').innerHTML = playoffFinal
+
+document.getElementById('playinTotal').innerHTML = playinTotal
+document.getElementById('groupATotal').innerHTML = groupATotal
+document.getElementById('groupBTotal').innerHTML = groupBTotal
+document.getElementById('playoffTotal').innerHTML = playoffTotal
+
+document.getElementById('subtotal').innerHTML = playinTotal+groupATotal+groupBTotal+playoffTotal
+document.getElementById('finalTotal').innerHTML = (playinTotal+groupATotal+groupBTotal+playoffTotal)*5

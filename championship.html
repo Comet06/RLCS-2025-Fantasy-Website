@@ -52,31 +52,26 @@
         <div class="section">
           <h3>Qualified Teams</h3>
           <ul>
-            <li class="team" id="nrg">NRG</li>
-            <li class="team" id="geng">Gen.G Mobil1 Racing</li>
-            <li class="team" id="ssg">Spacestation Gaming</li>
-            <li class="team" id="tu">The Ultimates</li>
-            <li class="team" id="kc">Karmine Corp</li>
-            <li class="team" id="dig">Dignitas</li>
-            <li class="team" id="vit">Team Vitality</li>
-            <li class="team" id="geek">Geekay Esports</li>
-            <li class="team" id="wild">Wildcard</li>
-            <li class="team" id="tsm">TSM</li>
-            <li class="team" id="fur">Furia Esports</li>
-            <li class="team" id="ts">Team Secret</li>
-            <li class="team" id="flcn">Team Falcons</li>
-            <li class="team" id="twis">Twisted Minds</li>
-            <li class="team" id="virt">Virtus.pro</li>
-            <li class="team" id="fut">FUT Esports</li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>LCQ Qualified Teams</h3>
-          <ul>
-            <li class="team" id="roc">ROC Esports</li>
-            <li class="team" id="mibr">MIBR</li>
-            <li class="team" id="shop">Shopify Rebellion</li>
-            <li class="team" id="nip">Ninjas in Pyjamas</li>
+            <li class="team" id="nrg">NRG<span id="points"></span></li>
+            <li class="team" id="ssg">Spacestation Gaming<span id="points"></span></li>
+            <li class="team" id="tu">The Ultimates<span id="points"></span></li>
+            <li class="team" id="kc">Karmine Corp<span id="points"></span></li>
+            <li class="team" id="dig">Dignitas<span id="points"></span></li>
+            <li class="team" id="vit">Team Vitality<span id="points"></span></li>
+            <li class="team" id="geek">Geekay Esports<span id="points"></span></li>
+            <li class="team" id="wild">Wildcard<span id="points"></span></li>
+            <li class="team" id="fur">Furia Esports<span id="points"></span></li>
+            <li class="team" id="ts">Team Secret<span id="points"></span></li>
+            <li class="team" id="flcn">Team Falcons<span id="points"></span></li>
+            <li class="team" id="nip">Ninjas in Pyjamas<span id="points"></span></li>
+            <li class="team" id="roc">ROC Esports<span id="points">13th-16th</span></li>
+            <li class="team" id="virt">Virtus.pro<span id="points">13th-16th</span></li>
+            <li class="team" id="geng">Gen.G Mobil1 Racing<span id="points">13th-16th</span></li>
+            <li class="team" id="twis">Twisted Minds<span id="points">13th-16th</span></li>
+            <li class="team" id="mibr">MIBR<span id="points">17th-18th</span></li>
+            <li class="team" id="shop">Shopify Rebellion<span id="points">17th-18th</span></li>
+            <li class="team" id="fut">FUT Esports<span id="points">19th-20th</span></li>
+            <li class="team" id="tsm">TSM<span id="points">19th-20th</span></li>
           </ul>
         </div>
       </div>
@@ -163,39 +158,44 @@
         </div>
       </div>
       <div class="center_vertical_container">
-        <h2>&nbsp;</h2>
-        <table class="home_tables">
-          <tbody>
-            <tr>
-              <th>Team</th><th>Championship</th><th>Total</th>
-            </tr>
-            <tr id="team1">
-              <td>Flip Lord</td><td>0</td><td>205673</td>
-            </tr>
-            <tr id="team2">
-              <td>Doofenschmirtz Inc.</td><td>0</td><td>224547</td>
-            </tr>
-            <tr id="team3">
-              <td>Goofy Goobers</td><td>0</td><td>144237</td>
-            </tr>
-            <tr id="team4">
-              <td>24 Karat Gold</td><td>0</td><td>167517</td>
-            </tr>
-            <tr id="team5">
-              <td>Skibideeznuts</td><td>0</td><td>177019</td>
-            </tr>
-            <tr id="team6">
-              <td>Team Canada</td><td>0</td><td>156900</td>
-            </tr>
-          </tbody>
-        </table>
+      <h2>&nbsp;</h2>
+      <table class="home_tables">
+        <tbody>
+          <tr>
+            <th>Championship</th><th>Play-in</th><th>Group A</th><th>Group B</th><th>Playoffs</th><th>Total Points</th>
+          </tr>
+          <tr id="team1">
+            <td>Flip Lord</td><td id="flipPI"></td><td id="flipGA"></td><td id="flipGB"></td><td id="flipPO"></td><td id="flipTotal"></td>
+          </tr>
+          <tr id="team2">
+            <td>Doofenschmirtz Inc.</td><td id="doofPI"></td><td id="doofGA"></td><td id="doofGB"></td><td id="doofPO"></td><td id="doofTotal"></td>
+          </tr>
+          <tr id="team3">
+            <td>Goofy Goobers</td><td id="goofPI"></td><td id="goofGA"></td><td id="goofGB"></td><td id="goofPO"></td><td id="goofTotal"></td>
+          </tr>
+        </tbody>
+        <tbody id="team4">
+          <tr>
+            <td>24 Karat Gold</td><td id="goldPI"></td><td id="goldGA"></td><td id="goldGB"></td><td id="goldPO"></td><td id="goldTotal"></td>
+          </tr>
+        </tbody>
+        <tbody id="team5">
+          <tr>
+            <td>Skibideeznuts</td><td id="skibPI"></td><td id="skibGA"></td><td id="skibGB"></td><td id="skibPO"></td><td id="skibTotal"></td>
+          </tr>
+        </tbody>
+        <tbody id="team6">
+          <tr>
+            <td>Team Canada</td><td id="canadaPI"></td><td id="canadaGA"></td><td id="canadaGB"></td><td id="canadaPO"></td><td id="canadaTotal"></td>
+          </tr>
+        </tbody>
+      </table>
       </div>
     </div>
   </main>
-  <h1 style="text-align: center;">WEBPAGE STILL IN DEVELOPMENT</h1>
 </body>
 <script src="main.js"></script>
-<script src="bracket.js"></script>
+<script type="module" src="home_page.js"></script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">

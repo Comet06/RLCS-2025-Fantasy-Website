@@ -97,10 +97,10 @@ td, th{padding: 0 5px;}
 #playin {margin-left: auto;margin-right: auto;margin-top: 20px;margin-bottom: 20px;padding:40px 10px;border: solid 2px black;width: 750px;}
 #groupA {margin-left: auto;margin-top: 20px;margin-bottom: 20px;padding:20px 10px;border: solid 2px black;width: 750px;}
 #groupB {margin-right: auto;margin-top: 20px;margin-bottom: 20px;padding:20px 10px;border: solid 2px black;width: 750px;}
-#playoffs {margin-left: auto;margin-right: auto;margin-top: 20px;margin-bottom: 20px;padding:20px 0px;border: solid 2px black;width: 900px;}
+#playoffs {margin-left: auto;margin-right: auto;margin-top: 20px;margin-bottom: 20px;padding:20px 0px;border: solid 2px black;width: fit-content;}
 
 .upper {height:350px;margin: auto;display: flex;} /* All upper sections */
-.lower {height: 190px;margin: auto;display: flex;} /* All lower sections */
+.lower {height: fit-content;margin: auto;display: flex;} /* All lower sections */
 
 .matchup{margin: 0 2.5% 0 2.5%;height: 60px;}
 .quarterfinals .matchup {padding: 20px 0px;} /* All QF matches */
@@ -115,14 +115,25 @@ td, th{padding: 0 5px;}
 
 .round-details {min-width:200px;color: #2C7399;text-transform: uppercase;text-align: center;}
 .date {font-size: 10px; letter-spacing: 2px;font-family: 'Istok Web', sans-serif;color:#3F915F;}
-.score {float: right;color: #00ffcc;font-weight: bold;position: absolute;right: 5px;}
+.score {float: right;font-weight: bold;position: absolute;right: 5px;}
 .bracket_team {padding: 0 5px;margin: 3px 0;line-height: 25px;white-space: nowrap;overflow: hidden;position: relative;color: white;background-color: #1e1e2f;}
 
-#win {color: white;background-color: #248635;} /* id="win" */
-#lose {color: white;background-color: #9c2438;} /* id="lose" */
+#win {background-color: #248635;} /* id="win" */
+#lose {background-color: #9c2438;} /* id="lose" */
 
+/* Swiss */
+.swiss_bracket_team {padding: 0 5px;margin: 3px 0;line-height: 25px;white-space: nowrap;overflow: hidden;position: relative;color: white;background-color: #1e1e2f;width: 100px;}
+.matchup_swiss{display: flex; margin: 0 2.5% 0 2.5%;}
+.empty_team{padding: 0 5px;margin: 3px 0;line-height: 25px;white-space: nowrap;overflow: hidden;position: relative;color: white;background-color: #1e1e2f00;width: 190px;}
 
-
+#round1{background-color: #2C7399;}
+#round1Upper{background-color: #3F915F;}
+#round1Lower{color: black; background-color: #d1d143;}
+#roundUpper{background-color: #3F915F;}
+#roundMiddle{color: black; background-color: #d1d143;}
+#roundLower{color: black; background-color: #d14343;}
+#qualified{color: black; background-color:#00ff62;}
+#disqualified{color: black; background-color:#ff0000;}
 /* Media Screens */
 @media screen and (max-width: 1593px){
   .center_horizontal_container{

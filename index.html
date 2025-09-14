@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="sytlesheet.css"/>
   <link rel="stylesheet" href="team_region.css"/>
-  <link rel="stylesheet" href="home_styles.css"/>
   <title>RLCS Fantasy 2025</title>
 </head>
 <body>
@@ -52,55 +51,24 @@
         <tr>
           <th>Team</th><th>Regional 1</th><th>Regional 2</th><th>Regional 3</th><th>Major 1</th><th>Split 1 Total</th><th>Regional 4</th><th>Regional 5</th><th>Regional 6</th><th>Major 2</th><th>Split 2 Total</th><th>Championship</th><th>Total</th>
         </tr>
-        <tr id="team1">
-          <td>Flip Lord</td><td>19311</td><td>16997</td><td>12953</td><td>48751</td><td>98012</td><td>13150</td><td>38072</td><td>10817</td><td>45622</td><td>107661</td><td>0</td><td>205637</td>
+        <tr class="player-data" id="team1" data-player="flip">
+          <td>Flip Lord</td>
+          <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr id="team2">
-          <td>Doofenschmirtz Inc.</td><td>19606</td><td>19384</td><td>16040</td><td>48221</td><td>103251</td><td>13120</td><td>50491</td><td>11129</td><td>46555</td><td>121295</td><td>0</td><td>224546</td>
+        <tr class="player-data" id="team2" data-player="doof">
+          <td>Doofenschmirtz Inc.</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr id="team3">
-          <td>Goofy Goobers</td><td>14764</td><td>12564</td><td>9707</td><td>38153</td><td>75188</td><td>11260</td><td>18114</td><td>11203</td><td>28472</td><td>69049</td><td>0</td><td>144237</td>
+        <tr class="player-data" id="team3" data-player="goof">
+          <td>Goofy Goobers</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr id="team4">
-          <td>24 Karat Gold</td><td>10058</td><td>15651</td><td>14768</td><td>26882</td><td>67359</td><td>14480</td><td>33311</td><td>10291</td><td>42076</td><td>100158</td><td>0</td><td>167517</td>
+        <tr class="player-data" id="team4" data-player="gold">
+          <td>24 Karat Gold</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr id="team5">
-          <td>Skibideeznuts</td><td>21805</td><td>17046</td><td>10802</td><td>50867</td><td>100521</td><td>12012</td><td>24448</td><td>10086</td><td>29951</td><td>76498</td><td>0</td><td>177019</td>
+        <tr class="player-data" id="team5" data-player="skib">
+          <td>Skibideeznuts</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr id="team6">
-          <td>Team Canada</td><td>16436</td><td>16559</td><td>16675</td><td>42099</td><td>91768</td><td>12317</td><td>15034</td><td>10885</td><td>26896</td><td>65132</td><td>0</td><td>156900</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>Current Event</h2>
-    <table class="home_tables">
-      <tbody>
-        <tr>
-          <th>Championship</th><th>Play-in</th><th>Group A</th><th>Group B</th><th>Playoffs</th><th>Total Points</th>
-        </tr>
-        <tr id="team1">
-          <td>Flip Lord</td><td>1600</td><td>0</td><td>0</td><td>0</td><td>0</td>
-        </tr>
-        <tr id="team2">
-          <td>Doofenschmirtz Inc.</td><td>1200</td><td>0</td><td>0</td><td>0</td><td>0</td>
-        </tr>
-        <tr id="team3">
-          <td>Goofy Goobers</td><td>1400</td><td>0</td><td>0</td><td>0</td><td>0</td>
-        </tr>
-      </tbody>
-      <tbody id="team4">
-        <tr>
-          <td>24 Karat Gold</td><td>1000</td><td>0</td><td>0</td><td>0</td><td>0</td>
-        </tr>
-      </tbody>
-      <tbody id="team5">
-        <tr>
-          <td>Skibideeznuts</td><td>1400</td><td>0</td><td>0</td><td>0</td><td>0</td>
-        </tr>
-      </tbody>
-      <tbody id="team6">
-        <tr>
-          <td>Team Canada</td><td>1600</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        <tr class="player-data" id="team6" data-player="cana">
+          <td>Team Canada</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
       </tbody>
     </table>
@@ -111,22 +79,22 @@
           <th>Team</th><th>Split 1</th><th>Split 2</th><th>Championship</th><th>Total Winnings</th>
         </tr>
         <tr id="team1">
-          <td>Flip Lord</td><td>$36.38</td><td>$42.80</td><td>$0.00</td><td>$79.18</td>
+          <td>Flip Lord</td><td>$36.38</td><td>$42.80</td><td>$103.88</td><td>$79.18</td>
         </tr>
         <tr id="team2">
-          <td>Doofenschmirtz Inc.</td><td>$53.50</td><td>$53.50</td><td>$0.00</td><td>$107.00</td>
+          <td>Doofenschmirtz Inc.</td><td>$53.50</td><td>$53.50</td><td>$141.82</td><td>$107.00</td>
         </tr>
         <tr id="team3">
-          <td>Goofy Goobers</td><td>$25.68</td><td>$25.68</td><td>$0.00</td><td>$51.36</td>
+          <td>Goofy Goobers</td><td>$25.68</td><td>$25.68</td><td>$65.94</td><td>$51.36</td>
         </tr>
         <tr id="team4">
-          <td>24 Karat Gold</td><td>$21.40</td><td>$36.38</td><td>$0.00</td><td>$57.78</td>
+          <td>24 Karat Gold</td><td>$21.40</td><td>$36.38</td><td>$71.36</td><td>$57.78</td>
         </tr>
-        <tr id="team3">
-          <td>Skibideeznuts</td><td>$42.80</td><td>$34.24</td><td>$0.00</td><td>$77.04</td>
+        <tr id="team5">
+          <td>Skibideeznuts</td><td>$42.80</td><td>$34.24</td><td>$82.20</td><td>$77.04</td>
         </tr>
         <tr id="team6">
-          <td>Team Canada</td><td>$34.24</td><td>$21.40</td><td>$0.00</td><td>$55.64</td>
+          <td>Team Canada</td><td>$34.24</td><td>$21.40</td><td>$76.78</td><td>$55.64</td>
         </tr>
         <tr>
           <td>Pool</td><td>$214.00</td><td>$214.00</td><td>$542.00</td><td>$970.00</td>
@@ -136,7 +104,7 @@
   </main>
 </body>
 <script src="main.js"></script>
-<script src="bracket.js"></script>
+<script src="home_page.js">deployScores()</script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">
