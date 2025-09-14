@@ -297,7 +297,7 @@ playerScores['cana'] = [canaR1Sum, canaR2Sum, canaR3Sum, canaM1Sum*3, canaS1, ca
 
 window.addEventListener('load', function() {
   // Check if the current URL matches the specific page you're interested in
-  if (window.location.pathname === '/comet06.github.io/RLCS-Fantasy-Website/index.html') {
+  if (window.location.pathname === 'RLCS-Fantasy-Website/index.html') {
     console.log('The specific page has loaded!');
     deployeScores()
   } else if (window.location.pathname === '/RLCS-Fantasy-Website/regional_1.html') {
@@ -941,6 +941,7 @@ function deployeScores() {
   }
 
 }
+
 
 
 
