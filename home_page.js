@@ -324,6 +324,9 @@ window.addEventListener('load', function() {
   } else if (window.location.pathname === '/RLCS-Fantasy-Website/major_2.html') {
     console.log('The specific page has loaded!');
     deployMaj2()
+  } else if (window.location.pathname === '/championship.html') {
+    console.log('The specific page has loaded!');
+    deployChamp()
   }
 });
 
@@ -938,6 +941,7 @@ function deployeScores() {
   }
 
 }
+
 
 
 
