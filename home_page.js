@@ -116,12 +116,12 @@ for (let i = 0; i < 3; i++) {
     canaR3Sum += canaSR3[i];
 }
 // Major 1
-let flipM1Sum = 48751/3
-let doofM1Sum = 48221/3
-let goofM1Sum = 38153/3
-let goldM1Sum = 26882/3
-let skibM1Sum = 50867/3
-let canaM1Sum = 42099/3
+let flipM1Sum = Math.round(48751/3)
+let doofM1Sum = Math.round(48221/3)
+let goofM1Sum = Math.round(38153/3)
+let goldM1Sum = Math.round(26882/3)
+let skibM1Sum = Math.round(50867/3)
+let canaM1Sum = Math.round(42099/3)
 // Regional 4
 let flipPR4 = ['Kiileerrz', 'Daniel', 'Atow']
 let doofPR4 = ['Rw9', 'Trk511', 'Atomic']
@@ -240,12 +240,12 @@ for (let i = 0; i < 3; i++) {
     canaR6Sum += canaSR5[i];
 }
 // Major 2
-let flipM2Sum = 45622/3
-let doofM2Sum = 46555/3
-let goofM2Sum = 28472/3
-let goldM2Sum = 42076/3
-let skibM2Sum = 29951/3
-let canaM2Sum = 26896/3
+let flipM2Sum = Math.round(45622/3)
+let doofM2Sum = Math.round(46555/3)
+let goofM2Sum = Math.round(28472/3)
+let goldM2Sum = Math.round(42076/3)
+let skibM2Sum = Math.round(29951/3)
+let canaM2Sum = Math.round(26896/3)
 // Split 1
 let flipS1 = flipR1Sum + flipR2Sum + flipR3Sum + flipM1Sum*3
 let doofS1 = doofR1Sum + doofR2Sum + doofR3Sum + doofM1Sum*3
@@ -938,5 +938,6 @@ function deployeScores() {
   }
 
 }
+
 
 
