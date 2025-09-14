@@ -128,73 +128,73 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gauqfm1('Karmine Corp','Virtus.pro')">Karmine Corp<span class="score"></span></li>
-            <li class="bracket_team" onclick="gauqfm1('Virtus.pro','Karmine Corp')">Virtus.pro<span class="score"></span></li>
+            <li class="bracket_team" id="win">Karmine Corp<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Virtus.pro<span class="score">0</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gauqfm2('The Ultimates','Geekay Esports')">The Ultimates<span class="score"></span></li>
-            <li class="bracket_team" onclick="gauqfm2('Geekay Esports','The Ultimates')">Geekay Esports<span class="score"></span></li>
+            <li class="bracket_team" id="win">The Ultimates<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Geekay Esports<span class="score">0</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gauqfm3('Dignitas','ROC Esports')">Dignitas<span class="score"></span></li>
-            <li class="bracket_team" onclick="gauqfm3('ROC Esports','Dignitas')">ROC Esports<span class="score"></span></li>
+            <li class="bracket_team" id="win">Dignitas<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">ROC Esports<span class="score">0</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gauqfm4('Furia Esports','Wildcard')">Furia Esports<span class="score"></span></li>
-            <li class="bracket_team" onclick="gauqfm4('Wildcard','Furia Esports')">Wildcard<span class="score"></span></li>
+            <li class="bracket_team" id="lose">Furia Esports<span class="score">0</span></li>
+            <li class="bracket_team" id="win">Wildcard<span class="score">3</span></li>
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
+          <div class="round-details">Upper Semifinals<br/><span class="date">September 11th</span></div>     
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gauqfm1" onclick="gausfm1(winnerGAuqfm1,winnerGAuqfm2)"><span class="score"></span></li>
-            <li class="bracket_team" id="winner_gauqfm2" onclick="gausfm1(winnerGAuqfm2,winnerGAuqfm1)"><span class="score"></span></li>
+            <li class="bracket_team" id="lose">Karmine Corp<span class="score">1</span></li>
+            <li class="bracket_team" id="win">The Ultimates<span class="score">3</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gauqfm3" onclick="gausfm2(winnerGAuqfm3,winnerGAuqfm4)"><span class="score"></span></li>
-            <li class="bracket_team" id="winner_gauqfm4" onclick="gausfm2(winnerGAuqfm4,winnerGAuqfm3)"><span class="score"></span></li>
+            <li class="bracket_team" id="lose">Dignitas<span class="score">0</span></li>
+            <li class="bracket_team" id="win">Wildcard<span class="score">3</span></li>
           </ul>
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
             <ul class="matchup">
-              <li class="bracket_team" id="winner_gausfm1"><span class="score"></span></li>
+              <li class="bracket_team" id="win">The Ultimates<span class="score"></span></li>
             </ul>
             <ul class="matchup">
-              <li class="bracket_team" id="winner_gausfm2"><span class="score"></span></li>
+              <li class="bracket_team" id="win">Wildcard<span class="score"></span></li>
             </ul>
         </div>
       </div>
       <div class="lower">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
+          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 12th</span></div>
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gauqfm1" onclick="galqfm1(loserGAuqfm1)">Loser of UQF 1<span class="score"></span></li>
-            <li class="bracket_team" id="loser_gauqfm2" onclick="galqfm1(loserGAuqfm2)">Loser of UQF 2<span class="score"></span></li>
+            <li class="bracket_team" id="lose">Virtus.pro<span class="score">1</span></li>
+            <li class="bracket_team" id="win">Geekay Esports<span class="score">3</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gauqfm3" onclick="galqfm2(loserGAuqfm3)">Loser of UQF 3<span class="score"></span></li>
-            <li class="bracket_team" id="loser_gauqfm4" onclick="galqfm2(loserGAuqfm4)">Loser of UQF 4<span class="score"></span></li>
+            <li class="bracket_team" id="lose">ROC Esports<span class="score">0</span></li>
+            <li class="bracket_team" id="win">Furia Esports<span class="score">3</span></li>
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gausfm2" onclick="galsfm1(loserGAusfm2)">Loser of A USF 2<span class="score"></span></li>
-            <li class="bracket_team" id="winner_galqfm1" onclick="galsfm1(winnerGAlqfm1)"><span class="score"></span></li>
+            <li class="bracket_team" id="lose">Dignitas<span class="score">2</span></li>
+            <li class="bracket_team" id="win">Geekay Esports<span class="score">3</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gausfm1" onclick="galsfm2(loserGAusfm1)">Loser of A USF 1<span class="score"></span></li>
-            <li class="bracket_team" id="winner_galqfm2" onclick="galsfm2(winnerGAlqfm2)"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Karmine Corp<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Furia Esports<span class="score">0</span></li>
           </ul>  
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
           <ul class="matchup">
-            <li class="bracket_team" id="winner_galsfm1"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Geekay Esports<span class="score"></span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" id="winner_galsfm2"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Karmine Corp<span class="score"></span></li>
           </ul>
         </div>
       </div>
@@ -205,73 +205,73 @@
         <div class="quarterfinals" id="bracket_round">
           <div class="round-details">Upper Quarterfinals<br/><span class="date">September 11th</span></div>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gbuqfm1('Team Falcons','Gen.G Mobil1 Racing')">Team Falcons<span class="score"></span></li>
-            <li class="bracket_team" onclick="gbuqfm1('Gen.G Mobil1 Racing','Team Falcons')">Gen.G Mobil1 Racing<span class="score"></span></li>
+            <li class="bracket_team" id="win">Team Falcons<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Gen.G Mobil1 Racing<span class="score">0</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gbuqfm2('Team Vitality','Spacestation Gaming')">Team Vitality<span class="score"></span></li>
-            <li class="bracket_team" onclick="gbuqfm2('Spacestation Gaming','Team Vitality')">Spacestation Gaming<span class="score"></span></li>
+            <li class="bracket_team" id="win">Team Vitality<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Spacestation Gaming<span class="score">2</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gbuqfm3('NRG','Ninjas in Pyjamas')">NRG<span class="score"></span></li>
-            <li class="bracket_team" onclick="gbuqfm3('Ninjas in Pyjamas','NRG')">Ninjas in Pyjamas<span class="score"></span></li>
+            <li class="bracket_team" id="win">NRG<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Ninjas in Pyjamas<span class="score">2</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" onclick="gbuqfm4('Twisted Minds','Team Secret')">Twisted Minds<span class="score"></span></li>
-            <li class="bracket_team" onclick="gbuqfm4('Team Secret','Twisted Minds')">Team Secret<span class="score"></span></li>
+            <li class="bracket_team" id="lose">Twisted Minds<span class="score">1</span></li>
+            <li class="bracket_team" id="win">Team Secret<span class="score">3</span></li>
           </ul>
         </div>
         <div class="semifinals" id="bracket_round">
-          <div class="round-details">Upper Semifinals<br/><span class="date">September 12th</span></div>     
+          <div class="round-details">Upper Semifinals<br/><span class="date">September 11th</span></div>     
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gbuqfm1" onclick="gbusfm1(winnerGBuqfm1,winnerGBuqfm2)"><span class="score"></span></li>
-            <li class="bracket_team" id="winner_gbuqfm2" onclick="gbusfm1(winnerGBuqfm2,winnerGBuqfm1)"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Team Falcons<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Team Vitality<span class="score">1</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gbuqfm3" onclick="gbusfm2(winnerGBuqfm3,winnerGBuqfm4)"><span class="score"></span></li>
-            <li class="bracket_team" id="winner_gbuqfm4" onclick="gbusfm2(winnerGBuqfm4,winnerGBuqfm3)"><span class="score"></span></li>
+            <li class="bracket_team" id="win">NRG<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Team Secret<span class="score">1</span></li>
           </ul>
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
             <ul class="matchup">
-              <li class="bracket_team" id="winner_gbusfm1"><span class="score"></span></li>
+              <li class="bracket_team" id="win">Team Falcons<span class="score"></span></li>
             </ul>
             <ul class="matchup">
-              <li class="bracket_team" id="winner_gbusfm2"><span class="score"></span></li>
+              <li class="bracket_team" id="win">NRG<span class="score"></span></li>
             </ul>
         </div>
       </div>
       <div class="lower">
         <div class="quarterfinals" id="bracket_round">
-          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 11th</span></div>
+          <div class="round-details">Lower Quarterfinals<br/><span class="date">September 12th</span></div>
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gbuqfm1" onclick="gblqfm1(loserGBuqfm1)">Loser of UQF 1<span class="score"></span></li>
-            <li class="bracket_team" id="loser_gbuqfm2" onclick="gblqfm1(loserGBuqfm2)">Loser of UQF 2<span class="score"></span></li>
+            <li class="bracket_team" id="lose">Gen.G Mobil1 Racing<span class="score">1</span></li>
+            <li class="bracket_team" id="win">Spacestation Gaming<span class="score">3</span></li>
           </ul> 
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gbuqfm3" onclick="gblqfm2(loserGBuqfm3)">Loser of UQF 3<span class="score"></span></li>
-            <li class="bracket_team" id="loser_gbuqfm4" onclick="gblqfm2(loserGBuqfm4)">Loser of UQF 4<span class="score"></span></li>
+            <li class="bracket_team" id="win">Ninjas in Pyjamas<span class="score">3</span></li>
+            <li class="bracket_team" id="lose">Twisted Minds<span class="score">2</span></li>
           </ul>              
         </div>
         <div class="semifinals" id="bracket_round">
           <div class="round-details">Lower Semifinals<br/><span class="date">September 12th</span></div>  
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gbusfm2" onclick="gblsfm1(loserGBusfm2)">Loser of B USF 2<span class="score"></span></li>
-            <li class="bracket_team" id="winner_gblqfm1" onclick="gblsfm1(winnerGBlqfm1)"><span class="score"></span></li>
+            <li class="bracket_team" id="lose">Team Secret<span class="score">1</span></li>
+            <li class="bracket_team" id="win">Spacestation Gaming<span class="score">3</span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" id="loser_gbusfm1" onclick="gblsfm2(loserGBusfm1)">Loser of B USF 1<span class="score"></span></li>
-            <li class="bracket_team" id="winner_gblqfm2" onclick="gblsfm2(winnerGBlqfm2)"><span class="score"></span></li>
+            <li class="bracket_team" id="lose">Team Vitality<span class="score">1</span></li>
+            <li class="bracket_team" id="win">Ninjas in Pyjamas<span class="score">3</span></li>
           </ul>  
         </div>
         <div class="quals" id="bracket_round">
           <div class="round-details">Qualified<br/>&nbsp;</span></div>     
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gblsfm1"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Spacestation Gaming<span class="score"></span></li>
           </ul>
           <ul class="matchup">
-            <li class="bracket_team" id="winner_gblsfm2"><span class="score"></span></li>
+            <li class="bracket_team" id="win">Ninjas in Pyjamas<span class="score"></span></li>
           </ul>
         </div>
       </div>
@@ -283,12 +283,12 @@
       <div class="semifinals" id="bracket_round"> <!-- Upper Quarterfinals -->
         <div class="round-details">Upper Quarterfinals<br/><span class="date">September 13th</span></div>     
         <ul class="matchup">
-          <li class="bracket_team" id="gauhs" onclick="pouqfm1(winnerGAusfm1,winnerGBusfm2)">Group A - UB Higher Seed<span class="score"></span></li>
-          <li class="bracket_team" id="gbuls" onclick="pouqfm1(winnerGBusfm2,winnerGAusfm1)">Group B - UB Lower Seed<span class="score"></span></li>
+          <li class="bracket_team" id="lose">The Ultimates<span class="score">3</span></li>
+          <li class="bracket_team" id="win">NRG<span class="score">4</span></li>
         </ul> 
         <ul class="matchup">
-          <li class="bracket_team" id="gbuhs" onclick="pouqfm2(winnerGBusfm1,winnerGAusfm2)">Group B - UB Higher Seed<span class="score"></span></li>
-          <li class="bracket_team" id="gauls" onclick="pouqfm2(winnerGAusfm2,winnerGBusfm1)">Group A - UB Lower Seed<span class="score"></span></li>
+          <li class="bracket_team" id="win">Team Falcons<span class="score">4</span></li>
+          <li class="bracket_team" id="lose">Wildcard<span class="score">1</span></li>
         </ul>
       </div>
     </div>
@@ -296,43 +296,43 @@
       <div class="semifinals" id="bracket_round"> <!-- Lower Round One -->
         <div class="round-details">Round 1<br/><span class="date">September 13th</span></div>
         <ul class="matchup">
-          <li class="bracket_team" id="galhs" onclick="polrm1(winnerGAlsfm1)">Group A - LB Higher Seed<span class="score"></span></li>
-          <li class="bracket_team" id="gblls" onclick="polrm1(winnerGBlsfm2)">Group B - LB Lower Seed<span class="score"></span></li>
+          <li class="bracket_team" id="win">Karmine Corp<span class="score">4</span></li>
+          <li class="bracket_team" id="lose">Ninjas in Pyjamas<span class="score">2</span></li>
         </ul> 
         <ul class="matchup">
-          <li class="bracket_team" id="gblhs" onclick="polrm2(winnerGBlsfm1)">Group B - LB Higher Seed<span class="score"></span></li>
-          <li class="bracket_team" id="galls" onclick="polrm2(winnerGAlsfm2)">Group A - LB Lower Seed<span class="score"></span></li>
+          <li class="bracket_team" id="lose">Spacestation Gaming<span class="score">1</span></li>
+          <li class="bracket_team" id="win">Geekay Esports<span class="score">4</span></li>
         </ul>              
       </div>
       <div class="semifinals" id="bracket_round"> <!-- Lower Quarterfinals -->
         <div class="round-details">Quarterfinals<br/><span class="date">September 14th</span></div>  
         <ul class="matchup">
-          <li class="bracket_team" id="loser_pouqfm1" onclick="polqfm1(loserPOuqfm1)">Loser of UQF 1<span class="score"></span></li>
-          <li class="bracket_team" id="winner_polrm1" onclick="polqfm1(winnerPOlrm1)">Winner of RO 1<span class="score"></span></li>
+          <li class="bracket_team" id="lose">The Ultimates<span class="score">0</span></li>
+          <li class="bracket_team" id="win">Karmine Corp<span class="score">4</span></li>
         </ul>
         <ul class="matchup">
-          <li class="bracket_team" id="loser_pouqfm2" onclick="polqfm2(loserPOuqfm2)">Loser of UQF 2<span class="score"></span></li>
-          <li class="bracket_team" id="winner_polrm2" onclick="polqfm2(winnerPOlrm2)">Winner of RO 2<span class="score"></span></li>
+          <li class="bracket_team" id="win">Geekay Esports<span class="score">4</span></li>
+          <li class="bracket_team" id="lose">Wildcard<span class="score">1</span></li>
         </ul>  
       </div>
       <div class="quals" id="bracket_round"> <!-- Lower Semifinals -->
         <div class="round-details">Semifinals<br/><span class="date">September 14th</span></div>     
         <ul class="matchup">
-          <li class="bracket_team" id="winner_pouqfm2" onclick="polsfm1(winnerPOuqfm2)">Winner of UQF 2<span class="score"></span></li>
-          <li class="bracket_team" id="winner_polqfm1" onclick="polsfm1(winnerPOlqfm1)">Winner of LQF 1 <span class="score"></span></li>
+          <li class="bracket_team" id="win">Team Falcons<span class="score">4</span></li>
+          <li class="bracket_team" id="lose">Karmine Corp<span class="score">2</span></li>
         </ul>
         <ul class="matchup">
-          <li class="bracket_team" id="winner_pouqfm1" onclick="polsfm2(winnerPOuqfm1)">Winner of UQF 1<span class="score"></span></li>
-          <li class="bracket_team" id="winner_polqfm2" onclick="polsfm2(winnerPOlqfm2)">Winner of LQF 2<span class="score"></span></li>
+          <li class="bracket_team" id="win">NRG<span class="score">4</span></li>
+          <li class="bracket_team" id="lose">Geekay Esports<span class="score">0</span></li>
         </ul>
       </div>
       <div class="final" id="bracket_round"> <!-- Lower Finals -->
         <div class="round-details">Finals<br/><span class="date">September 14th</span></div>     
         <ul class="matchup">
-          <li class="bracket_team" id="winner_polsfm1" onclick="finalWinner(winnerPOlsfm1)">Winner of LSF 1<span class="score"></span></li>
-          <li class="bracket_team" id="winner_polsfm2" onclick="finalWinner(winnerPOlsfm2)">Winner of LSF 2<span class="score"></span></li>
+          <li class="bracket_team" id="lose">Team Falcons<span class="score">1</span></li>
+          <li class="bracket_team" id="win">NRG<span class="score">4</span></li>
           <li></li>
-          <li class="bracket_team" id="tourneyWinner" style="background-color: green;">Winner<span class="score"></span></li>
+          <li class="bracket_team" id="win">NRG<span class="score"></span></li>
         </ul>
       </div>
     </div>
