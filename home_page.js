@@ -328,6 +328,7 @@ window.addEventListener('load', function() {
     console.log('The specific page has loaded!');
     deployChamp()
   }
+console.log("Event listener is working")
 });
 
 
@@ -941,6 +942,7 @@ function deployeScores() {
   }
 
 }
+
 
 
 
