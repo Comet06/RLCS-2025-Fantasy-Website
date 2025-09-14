@@ -297,31 +297,31 @@ playerScores['cana'] = [canaR1Sum, canaR2Sum, canaR3Sum, canaM1Sum*3, canaS1, ca
 
 window.addEventListener('load', function() {
   // Check if the current URL matches the specific page you're interested in
-  if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/index.html') {
+  if (window.location.pathname === '/comet06.github.io/RLCS-Fantasy-Website/index.html') {
     console.log('The specific page has loaded!');
     deployeScores()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_1.html') {
+  } else if (window.location.pathname === '/comet06.github.io/RLCS-Fantasy-Website/regional_1.html') {
     console.log('The specific page has loaded!');
     deployReg1()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_2.html') {
+  } else if (window.location.pathname === '/comet06.github.io/RLCS-Fantasy-Website/regional_2.html') {
     console.log('The specific page has loaded!');
     deployReg2()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_3.html') {
+  } else if (window.location.pathname === '/comet06.github.io/RLCS-Fantasy-Website/regional_3.html') {
     console.log('The specific page has loaded!');
     deployReg3()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/major_1.html') {
+  } else if (window.location.pathname === '/RLCS-Fantasy-Website/major_1.html') {
     console.log('The specific page has loaded!');
     deployMaj1()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_4.html') {
+  } else if (window.location.pathname === 'regional_4.html') {
     console.log('The specific page has loaded!');
     deployReg4()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_5.html') {
+  } else if (window.location.pathname === 'comet06.github.io/RLCS-Fantasy-Website/regional_5.html') {
     console.log('The specific page has loaded!');
     deployReg5()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/regional_6.html') {
+  } else if (window.location.pathname === '//comet06.github.io/RLCS-Fantasy-Website/regional_6.html') {
     console.log('The specific page has loaded!');
     deployReg6()
-  } else if (window.location.pathname === 'https://comet06.github.io/RLCS-Fantasy-Website/major_2.html') {
+  } else if (window.location.pathname === 'comet06.github.io/RLCS-Fantasy-Website/major_2.html') {
     console.log('The specific page has loaded!');
     deployMaj2()
   }
@@ -938,3 +938,4 @@ function deployeScores() {
   }
 
 }
+
