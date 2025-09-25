@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="sytlesheet.css"/>
   <link rel="stylesheet" href="team_region.css"/>
-  <title>RLCS Fantasy 2025</title>
+  <title>RLCS Fantasy 2026</title>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <h1>RLCS 2025</h1>
+      <h1>RLCS 2026</h1>
       <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
@@ -35,12 +35,11 @@
         <li><a href="championship.html">Championship</a></li>
         <li><a href="players_stats.html">Player Stats</a></li>
         <li><a href="teams_rankings.html">Rankings</a></li>
-        <li><a href="drafting.html">Drafting</a></li>
-        <li><a href="bracket_form.html">Bracket</a></li>
+        <!-- <li><a href="bracket_form.html">Bracket Form</a></li> -->
         <li><a href="info.html">Rules</a></li>
       </ul>
       <div class="menu-icon">
-          <button onclick="toggleMenu()">Menu</button>
+          <button id="menuButton">Menu</button>
       </div>
     </nav>
   </header>
@@ -51,24 +50,33 @@
         <tr>
           <th>Team</th><th>Regional 1</th><th>Regional 2</th><th>Regional 3</th><th>Major 1</th><th>Split 1 Total</th><th>Regional 4</th><th>Regional 5</th><th>Regional 6</th><th>Major 2</th><th>Split 2 Total</th><th>Championship</th><th>Total</th>
         </tr>
-        <tr class="player-data" id="team1" data-player="flip">
+        <tr class="player-data" id="teamflip" data-player="flip">
           <td>Flip Lord</td>
           <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr class="player-data" id="team2" data-player="doof">
+        <tr class="player-data" id="teamdoof" data-player="doof">
           <td>Doofenschmirtz Inc.</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr class="player-data" id="team3" data-player="goof">
+        <tr class="player-data" id="teamgoof" data-player="goof">
           <td>Goofy Goobers</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr class="player-data" id="team4" data-player="gold">
+        <tr class="player-data" id="teamgold" data-player="gold">
           <td>24 Karat Gold</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr class="player-data" id="team5" data-player="skib">
+        <tr class="player-data" id="teamskib" data-player="skib">
           <td>Skibideeznuts</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
-        <tr class="player-data" id="team6" data-player="cana">
+        <tr class="player-data" id="teamcana" data-player="cana">
           <td>Team Canada</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+        </tr>
+        <tr class="player-data" id="teampots" data-player="pots">
+          <td>Potus</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+        </tr>
+        <tr class="player-data" id="teamyuri" data-player="yuri">
+          <td>Brother Yuri</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+        </tr>
+        <tr class="player-data" id="teammaht" data-player="maht">
+          <td>Mahtoose</td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
         </tr>
       </tbody>
     </table>
@@ -78,33 +86,43 @@
         <tr>
           <th>Team</th><th>Split 1</th><th>Split 2</th><th>Championship</th><th>Total Winnings</th>
         </tr>
-        <tr id="team1">
-          <td>Flip Lord</td><td>$36.38</td><td>$42.80</td><td>$103.88</td><td>$79.18</td>
+        <tr id="teamflip">
+          <td>Flip Lord</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
-        <tr id="team2">
-          <td>Doofenschmirtz Inc.</td><td>$53.50</td><td>$53.50</td><td>$141.82</td><td>$107.00</td>
+        <tr id="teamdoof">
+          <td>Doofenschmirtz Inc.</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
-        <tr id="team3">
-          <td>Goofy Goobers</td><td>$25.68</td><td>$25.68</td><td>$65.94</td><td>$51.36</td>
+        <tr id="teamgoof">
+          <td>Goofy Goobers</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
-        <tr id="team4">
-          <td>24 Karat Gold</td><td>$21.40</td><td>$36.38</td><td>$71.36</td><td>$57.78</td>
+        <tr id="teamgold">
+          <td>24 Karat Gold</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
-        <tr id="team5">
-          <td>Skibideeznuts</td><td>$42.80</td><td>$34.24</td><td>$82.20</td><td>$77.04</td>
+        <tr id="teamskib">
+          <td>Skibideeznuts</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
-        <tr id="team6">
-          <td>Team Canada</td><td>$34.24</td><td>$21.40</td><td>$76.78</td><td>$55.64</td>
+        <tr id="teamcana">
+          <td>Team Canada</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
+        </tr>
+        <tr id="teampots">
+          <td>Potus</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
+        </tr>
+        <tr id="teamyuri">
+          <td>Brother Yuri</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
+        </tr>
+        <tr id="teammaht">
+          <td>Mahtoose</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
         <tr>
-          <td>Pool</td><td>$214.00</td><td>$214.00</td><td>$542.00</td><td>$970.00</td>
+          <td>Pool</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td>
         </tr>
       </tbody>
     </table>
   </main>
 </body>
-<script src="main.js"></script>
-<script src="home_page.js"></script>
+<script type="module" src="main.js"></script>
+<script type="module" src="home_page.js"></script>
+<script type="module" src="info.js"></script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">

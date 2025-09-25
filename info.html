@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <h1>RLCS 2025</h1>
+      <h1>RLCS 2026</h1>
       <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
@@ -35,17 +35,16 @@
         <li><a href="championship.html">Championship</a></li>
         <li><a href="players_stats.html">Player Stats</a></li>
         <li><a href="teams_rankings.html">Rankings</a></li>
-        <li><a href="drafting.html">Drafting</a></li>
-        <li><a href="bracket_form.html">Bracket</a></li>
+        <!-- <li><a href="bracket_form.html">Bracket Form</a></li> -->
         <li><a href="info.html">Rules</a></li>
       </ul>
       <div class="menu-icon">
-          <button onclick="toggleMenu()">Menu</button>
+          <button id="menuButton">Menu</button>
       </div>
     </nav>
   </header>
   <main>
-    <div id="rules">
+    <div class="rules">
       <h2>Overall Rules</h2>
       <ol>
         <li>Prizes will be distributed based on the Points/Team total points at the end of each split and after the championship(3 total, $200 per major, $500 for Championship, Plus additions from contributing players).</li>
@@ -80,58 +79,58 @@
         <tbody>
           <tr>
             <th colspan="2">Prize Pool(Season 2025)</th>
-            <th style="text-align: right;">Number of Teams:</th><th style="text-align: left;" id="numOfTeams">6<th>
+            <th style="text-align: right;">Number of Teams:</th><th style="text-align: left;" id="numOfTeams">9<th>
           </tr>
           <tr>
             <th>Place</th><th>Major</th><th>Championship</th><th>% of prize pool</th>
           </tr>
           <tr>
-            <td id="first">1</td><td id="first_prize_major">$56.00</td><td id="first_prize_championship">$141.82</td><td id="first_prize_percent">26%</td>
+            <td id="first">1</td><td id="first_prize_major"></td><td id="first_prize_championship"></td><td id="first_prize_percent"></td>
           </tr>
           <tr>
-            <td id="second">2</td><td id="second_prize_major">$41.02</td><td id="second_prize_championship">$103.88</td><td id="second_prize_percent">19%</td>
+            <td id="second">2</td><td id="second_prize_major"></td><td id="second_prize_championship"></td><td id="second_prize_percent"></td>
           </tr>
           <tr>
-            <td id="third">3</td><td id="third_prize_major">$32.46</td><td id="third_prize_championship">$82.20</td><td id="third_prize_percent">15%</td>
+            <td id="third">3</td><td id="third_prize_major"></td><td id="third_prize_championship"></td><td id="third_prize_percent"></td>
           </tr>
           <tr>
-            <td id="fourth">4</td><td id="fourth_prize_major">$30.32</td><td id="fourth_prize_championship">$76.78</td><td id="fourth_prize_percent">14%</td>
+            <td id="fourth">4</td><td id="fourth_prize_major"></td><td id="fourth_prize_championship"></td><td id="fourth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="fifth">5</td><td id="fifth_prize_major">$28.18</td><td id="fifth_prize_championship">$71.36</td><td id="fifth_prize_percent">13%</td>
+            <td id="fifth">5</td><td id="fifth_prize_major"></td><td id="fifth_prize_championship"></td><td id="fifth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="sixth">6</td><td id="sixth_prize_major">$26.04</td><td id="sixth_prize_championship">$65.94</td><td id="sixth_prize_percent">12%</td>
+            <td id="sixth">6</td><td id="sixth_prize_major"></td><td id="sixth_prize_championship"></td><td id="sixth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="seventh">7</td><td id="seventh_prize_major">$0</td><td id="seventh_prize_championship">$0</td><td id="seventh_prize_percent">0%</td>
+            <td id="seventh">7</td><td id="seventh_prize_major"></td><td id="seventh_prize_championship"></td><td id="seventh_prize_percent"></td>
           </tr>
           <tr>
-            <td id="eighth">8</td><td id="eighth_prize_major">$0</td><td id="eighth_prize_championship">$0</td><td id="eighth_prize_percent">0%</td>
+            <td id="eighth">8</td><td id="eighth_prize_major"></td><td id="eighth_prize_championship"></td><td id="eighth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="ninth">9</td><td id="ninth_prize_major">$0</td><td id="ninth_prize_championship">$0</td><td id="ninth_prize_percent">0%</td>
+            <td id="ninth">9</td><td id="ninth_prize_major"></td><td id="ninth_prize_championship"></td><td id="ninth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="tenth">10</td><td id="tenth_prize_major">$0</td><td id="tenth_prize_championship">$0</td><td id="tenth_prize_percent">0%</td>
+            <td id="tenth">10</td><td id="tenth_prize_major"></td><td id="tenth_prize_championship"></td><td id="tenth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="eleventh">11</td><td id="eleventh_prize_major">$0</td><td id="eleventh_prize_championship">$0</td><td id="eleventh_prize_percent">0%</td>
+            <td id="eleventh">11</td><td id="eleventh_prize_major"></td><td id="eleventh_prize_championship"></td><td id="eleventh_prize_percent"></td>
           </tr>
           <tr>
-            <td id="twelfth">12</td><td id="twelfth_prize_major">$0</td><td id="twelfth_prize_championship">$0</td><td id="twelfth_prize_percent">0%</td>
+            <td id="twelfth">12</td><td id="twelfth_prize_major"></td><td id="twelfth_prize_championship"></td><td id="twelfth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="thirteenth">13</td><td id="thirteenth_prize_major">$0</td><td id="thirteenth_prize_championship">$0</td><td id="thirteenth_prize_percent">0%</td>
+            <td id="thirteenth">13</td><td id="thirteenth_prize_major"></td><td id="thirteenth_prize_championship"></td><td id="thirteenth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="fourteenth">14</td><td id="fourteenth_prize_major">$0</td><td id="fourteenth_prize_championship">$0</td><td id="fourteenth_prize_percent">0%</td>
+            <td id="fourteenth">14</td><td id="fourteenth_prize_major"></td><td id="fourteenth_prize_championship"></td><td id="fourteenth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="fifteenth">15</td><td id="fifteenth_prize_major">$0</td><td id="fifteenth_prize_championship">$0</td><td id="fifteenth_prize_percent">0%</td>
+            <td id="fifteenth">15</td><td id="fifteenth_prize_major"></td><td id="fifteenth_prize_championship"></td><td id="fifteenth_prize_percent"></td>
           </tr>
           <tr>
-            <td id="sixteenth">16</td><td id="sixteenth_prize_major">$0</td><td id="sixteenth_prize_championship">$0</td><td id="sixteenth_prize_percent">0%</td>
+            <td id="sixteenth">16</td><td id="sixteenth_prize_major"></td><td id="sixteenth_prize_championship"></td><td id="sixteenth_prize_percent"></td>
           </tr>
           <tr>
             <td colspan="4">Match-up prizes per regional</td>
@@ -147,40 +146,40 @@
       <table id="bracket_points">
         <tbody>
           <tr>
-            <th>Championship Pts Distribution</th><th>Make it to Quarter/Semifinals</th><th>Make it to Qualified/Finals</th><th>Total Points earned</th>
+            <th>Championship and Majors Points Distribution</th><th>Make it to Quarter/Semifinals</th><th>Make it to Qualified/Finals</th><th>Total Points earned</th>
           </tr>
           <tr>
             <th>Team spots/Event round</th><th>8</th><th>2</th><th>&nbsp;</th>
           </tr>
           <tr>
-            <td>Play-in</td><td id="playinSemi">200</td><td id="playinQualify">300</td><td id="playinTotal">3,300</td>
+            <td>Play-in</td><td id="playinSemi"></td><td id="playinQualify"></td><td id="playinTotal"></td>
           </tr>
           <tr>
-            <td>Group-A</td><td id="groupASemi">300</td><td id="groupAQualify">400</td><td id="groupATotal">4,500</td>
+            <td>Group-A</td><td id="groupASemi"></td><td id="groupAQualify"></td><td id="groupATotal"></td>
           </tr>
           <tr>
-            <td>Group-B</td><td id="groupBSemi">300</td><td id="groupBQualify">400</td><td id="groupBTotal">4,500</td>
+            <td>Group-B</td><td id="groupBSemi"></td><td id="groupBQualify"></td><td id="groupBTotal"></td>
           </tr>
           <tr>
-            <td>Playoffs</td><td id="playoffSemi">300</td><td id="playoffQualify">600</td><td id="playoffTotal">4,300</td>
+            <td>Playoffs</td><td id="playoffSemi"></td><td id="playoffQualify"></td><td id="playoffTotal"></td>
           </tr>
           <tr>
-            <td colspan="2" rowspan="3"></td><th>Total</th><th id="subtotal">16,600</th>
+            <td colspan="2"></td><th>Total</th><th id="subtotal"></th>
           </tr>
           <tr>
-            <th>Multiplier</th><th>5X</th>
+            <th>Major Multiplier</th><th>3X</th><th>Total Major Points</th><th id="majorfinalTotal"></th>
           </tr>
           <tr>
-            <th>Total Points Available</th><th id="finalTotal">83,000</th>
+            <th>Championship Multiplier</th><th>5X</th><th>Total Championship Points</th><th id="finalTotal"></th>
           </tr>
         </tbody>
       </table>
     </div>
   </main>
 </body>
-<script src="main.js"></script>
-<script src="bracket.js"></script>
-<script src="prize_pool.js"></script>
+<script type="module" src="main.js"></script>
+<script type="module" src="home_page.js"></script>
+<script type="module" src="info.js"></script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">

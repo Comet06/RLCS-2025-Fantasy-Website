@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <h1>RLCS 2025</h1>
+      <h1>RLCS 2026</h1>
       <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
@@ -35,12 +35,11 @@
         <li><a href="championship.html">Championship</a></li>
         <li><a href="players_stats.html">Player Stats</a></li>
         <li><a href="teams_rankings.html">Rankings</a></li>
-        <li><a href="drafting.html">Drafting</a></li>
-        <li><a href="bracket_form.html">Bracket</a></li>
+        <!-- <li><a href="bracket_form.html">Bracket Form</a></li> -->
         <li><a href="info.html">Rules</a></li>
       </ul>
       <div class="menu-icon">
-          <button onclick="toggleMenu()">Menu</button>
+          <button id="menuButton">Menu</button>
       </div>
     </nav>
   </header>
@@ -48,233 +47,233 @@
     <h1>Regional 3</h1>
     <div class="center_vertical_container"> <!--Only here for the title text-->
       <h2>Team Placements</h2>
-      <div class="placements_horizontal_container" id="data_box"> <!-- columns of data displayed flex -->
+      <div class="placements_horizontal_container"> <!-- columns of data displayed flex -->
         <div class="section" id="na">
           <h3>NA</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="eu">
           <h3>EU</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="mena">
           <h3>MENA</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="sam">
           <h3>SAM</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="oce">
           <h3>OCE</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="apac">
           <h3>APAC</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
         <div class="section" id="ssa">
           <h3>SSA</h3>
-          <ul id="hide_list">
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
-            <li class="team" id=""><span id="points"></span></li>
+          <ul>
+            <li class="team" id=""><span id="points">15</span></li>
+            <li class="team" id=""><span id="points">10</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">7</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">5</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">3</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">2</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
+            <li class="team" id=""><span id="points">1</span></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="tops_horizontal_container">
       <div class="center_vertical_container"> <!--Only here for the title text-->
-        <h2>Top Players</h2>
-        <div class="horizontal_container" id="data_box"> <!-- columns of data displayed flex -->
-          <div class="tops_section"> <!-- full column of data -->
-            <h3>Scores</h3>
+        <h2>&nbsp;</h2>
+        <div class="tops_horizontal_container"> <!-- columns of data displayed flex -->
+          <div class="tops_section" id="border_box"> <!-- full column of data -->
+            <h3>Overall Points</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
             </ul>
           </div>
-          <div class="tops_section">
+          <div class="tops_section" id="border_box">
             <h3>Goals</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
             </ul>
           </div>
-          <div class="tops_section">
+          <div class="tops_section" id="border_box">
             <h3>Assists</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
             </ul>
           </div>
-          <div class="tops_section">
+          <div class="tops_section" id="border_box">
             <h3>Saves</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
             </ul>
           </div>
-          <div class="tops_section">
+          <div class="tops_section" id="border_box">
             <h3>Shots</h3>
             <ul>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
-              <li class="team">Player<span id="points">&nbsp;</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
+              <li class="team"><span id="points">0</span></li>
             </ul>
           </div>
         </div>
@@ -287,86 +286,121 @@
                 <th>Team Name</th><th>Player</th><th>Team</th><th>Region</th><th>Points</th>
               </tr>
           </tbody>
-          <tbody id="team1">
+          <tbody class="player-data" id="teamflip" data-player="flip">
             <tr>
               <td rowspan="3">Flip Lord</td>
-              <td id="flipR3N1"></td><td id="flipR3T1"></td><td id="flipR3R1"></td><td id="flipR3S1"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="flipR3N2"></td><td id="flipR3T2"></td><td id="flipR3R2"></td><td id="flipR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="flipR3N3"></td><td id="flipR3T3"></td><td id="flipR3R3"></td><td id="flipR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
-          <tbody id="team2">
+          <tbody class="player-data" id="teamdoof" data-player="doof">
             <tr>
-              <td rowspan="3">Doofenschmirtz Inc.</td>
-              <td id="doofR3N1"></td><td id="doofR3T1"></td><td id="doofR3R1"></td><td id="doofR3S1"></td>
+              <td rowspan="3">Doofenschmirtz inc.</td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="doofR3N2"></td><td id="doofR3T2"></td><td id="doofR3R2"></td><td id="doofR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="doofR3N3"></td><td id="doofR3T3"></td><td id="doofR3R3"></td><td id="doofR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
-          <tbody id="team3">
+          <tbody class="player-data" id="teamgoof" data-player="goof">
             <tr>
               <td rowspan="3">Goofy Goobers</td>
-              <td id="goofR3N1"></td><td id="goofR3T1"></td><td id="goofR3R1"></td><td id="goofR3S1"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="goofR3N2"></td><td id="goofR3T2"></td><td id="goofR3R2"></td><td id="goofR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="goofR3N3"></td><td id="goofR3T3"></td><td id="goofR3R3"></td><td id="goofR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
-          <tbody id="team4">
+          <tbody class="player-data" id="teamgold" data-player="gold">
             <tr>
               <td rowspan="3">24 Karat Gold</td>
-              <td id="goldR3N1"></td><td id="goldR3T1"></td><td id="goldR3R1"></td><td id="goldR3S1"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="goldR3N2"></td><td id="goldR3T2"></td><td id="goldR3R2"></td><td id="goldR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="goldR3N3"></td><td id="goldR3T3"></td><td id="goldR3R3"></td><td id="goldR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
-          <tbody id="team5">
+          <tbody class="player-data" id="teamskib" data-player="skib">
             <tr>
               <td rowspan="3">Skibideeznuts</td>
-              <td id="skibR3N1"></td><td id="skibR3T1"></td><td id="skibR3R1"></td><td id="skibR3S1"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="skibR3N2"></td><td id="skibR3T2"></td><td id="skibR3R2"></td><td id="skibR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="skibR3N3"></td><td id="skibR3T3"></td><td id="skibR3R3"></td><td id="skibR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
-          <tbody id="team6">
+          <tbody class="player-data" id="teamcana" data-player="cana">
             <tr>
               <td rowspan="3">Team Canada</td>
-              <td id="canaR3N1"></td><td id="canaR3T1"></td><td id="canaR3R1"></td><td id="canaR3S1"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="canaR3N2"></td><td id="canaR3T2"></td><td id="canaR3R2"></td><td id="canaR3S2"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
             <tr>
-              <td id="canaR3N3"></td><td id="canaR3T3"></td><td id="canaR3R3"></td><td id="canaR3S3"></td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+          </tbody>
+          <tbody class="player-data" id="teampots" data-player="pots">
+            <tr>
+              <td rowspan="3">Potus</td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+          </tbody>
+          <tbody class="player-data" id="teamyuri" data-player="yuri">
+            <tr>
+              <td rowspan="3">Brother Yuri</td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+          </tbody>
+          <tbody class="player-data" id="teammaht" data-player="maht">
+            <tr>
+              <td rowspan="3">Mahtoose</td>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
+            </tr>
+            <tr>
+              <td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td><td class="stat-value"></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </main>
-  <h1 style="text-align: center;">WEBPAGE STILL IN DEVELOPMENT</h1>
 </body>
-<script src="main.js"></script>
-<script src="home_page.js"></script>
+<script type="module" src="main.js"></script>
+<script type="module" src="home_page.js"></script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">
