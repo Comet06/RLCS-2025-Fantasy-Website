@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="player-profiles-title">Player Profiles</title>
-    <link rel="stylesheet" href="sytlesheet.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="team_region.css">
 </head>
 <header>
     <nav class="navbar">
-        <h1>RLCS 2026</h1>
+        <h1>RLCS 2025</h1>
         <ul class="nav-links" id="menuList">
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
@@ -34,6 +34,13 @@
         <li><a href="players_stats.html">Player Stats</a></li>
         <li><a href="teams_rankings.html">Rankings</a></li>
         <!-- <li><a href="bracket_form.html">Bracket Form</a></li> -->
+        <li class="dropdown">
+          <a href="#">Other Seasons</a>
+            <div class="dropdown-content">
+              <a href="/RLCS-2025-Fantasy-Website/index.html">2025</a>
+              <a href="/RLCS-2026-Fantasy-Website/index.html">2026</a>
+            </div>
+        </li>
         <li><a href="info.html">Rules</a></li>
         </ul>
         <div class="menu-icon">
@@ -41,14 +48,26 @@
         </div>
     </nav>
 </header>
-<body>
-    <h1 id="profile">Profile</h1>
-    <div id="player-profiles">
-        <!-- Player profiles will be injected here by JavaScript -->
+<body class="profiles">
+    <div class="player-profiles" id="player-profiles1">
     </div>
-    <script type="module" src="player_data.js"></script>
-    <script type="module" src="create_player_page.js"></script>
+    <div class="player-profiles" id="player-profiles2">
+    </div>
+    <div class="player-profiles" id="player-profiles3">
+    </div>
+    <div class="player-profiles" id="player-profiles4">
+    </div>
+    <div class="player-profiles" id="player-profiles5">
+    </div>
+    <div class="player-profiles" id="player-profiles6">
+    </div>
+    <div class="player-profiles" id="player-profiles7">
+    </div>
+    <div class="player-profiles" id="player-profiles8">
+    </div>
 </body>
+<script type="module" src="player_data.js"></script>
+<script type="module" src="create_player_page.js"></script>
 <footer>
   <p>©Comet Productions.</p>
   <div id="socials">
