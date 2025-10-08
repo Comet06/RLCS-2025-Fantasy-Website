@@ -1,296 +1,174 @@
-import { players } from "./player_data.js";
+import { 
+  members, Regional1, Regional1Tops, Regional1Placements, Regional2, Regional2Tops, Regional2Placements, Regional3, Regional3Tops, Regional3Placements,
+  Major1, Major1Tops, Major1Placements, split1QualifiedTeams, Regional4, Regional4Tops, Regional4Placements, Regional5, Regional5Tops, Regional5Placements, 
+  Regional6, Regional6Tops, Regional6Placements, Major2, Major2Tops, Major2Placements, split2QualifiedTeams, 
+  Championship, ChampionshipTops, ChampionshipPlacements, championshipQualifiedTeams, players, teams, amtAdded,  amountPerMajor, amountForChampionship, split1, split2, prizes, year
+} from "./a-current-page-data.js";
 
-let tops = ['score', 'goals', 'assists', 'saves', 'shots']
+import { playersPrevious, teamsPrevious } from "./a-previous-page-data.js";
+const previous = document.getElementById('legacy_data');
+
+const menuList = document.getElementById("menuList")
+menuList.style.maxHeight = "0px";
+function toggleMenu(){
+  if(menuList.style.maxHeight == "0px")
+  {
+      menuList.style.maxHeight = "600px";
+  }
+  else{
+      menuList.style.maxHeight = "0px";
+  }
+}
+const menu_button = document.getElementById('menuButton');
+menu_button.addEventListener('click', function() {toggleMenu()});
+
+// Stats Page
+const currentSeason = document.getElementById('current_data');
+const playerTable = document.getElementById('player_data_table');
+const teamTable = document.getElementById('team_data_table');
+const playerTableHeader = `
+<tr>
+  <th colspan="11">Player Data</th>
+</tr>
+<tr>
+  <th colspan="4" style="border-bottom: solid #ff0000 2px;">Player Information</th><th colspan="1" style="border-bottom: solid #00ff00 2px;">Team Stats</th><th colspan="6" style="border-bottom: solid #001aff 2px;">Player Stats Per Game</th><th></th>
+</tr>
+<tr>
+  <th>Player Name</th><th>Available</th><th>Region</th><th>Rating</th><th>Team</th><th>Win %</th><th>Score</th><th>Goals</th><th>Assists</th><th>Saves</th><th>Shots</th>
+</tr>
+`
+const teamTableHeader = `
+<tr>
+  <th colspan="11">Team Data</th>
+</tr>
+<tr>
+  <th colspan="3" style="border-bottom: solid #ff0000 2px;">Team</th><th colspan="7" style="border-bottom: solid #001aff 2px;">Team Stats Total</th>
+</tr>
+<tr>
+  <th>Team Name</th><th>Region</th><th>Rating</th><th>Win %</th><th>Score</th><th>Goals</th><th>Assists</th><th>Saves</th><th>Shots</th><th># of players</th>
+</tr>
+`
+// Regional/Major/Championship pages
+const tops = ['score', 'goals', 'assists', 'saves', 'shots']
 const regions = ['eu', 'na', 'oce', 'sam', 'mena', 'apac', 'ssa']
-let path1 = ''
-let path = '/RLCS-2025-Fantasy-Website'
+
+
+// Site Wide
+export const path = `/RLCS-${year}-Fantasy-Website`
 window.addEventListener('load', function() {
   if (window.location.pathname === `${path}/index.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
+    document.getElementById('titleYear').innerHTML = `RLCS Fantasy ${year}`
     console.log('Index page has loaded!');
+    determineScore(Regional1, Regional2, Regional3, Major1, Regional4, Regional5, Regional6, Major2, Championship)
     deployScores()
-    deployPrize()
+    deployPrize(prizes)
   } else if (window.location.pathname === `${path}/regional_1.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 1 page has loaded!');
-    deployReg(Regional1)
+    deployReg(Regional1, players)
     deployRegPlacements(Regional1Placements)
     deployTops(Regional1Tops)
   } else if (window.location.pathname === `${path}/regional_2.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 2 page has loaded!');
-    deployReg(Regional2)
+    deployReg(Regional2, players)
     deployRegPlacements(Regional2Placements)
     deployTops(Regional2Tops)
   } else if (window.location.pathname === `${path}/regional_3.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 3 page has loaded!');
-    deployReg(Regional3)
+    deployReg(Regional3, players)
     deployRegPlacements(Regional3Placements)
     deployTops(Regional3Tops)
   } else if (window.location.pathname === `${path}/major_1.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Major 1 page has loaded!');
     deployMaj(Major1)
     deployMajPlacements(Major1Placements)
     deployTops(Major1Tops)
   } else if (window.location.pathname === `${path}/regional_4.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 4 page has loaded!');
-    deployReg(Regional4)
+    deployReg(Regional4, players)
     deployRegPlacements(Regional4Placements)
     deployTops(Regional4Tops)
   } else if (window.location.pathname === `${path}/regional_5.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 5 page has loaded!');
-    deployReg(Regional5)
+    deployReg(Regional5, players)
     deployRegPlacements(Regional5Placements)
     deployTops(Regional5Tops)
   } else if (window.location.pathname === `${path}/regional_6.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Regional 6 page has loaded!');
-    deployReg(Regional6)
+    deployReg(Regional6, players)
     deployRegPlacements(Regional6Placements)
     deployTops(Regional6Tops)
   } else if (window.location.pathname === `${path}/major_2.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Major 2 page has loaded!');
     deployMaj(Major2)
     deployMajPlacements(Major2Placements)
     deployTops(Major2Tops)
   } else if (window.location.pathname === `${path}/championship.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Championship page has loaded!');
-    deployChamp()
-    deployChampPlacements()
+    determineScore(Regional1, Regional2, Regional3, Major1, Regional4, Regional5, Regional6, Major2, Championship)
+    deployChamp(champRounds)
+    deployChampPlacements(ChampionshipPlacements)
     deployTops(ChampionshipTops)
+  } else if (window.location.pathname === `${path}/teams_rankings.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
+    console.log('Rankings page has loaded!');
+    deploySplitPoints(split1, 1)
+    deploySplitPoints(split2, 2)
+    deploySplitQuals(split1QualifiedTeams, 1)
+    deploySplitQuals(split2QualifiedTeams, 2)
+    deploySplitQuals(championshipQualifiedTeams, 3)
+  } else if (window.location.pathname === `${path}/players_stats.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
+    console.log('Player Stats page has loaded!');
+    populatePlayersTable(players, 'player_data_table')
+    populateTeamsTable(teams, 'team_data_table')
+    console.log('Current data loaded');
+
+    previous.addEventListener('click', function() {
+      playerTable.innerHTML = playerTableHeader;
+      teamTable.innerHTML = teamTableHeader;
+      populatePlayersTable(playersPrevious, 'player_data_table')
+      populateTeamsTable(teamsPrevious, 'team_data_table')
+      console.log('Season Data loaded');
+    });
+    
+    currentSeason.addEventListener('click', function() {
+      playerTable.innerHTML = playerTableHeader;
+      teamTable.innerHTML = teamTableHeader;
+      populatePlayersTable(players, 'player_data_table')
+      populateTeamsTable(teams, 'team_data_table')
+      console.log('Season Data loaded');
+    });
   } else if (window.location.pathname === `${path}/info.html`) {
+    document.getElementById('year').innerHTML = `RLCS ${year}`
     console.log('Info page has loaded!');
+    document.getElementById('numOfTeams').innerHTML = members.length
+    document.getElementById('amount_added').innerHTML = "$" + amtAdded
+    deployPrizePoolInfo(amountPerMajor, amountForChampionship)
+    deployPointsInfo()
+    determineSpread()
   } else {
     console.log("main event listener is working but nothing else is")
   }
 });
 
-export const members = [
-  {name: 'Flip Lord', shortname: 'flip'},
-  {name: 'Doofenschmirtz inc.',  shortname: 'doof'},
-  {name: 'Goofy Goobers',  shortname: 'goof'},
-  {name: '24 Karat Gold',  shortname: 'gold'},
-  {name: 'Skibbideeznuts',  shortname: 'skib'},
-  {name: 'Team Canada',  shortname: 'cana'},
-]
-export let points = {
+
+
+const points = {
     'playin' : [200, 300],
     'groupA' : [300, 400],
     'groupB' : [300, 400],
     'playoff' : [400, 600]
 }
-export let split1 = {
-    'Regional': [15, 10, 7, 7, 5, 5, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1],
-    'Major': [30, 20, 14, 14, 10, 10, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3],
-}
-export let split2 = {
-    'Regional': [18, 12, 8, 8, 6, 6, 4, 4, 2, 2, 2, 2, 1, 1, 1, 1],
-    'Major': [36, 24, 16, 16, 12, 12, 8, 8, 6, 6, 6, 5, 5, 5, 5, 4],
-}
-let Regional1 = {
-  'flip' : ['Kiileerrz', '', '', 4914, 'Daniel', '', '', 10641, 'Exotiik', '', '', 3756],
-  'doof' : ['Rw9', '', '', 4293, 'Trk511', '', '', 5547, 'Atomic', '', '', 9766],
-  'goof' : ['Drufinho', '', '', 6342, 'Seikoo', '', '', 2255, 'Lostt', '', '', 6167],
-  'gold' : ['M0nkey M00n', '', '', 4242, 'Torsos', '', '', 6156, 'ApparentlyJack', '', '', 2917],
-  'skib' : ['Beastmode', '', '', 9725, 'Yanxnz', '', '', 6821, 'Vatira', '', '', 5259],
-  'cana' : ['Zen', '', '', 5191, 'Dralii', '', '', 5675, 'Fever', '', '', 5570],
-}
-let Regional1Placements = {
-    'eu' : ['Karmine Corp', 'kc', split1['Regional'][0], 'Team Vitality', 'vit', split1['Regional'][1], '100%', 'onehundred', split1['Regional'][2], 'Ninjas in Pyjamas', 'nip', split1['Regional'][3], 'Dignitas', 'dig', split1['Regional'][4], 'Gentle Mates Alpine', 'm8', split1['Regional'][5], 'RRG', 'rrg', split1['Regional'][6], 'Geekay Esports', 'geek', split1['Regional'][7], 'Synergy', 'syn', split1['Regional'][8], 'Save the Game', 'stg', split1['Regional'][9], 'Ascend', 'asce', split1['Regional'][10], 'Caliente', 'cali', split1['Regional'][11], 'Novo Esports', 'novo', split1['Regional'][12], 'Redemption', 'red', split1['Regional'][13], 'Startpoint', 'start', split1['Regional'][14], 'Selaco', 'sel', split1['Regional'][15]],
-    'na' : ['NRG', 'nrg', split1['Regional'][0], 'Spacestation Gaming', 'ssg', split1['Regional'][1], 'Complexity', 'col', split1['Regional'][2], '9Lives', 'nine', split1['Regional'][3], 'The Ultimates', 'tu', split1['Regional'][4], 'Deleted Gaming', 'del', split1['Regional'][5], 'Team Evo', 'evo', split1['Regional'][6], 'Gen.G Mobil1 Racing', 'geng', split1['Regional'][7], 'Shopify Rebellion', 'shop', split1['Regional'][8], 'Pirates on a Boat', 'poab', split1['Regional'][9], 'Omelette', 'omle', split1['Regional'][10], 'G.A.S.', 'gas', split1['Regional'][11], 'tech', 'tech', split1['Regional'][12], 'Almost Nuts', 'nuts', split1['Regional'][13], 'Wurstlstand', 'wurst', split1['Regional'][14], 'Strictly Business', 'strict', split1['Regional'][15]],
-    'oce' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'sam' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'mena' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'apac' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'ssa' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-}
-let Regional1Tops = {
-    'score' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Regional2 = {
-  'flip' : ['Kiileerrz', '', '', 6953, 'Daniel', '', '', 5985, 'Bananahead', '', '', 4059],
-  'doof' : ['Rw9', '', '', 6702, 'Trk511', '', '', 6782, 'Atomic', '', '', 5900],
-  'goof' : ['Drufinho', '', '', 5574, 'Seikoo', '', '', 410, 'Lostt', '', '', 6581],
-  'gold' : ['M0nkey M00n', '', '', 5900, 'Firstkiller', '', '', 5540, 'ApparentlyJack', '', '', 4211],
-  'skib' : ['Beastmode', '', '', 6146, 'Yanxnz', '', '', 5613, 'Vatira', '', '', 5287],
-  'cana' : ['Zen', '', '', 6260, 'Dralii', '', '', 6479, 'Fever', '', '', 3819],
-}
-let Regional2Placements = {
-    'eu' : ['Karmine Corp', 'kc', split1['Regional'][0], 'Dignitas', 'dig', split1['Regional'][1], 'Ninjas in Pyjamas', 'nip', split1['Regional'][2], 'Team Vitality', 'vit', split1['Regional'][3], '100%', 'onehundred', split1['Regional'][4], 'Startpoint', 'start', split1['Regional'][5], 'Geekay Esports', 'geek', split1['Regional'][6], 'Ascend', 'asce', split1['Regional'][7], 'Caliente', 'cali', split1['Regional'][8], 'JJROX', 'jjr', split1['Regional'][9], 'Gentle Mates Alpine', 'm8', split1['Regional'][10], 'Save the Game', 'stg', split1['Regional'][11], 'F4wd', 'f4wd', split1['Regional'][12], 'Nomster', 'nom', split1['Regional'][13], 'Redemption', 'red', split1['Regional'][14], 'RRG', 'rrg', split1['Regional'][15]],
-    'na' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'oce' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'sam' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'mena' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'apac' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'ssa' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-}
-let Regional2Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Regional3 = {
-  'flip' : ['Kiileerrz', '', '', 6843, 'Daniel', '', '', 2021, 'Atow', '', '', 4088],
-  'doof' : ['Rw9', '', '', 7183, 'Trk511', '', '', 6990, 'Atomic', '', '', 1867],
-  'goof' : ['Drufinho', '', '', 4719, 'Seikoo', '', '', 306, 'Lostt', '', '', 4682],
-  'gold' : ['M0nkey M00n', '', '', 6098, 'Nass', '', '', 2373, 'Nwpo', '', '', 6297],
-  'skib' : ['Beastmode', '', '', 2058, 'Yanxnz', '', '', 5029, 'Vatira', '', '', 3716],
-  'cana' : ['Zen', '', '', 7274, 'Dralii', '', '', 4655, 'Fever', '', '', 4746],
-}
-let Regional3Placements = {
-    'eu' : ['Geekay Esports', 'geek', split1['Regional'][0], 'Karmine Corp', 'kc', split1['Regional'][1], 'Dignitas', 'dig', split1['Regional'][2], 'Team Vitality', 'vit', split1['Regional'][3], 'Redemption', 'red', split1['Regional'][4], 'Ninjas in Pyjamas', 'nip', split1['Regional'][5], '100%', 'onehundred', split1['Regional'][6], 'Startpoint', 'start', split1['Regional'][7], 'JJROX', 'jjr', split1['Regional'][8], 'Caliente', 'cali', split1['Regional'][9], 'Ascend', 'asce', split1['Regional'][10], 'Synergy', 'syn', split1['Regional'][11], 'F4wd', 'f4wd', split1['Regional'][12], 'RRG', 'rrg', split1['Regional'][13], 'Sick!', 'sick', split1['Regional'][14], 'Gentle Mates Alpine', 'm8', split1['Regional'][15]],
-    'na' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'oce' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'sam' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'mena' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'apac' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-    'ssa' : ['', '', split1['Regional'][0], '', '', split1['Regional'][1], '', '', split1['Regional'][2], '', '', split1['Regional'][3], '', '', split1['Regional'][4], '', '', split1['Regional'][5], '', '', split1['Regional'][6], '', '', split1['Regional'][7], '', '', split1['Regional'][8], '', '', split1['Regional'][9], '', '', split1['Regional'][10], '', '', split1['Regional'][11], '', '', split1['Regional'][12], '', '', split1['Regional'][13], '', '', split1['Regional'][14], '', '', split1['Regional'][15]],
-}
-let Regional3Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Major1 = {
-  'flip' : [16250],
-  'doof' : [16073],
-  'goof' : [12717],
-  'gold' : [8960],
-  'skib' : [16955],
-  'cana' : [14033],
-}
-let Major1Placements = {
-    'major' : ['Karmine Corp', '', split1['Major'][0], 'The Ultimates', '', split1['Major'][1], 'Furia Esports', '', split1['Major'][2], 'NRG', '', split1['Major'][3], 'Team Vitality', '', split1['Major'][4], 'Team Falcons', '', split1['Major'][5], 'Twisted Minds', '', split1['Major'][6], 'Geekay Esports', '', split1['Major'][7], 'Dignitas', '', split1['Major'][8], 'Gen.G Mobil1 Racing', '', split1['Major'][9], 'Virtus.pro', '', split1['Major'][10], 'Wildcard', '', split1['Major'][11], 'Complexity Gaming', '', split1['Major'][12], 'Team Secret', '', split1['Major'][13], 'Helfie Chiefs', '', split1['Major'][14], 'FUT Esports', '', split1['Major'][15]],
-}
-let Major1Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Regional4 = {
-  'flip' : ['Kiileerrz', '', '', 4392, 'Daniel', '', '', 4085, 'Atow', '', '', 4672],
-  'doof' : ['Rw9', '', '', 4478, 'Trk511', '', '', 5347, 'Atomic', '', '', 3295],
-  'goof' : ['Drufinho', '', '', 3907, 'Firstkiller', '', '', 3617, 'Lostt', '', '', 3737],
-  'gold' : ['M0nkey M00n', '', '', 3941, 'ApparentlyJack', '', '', 5588, 'Nwpo', '', '', 4951],
-  'skib' : ['Beastmode', '', '', 3869, 'Yanxnz', '', '', 3918, 'Vatira', '', '', 4226],
-  'cana' : ['Zen', '', '', 4601, 'Dralii', '', '', 4757, 'LJ', '', '', 2958],
-}
-let Regional4Placements = {
-    'eu' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'na' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'oce' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'sam' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'mena' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'apac' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'ssa' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-}
-let Regional4Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Regional5 = {
-  'flip' : ['Kiileerrz', '', '', 17973, 'Daniel', '', '', 15664, 'Atow', '', '', 4435],
-  'doof' : ['Rw9', '', '', 16477, 'Trk511', '', '', 20151, 'Atomic', '', '', 13863],
-  'goof' : ['Drufinho', '', '', 4756, 'Firstkiller', '', '', 8591, 'Lostt', '', '', 4766],
-  'gold' : ['M0nkey M00n', '', '', 2567, 'ApparentlyJack', '', '', 9378, 'Nwpo', '', '', 21365],
-  'skib' : ['Beastmode', '', '', 16307, 'Yanxnz', '', '', 4823, 'Vatira', '', '', 3317],
-  'cana' : ['Zen', '', '', 2897, 'Dralii', '', '', 4573, 'LJ', '', '', 7563],
-}
-let Regional5Placements = {
-    'eu' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'na' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'oce' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'sam' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'mena' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'apac' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'ssa' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-}
-let Regional5Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Regional6 = {
-  'flip' : ['Kiileerrz', '', '', 4982, 'Daniel', '', '', 2233, 'Atow', '', '', 3601],
-  'doof' : ['Rw9', '', '', 5199, 'Trk511', '', '', 4233, 'Atomic', '', '', 1697],
-  'goof' : ['Drufinho', '', '', 3467, 'Firstkiller', '', '', 4367, 'Lostt', '', '', 3370],
-  'gold' : ['M0nkey M00n', '', '', 2727, 'ApparentlyJack', '', '', 2587, 'Nwpo', '', '', 4977],
-  'skib' : ['Beastmode', '', '', 1850, 'Yanxnz', '', '', 4168, 'Vatira', '', '', 4068],
-  'cana' : ['Zen', '', '', 2897, 'Dralii', '', '', 4573, 'LJ', '', '', 7563],
-}
-let Regional6Placements = {
-    'eu' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'na' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'oce' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'sam' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'mena' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'apac' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-    'ssa' : ['', '', split2['Regional'][0], '', '', split2['Regional'][1], '', '', split2['Regional'][2], '', '', split2['Regional'][3], '', '', split2['Regional'][4], '', '', split2['Regional'][5], '', '', split2['Regional'][6], '', '', split2['Regional'][7], '', '', split2['Regional'][8], '', '', split2['Regional'][9], '', '', split2['Regional'][10], '', '', split2['Regional'][11], '', '', split2['Regional'][12], '', '', split2['Regional'][13], '', '', split2['Regional'][14], '', '', split2['Regional'][15]],
-}
-let Regional6Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Major2 = {
-  'flip' : [15207],
-  'doof' : [15518],
-  'goof' : [9490],
-  'gold' : [14022],
-  'skib' : [9983],
-  'cana' : [8965],
-}
-let Major2Placements = {
-    'major' : ['Team Falcons', '', split2['Major'][0], 'Dignitas', '', split2['Major'][1], 'Team Vitality', '', split2['Major'][2], 'NRG', '', split2['Major'][3], 'Team Secret', '', split2['Major'][4], 'Twisted Minds', '', split2['Major'][5], 'Gentle Mates Alpine', '', split2['Major'][6], 'Karmine Corp', '', split2['Major'][7], 'The Ultimates', '', split2['Major'][8], 'Gen.G Mobil1 Racing', '', split2['Major'][9], 'Furia Esports', '', split2['Major'][10], 'TSM', '', split2['Major'][11], 'Spacestation Gaming', '', split2['Major'][12], 'Virtus.pro', '', split2['Major'][13], 'Wildcard', '', split2['Major'][14], 'FUT Esports', '', split2['Major'][15]],
-}
-let Major2Tops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let Championship = {
-  //(max): PISemi(6), PIQuals(4), GASemi(6), GAQuals(4), GBSemi(6), GBQuals(4), POSemi(8), POFinals(3)
-  'flip' : [5, 3, 5, 3, 5, 3, 4, 3],
-  'doof' : [4, 2, 5, 2, 5, 2, 4, 1],
-  'goof' : [5, 2, 5, 2, 4, 2, 4, 1],
-  'gold' : [4, 2, 4, 2, 4, 2, 2, 0],
-  'skib' : [5, 3, 4, 1, 4, 2, 3, 1],
-  'cana' : [6, 3, 5, 3, 4, 3, 3, 1],
-}
-let ChampionshipPlacements = {
-    'champ' : ['1st', 'NRG', '2nd', 'Team Falcons', '3rd-4th', 'Karmine Corp', '3rd-4th', 'Geekay Esports', '5th-6th', 'The Ultimates', '5th-6th', 'Wildcard', '7th-8th', 'Ninjas in Pyjamas', '7th-8th', 'Spacestation Gaming', '9th-12th', 'Dignitas', '9th-12th', 'Furia Esports', '9th-12th', 'Team Secret', '9th-12th', 'Team Vitality', '13th-16th', 'Virtus.pro', '13th-16th', 'ROC Esports', '13th-16th', 'Gen.G Mobil1 Racing', '13th-16th', 'Twisted Minds', '17th-18th', 'MIBR', '17th-18th', 'Shopify Rebellion', '19th-20th', 'FUT Esports', '19th-20th', 'TSM'],
-}
-let ChampionshipTops = {
-    'score' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'goals' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'assists' : ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'saves' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-    'shots' :   ['', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0],
-}
-let prizes = {
-  'flip' : [36.38, 42.80, 103.88],
-  'doof' : [53.50, 53.50, 141.82],
-  'goof' : [25.68, 25.68, 65.94],
-  'gold' : [21.40, 36.38, 71.36],
-  'skib' : [42.80, 34.24, 82.20],
-  'cana' : [34.24, 21.40, 76.78],
-}
-
 let EventSums = { //*****Do not manipulate this data*****
   // Regionals 1-6
   'flip' : [0, 0, 0, 0, 0, 0],
@@ -299,15 +177,23 @@ let EventSums = { //*****Do not manipulate this data*****
   'gold' : [0, 0, 0, 0, 0, 0],
   'skib' : [0, 0, 0, 0, 0, 0],
   'cana' : [0, 0, 0, 0, 0, 0],
+  'pots' : [0, 0, 0, 0, 0, 0],
+  'yuri' : [0, 0, 0, 0, 0, 0],
+  'maht' : [0, 0, 0, 0, 0, 0],
+  'sock' : [0, 0, 0, 0, 0, 0],
 }
 let splitSums = { //*****Do not manipulate this data*****
-  // split 1-2, Championship, total
+  // split 1-2, Championship, Grand total
   'flip' : [0, 0, 0, 0],
   'doof' : [0, 0, 0, 0],
   'goof' : [0, 0, 0, 0],
   'gold' : [0, 0, 0, 0],
   'skib' : [0, 0, 0, 0],
   'cana' : [0, 0, 0, 0],
+  'pots' : [0, 0, 0, 0],
+  'yuri' : [0, 0, 0, 0],
+  'maht' : [0, 0, 0, 0],
+  'sock' : [0, 0, 0, 0],
 }
 let champRounds = { //*****Do not manipulate this data*****
   // this is for calculating the totals for playin, groupA, groupB, playoffs, total
@@ -317,6 +203,10 @@ let champRounds = { //*****Do not manipulate this data*****
   'gold' : [0, 0, 0, 0, 0],
   'skib' : [0, 0, 0, 0, 0],
   'cana' : [0, 0, 0, 0, 0],
+  'pots' : [0, 0, 0, 0, 0],
+  'yuri' : [0, 0, 0, 0, 0],
+  'maht' : [0, 0, 0, 0, 0],
+  'sock' : [0, 0, 0, 0, 0],
 }
 let playerScores = { //*****Do not manipulate this data*****
     'flip': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -325,93 +215,245 @@ let playerScores = { //*****Do not manipulate this data*****
     'gold': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     'skib': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     'cana': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'pots': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'yuri': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'maht': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'sock': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 };
+// Info Page
+const spread = [.20, .13, .09, .08, .07, .06, .06, .05, .05, .04, .04, .03, .03, .03, .02, .02]
+const semiFinal = 6
+const qualify = 4
+const final = 3
 
-members.forEach((id)=>{
-  champRounds[id.shortname][0] = Championship[`${id.shortname}`][0]*points['playin'][0]+Championship[`${id.shortname}`][1]*points['playin'][1]
-  champRounds[id.shortname][1] = Championship[`${id.shortname}`][2]*points['groupA'][0]+Championship[`${id.shortname}`][3]*points['groupA'][1]
-  champRounds[id.shortname][2] = Championship[`${id.shortname}`][4]*points['groupB'][0]+Championship[`${id.shortname}`][5]*points['groupB'][1]
-  champRounds[id.shortname][3] = Championship[`${id.shortname}`][6]*points['playoff'][0]+Championship[`${id.shortname}`][7]*points['playoff'][1]
-  champRounds[id.shortname][4] = (champRounds[id.shortname][0] + champRounds[id.shortname][1] + champRounds[id.shortname][2] + champRounds[id.shortname][3])*5
-  splitSums[id.shortname][2] = champRounds[id.shortname][4]
-  for (let i = 3; i < 12; i += 4) {//adding regional points from each player into event sums
-    EventSums[id.shortname][0] += Regional1[id.shortname][i];
-    EventSums[id.shortname][1] += Regional2[id.shortname][i];
-    EventSums[id.shortname][2] += Regional3[id.shortname][i];
-    EventSums[id.shortname][3] += Regional4[id.shortname][i];
-    EventSums[id.shortname][4] += Regional5[id.shortname][i];
-    EventSums[id.shortname][5] += Regional6[id.shortname][i];
-  }
-  // Adding each split event up into one sum for prize distribution
-  // Adding Multipliers to Major 1, 2, and championship
-  Major1[id.shortname][0] = Major1[id.shortname][0]*3
-  Major2[id.shortname][0] = Major2[id.shortname][0]*3
-  splitSums[id.shortname][0] = EventSums[id.shortname][0] + EventSums[id.shortname][1] + EventSums[id.shortname][2] + Major1[id.shortname][0]
-  splitSums[id.shortname][1] = EventSums[id.shortname][3] + EventSums[id.shortname][4] + EventSums[id.shortname][5] + Major2[id.shortname][0]
-  // splitSums[id.shortname][2] = splitSums[id.shortname][2]*5
-  splitSums[id.shortname][3] = splitSums[id.shortname][0] + splitSums[id.shortname][1] + splitSums[id.shortname][2]
-  // Deploying scores to the array of playerScores Objects
-  playerScores[id.shortname] = [EventSums[id.shortname][0], EventSums[id.shortname][1], EventSums[id.shortname][2], Major1[id.shortname][0], '', splitSums[id.shortname][0], 
-                                EventSums[id.shortname][3], EventSums[id.shortname][4], EventSums[id.shortname][5], Major2[id.shortname][0], '', splitSums[id.shortname][1], '', splitSums[id.shortname][2], '', splitSums[id.shortname][3]];
-})
+let playinTotal = points['playin'][0]*semiFinal + points['playin'][1]*qualify
+let groupATotal = points['groupA'][0]*semiFinal + points['groupA'][1]*qualify
+let groupBTotal = points['groupB'][0]*semiFinal + points['groupB'][1]*qualify
+let playoffTotal = points['playoff'][0]*semiFinal + points['playoff'][1]*final
+let totals = [
+    {name: "Play-In", event: 'playin', total: playinTotal},
+    {name: "Group A", event: 'groupA', total: groupATotal},
+    {name: "Group B", event: 'groupB', total: groupBTotal},
+    {name: "PlayOffs", event: 'playoff', total: playoffTotal},
+]
 
 
-
-
-function deployTops(event){
-  tops.forEach((id) => {
-    for (let i = 0; i < 20; i += 2){
-      const tableBody = document.getElementById(`${id}`);
-      const newRow = document.createElement('tr');
-      const team = document.createElement('td');
-      const pts = document.createElement('td');
-
-      team.textContent = event[id][i]
-      team.id = 'team'
-      pts.textContent = event[id][i+1]
-      pts.id = 'points'
-
-      newRow.appendChild(team);
-      newRow.appendChild(pts);
-      
-      tableBody.appendChild(newRow);
+function determineScore(reg1, reg2, reg3, maj1, reg4, reg5, reg6, maj2, champ){
+  members.forEach((id)=>{
+    champRounds[id.shortname][0] = champ[`${id.shortname}`][0]*points['playin'][0]+champ[`${id.shortname}`][1]*points['playin'][1] //Play-Ins
+    champRounds[id.shortname][1] = champ[`${id.shortname}`][2]*points['groupA'][0]+champ[`${id.shortname}`][3]*points['groupA'][1] //Group A
+    champRounds[id.shortname][2] = champ[`${id.shortname}`][4]*points['groupB'][0]+champ[`${id.shortname}`][5]*points['groupB'][1] //Group B
+    champRounds[id.shortname][3] = champ[`${id.shortname}`][6]*points['playoff'][0]+champ[`${id.shortname}`][7]*points['playoff'][1] //Playoffs
+    for (let i = 3; i < reg1[id.shortname].length; i += 4) {
+      EventSums[id.shortname][0] += reg1[id.shortname][i]; //Regional sum of all your players
+      EventSums[id.shortname][1] += reg2[id.shortname][i];
+      EventSums[id.shortname][2] += reg3[id.shortname][i];
+      EventSums[id.shortname][3] += reg4[id.shortname][i];
+      EventSums[id.shortname][4] += reg5[id.shortname][i];
+      EventSums[id.shortname][5] += reg6[id.shortname][i];
     }
+    // Adding Multipliers to Major 1, 2, and championship
+    maj1[id.shortname][0] = maj1[id.shortname][0]*3
+    maj2[id.shortname][0] = maj2[id.shortname][0]*3
+    // Adding each split event up into one sum for prize distribution
+    splitSums[id.shortname][0] = EventSums[id.shortname][0] + EventSums[id.shortname][1] + EventSums[id.shortname][2] + maj1[id.shortname][0] //Split 1 Total
+    splitSums[id.shortname][1] = EventSums[id.shortname][3] + EventSums[id.shortname][4] + EventSums[id.shortname][5] + maj2[id.shortname][0] //Split 2 Total
+    splitSums[id.shortname][2] = (champRounds[id.shortname][0] + champRounds[id.shortname][1] + champRounds[id.shortname][2] + champRounds[id.shortname][3])*5 //Total of all championship rounds
+    splitSums[id.shortname][3] = splitSums[id.shortname][0] + splitSums[id.shortname][1] + splitSums[id.shortname][2] // Grand Total
+    // Deploying scores to the array of playerScores Objects
+    playerScores[id.shortname] = [EventSums[id.shortname][0], EventSums[id.shortname][1], EventSums[id.shortname][2], maj1[id.shortname][0], splitSums[id.shortname][0], 
+                                  EventSums[id.shortname][3], EventSums[id.shortname][4], EventSums[id.shortname][5], maj2[id.shortname][0], splitSums[id.shortname][1], splitSums[id.shortname][2], splitSums[id.shortname][3]];
   })
 }
-function deployReg(event){
+function determineSpread(){
+  let spreadSum = 0;
+  for (let i = 0; i<spread.length; i++) {
+      if (i>members.length){
+          spreadSum += spread[i];
+          spread[i] = 0;
+      }
+  }
+  let spreadToAdd = spreadSum/members.length
+  for (let i = 0; i<=(members.length-1); i++) {
+      spread[i] += spreadToAdd;
+  }
+}
+function deployPrizePoolInfo(major, champ){
+    for (let i = 0; i < members.length; i ++){
+        const tableBody = document.getElementById('prize_pool');
+        const newRow = document.createElement('tr');
+        const place = document.createElement('td');
+        const majorPerc = document.createElement('td');
+        const championshipPerc = document.createElement('td');
+        const percOfPP = document.createElement('td');
+        place.textContent = i+1
+        if (i < members.length){
+            majorPerc.textContent = "$" + (spread[i] * major).toFixed(2)
+            championshipPerc.textContent = "$" + (spread[i] * champ).toFixed(2)
+            percOfPP.textContent = (spread[i]*100).toFixed(2) + "%"
+        } else {
+            majorPerc.textContent = 0
+            championshipPerc.textContent = 0
+            percOfPP.textContent = 0
+        }
+        
+        newRow.appendChild(place);
+        newRow.appendChild(majorPerc);
+        newRow.appendChild(championshipPerc);
+        newRow.appendChild(percOfPP);
+        
+        tableBody.appendChild(newRow);
+    }
+    const tableBody = document.getElementById('prize_pool');
+    const newRow = document.createElement('tr');
+    const place = document.createElement('td');
+    const majorPerc = document.createElement('td');
+    const championshipPerc = document.createElement('td');
+    const percOfPP = document.createElement('td');
+    let totalMajor = 0
+    let totalChamp = 0
+    let totalPerc = 0
+    for (let i = 0; i < 16; i ++){
+        totalMajor += spread[i] * major
+        totalChamp += spread[i] * champ
+        totalPerc += spread[i]
+    }
+    
+    place.textContent = "Total"
+    majorPerc.textContent = "$" + (totalMajor).toFixed(0)
+    championshipPerc.textContent = "$" + (totalChamp).toFixed(0)
+    percOfPP.textContent = (totalPerc*100).toFixed(0) + "%"
+    
+    newRow.appendChild(place);
+    newRow.appendChild(majorPerc);
+    newRow.appendChild(championshipPerc);
+    newRow.appendChild(percOfPP);
+    
+    tableBody.appendChild(newRow);
+}
+function deployPointsInfo(){
+    // for (let i = 0; i < rounds.length; i ++){
+    totals.forEach((id) =>{
+        const tableBody = document.getElementById('bracket_points');
+        const newRow = document.createElement('tr');
+        const round = document.createElement('td');
+        const quarter = document.createElement('td');
+        const qualified = document.createElement('td');
+        const totalPoints = document.createElement('td');
+        
+        round.textContent = id.name
+        quarter.textContent = points[id.event][0]
+        qualified.textContent = points[id.event][1]
+        totalPoints.textContent = id.total
+
+        newRow.appendChild(round);
+        newRow.appendChild(quarter);
+        newRow.appendChild(qualified);
+        newRow.appendChild(totalPoints);
+        
+        tableBody.appendChild(newRow);
+    })
+    const tableBody = document.getElementById('bracket_points');
+    const newRow1 = document.createElement('tr');
+    const round1 = document.createElement('td');
+    const quarter1 = document.createElement('td');
+    const qualified1 = document.createElement('td');
+    const totalPoints1 = document.createElement('td');
+
+    const newRow = document.createElement('tr');
+    const round = document.createElement('td');
+    const quarter = document.createElement('td');
+    const qualified = document.createElement('td');
+    const totalPoints = document.createElement('td');
+    
+    round1.textContent = "Major Multiplier"
+    quarter1.textContent = "3X"
+    qualified1.textContent = "Total Major Points"
+    totalPoints1.textContent = 0
+
+    round.textContent = "Championship Multiplier"
+    quarter.textContent = "5X"
+    qualified.textContent = "Total Championship Points"
+    totalPoints.textContent = 0
+
+    newRow1.appendChild(round1);
+    newRow1.appendChild(quarter1);
+    newRow1.appendChild(qualified1);
+    newRow1.appendChild(totalPoints1);
+
+    newRow.appendChild(round);
+    newRow.appendChild(quarter);
+    newRow.appendChild(qualified);
+    newRow.appendChild(totalPoints);
+    
+    tableBody.appendChild(newRow1);
+    tableBody.appendChild(newRow);
+}
+function deployTops(event){
+    tops.forEach((id) => {
+        for (let i = 0; i < 20; i += 2){
+            const tableBody = document.getElementById(`${id}`);
+            const newRow = document.createElement('tr');
+            const team = document.createElement('td');
+            const pts = document.createElement('td');
+
+            team.textContent = event[id][i]
+            team.id = 'team'
+            pts.textContent = event[id][i+1]
+            pts.id = 'points'
+
+
+            newRow.appendChild(team);
+            newRow.appendChild(pts);
+            
+            tableBody.appendChild(newRow);
+        }
+    })
+}
+function deployReg(event, players){
   members.forEach((id) =>{
     const tableBody = document.getElementById('regionalScoreCard');
     const newRow = document.createElement('tr');
     const teamName = document.createElement('td');
+    teamName.textContent = id.name
     teamName.rowSpan = 4
     teamName.id = id.shortname
     tableBody.appendChild(newRow);
     newRow.appendChild(teamName);
-    for (let i = 0; i < 12; i += 4){
+    for (let i = 0; i < event[id.shortname].length; i += 4){
       event[id.shortname][i+1] = getTeam(players, event[id.shortname][i])
       event[id.shortname][i+2] = getRegion(players, event[id.shortname][i])
       const tableBody = document.getElementById('regionalScoreCard');
       const newRow = document.createElement('tr');
-      const PlayerCell = document.createElement('td');
-      const PlayerTeam = document.createElement('td');
-      const PlayerRegion = document.createElement('td');
-      const PlayerPoints = document.createElement('td');
-      
-      PlayerCell.id = id.shortname
-      PlayerTeam.id = id.shortname
-      PlayerRegion.id = id.shortname
-      PlayerPoints.id = id.shortname
-      teamName.textContent = id.name
-      PlayerCell.textContent = event[id.shortname][i]
-      PlayerTeam.textContent = event[id.shortname][i+1]
-      PlayerRegion.textContent = event[id.shortname][i+2]
-      PlayerPoints.textContent = event[id.shortname][i+3]
+      const playerLink = document.createElement('a');
+      const teamLink = document.createElement('a');
+      const Player = document.createElement('td');
+      const Team = document.createElement('td');
+      const Region = document.createElement('td');
+      const Points = document.createElement('td');
+      const teamShort = getTeamShort(event[id.shortname][i+1])
+
+      Player.id = id.shortname
+      Team.id = id.shortname
+      Region.id = id.shortname
+      Points.id = id.shortname
+
+      playerLink.textContent = event[id.shortname][i]
+      playerLink.href = `${path}/profile.html?name=${encodeURIComponent(event[id.shortname][i])}`
+      teamLink.textContent = event[id.shortname][i+1]
+      teamLink.href = `${path}/profile.html?name=${encodeURIComponent(teamShort)}`
+
+      Region.textContent = event[id.shortname][i+2]
+      Points.textContent = event[id.shortname][i+3]
+
+      Player.appendChild(playerLink)
+      Team.appendChild(teamLink)
       
 
-      newRow.appendChild(PlayerCell);
-      newRow.appendChild(PlayerTeam);
-      newRow.appendChild(PlayerRegion);
-      newRow.appendChild(PlayerPoints);
+      newRow.appendChild(Player);
+      newRow.appendChild(Team);
+      newRow.appendChild(Region);
+      newRow.appendChild(Points);
       
       tableBody.appendChild(newRow);
     }
@@ -422,17 +464,17 @@ function deployRegPlacements(event){
     for (let i = 0; i < 48; i += 3){
       const tableBody = document.getElementById(`${id}`);
       const newRow = document.createElement('tr');
+      const newLink = document.createElement('a');
       const team = document.createElement('td');
-      const spanCell = document.createElement('span')
       const pts = document.createElement('td');
 
-      team.appendChild(spanCell)
-      team.id = 'team'
-      spanCell.textContent = event[id][i]
-      spanCell.id = event[id][i+1]
+      team.id = event[id][i+1]
+      newLink.textContent = event[id][i]
+      newLink.href = `${path}/profile.html?name=${encodeURIComponent(team.id)}`
+      team.appendChild(newLink)
+
       pts.textContent = event[id][i+2]
       pts.id = 'points'
-
 
       newRow.appendChild(team);
       newRow.appendChild(pts);
@@ -460,15 +502,19 @@ function deployMaj(event){
   })
 }
 function deployMajPlacements(event){
-  for (let i = 0; i < 36; i += 2){
+  for (let i = 0; i < 48; i += 3){
     const tableBody = document.getElementById('Major-placements');
     const newRow = document.createElement('tr');
+    const newLink = document.createElement('a');
     const team = document.createElement('td');
     const pts = document.createElement('td');
 
-    team.textContent = event['major'][i]
-    team.id = 'team'
-    pts.textContent = event['major'][i+1]
+    team.id = event['Major'][i+1]
+    newLink.textContent = event['Major'][i]
+    newLink.href = `${path}/profile.html?name=${encodeURIComponent(team.id)}`
+    team.appendChild(newLink)
+    
+    pts.textContent = event['Major'][i+2]
     pts.id = 'points'
 
 
@@ -478,63 +524,66 @@ function deployMajPlacements(event){
     tableBody.appendChild(newRow);
   }
 }
-function deployChamp(){
+function deployChamp(event){
   console.log('champ function working')
   // ChampionshipBracket()
   members.forEach((id)=>{
-    for (let i = 0; i<5; i += 5){
-      const tableBody = document.getElementById('championshipScoreCard');
-      const newRow = document.createElement('tr');
-      const teamName = document.createElement('td');
-      const playinCell = document.createElement('td');
-      const groupACell = document.createElement('td');
-      const groupBCell = document.createElement('td');
-      const playoffCell = document.createElement('td');
-      const totalCell = document.createElement('td');
-      
-      teamName.id = id.shortname
-      playinCell.id = id.shortname
-      groupACell.id = id.shortname
-      groupBCell.id = id.shortname
-      playoffCell.id = id.shortname
-      totalCell.id = id.shortname
-      teamName.textContent = id.name
-      playinCell.textContent = champRounds[id.shortname][0]
-      groupACell.textContent = champRounds[id.shortname][1]
-      groupBCell.textContent = champRounds[id.shortname][2]
-      playoffCell.textContent = champRounds[id.shortname][3]
-      totalCell.textContent = champRounds[id.shortname][4]
-      
-      newRow.appendChild(teamName);
-      newRow.appendChild(playinCell);
-      newRow.appendChild(groupACell);
-      newRow.appendChild(groupBCell);
-      newRow.appendChild(playoffCell);
-      newRow.appendChild(totalCell);
-      
-      tableBody.appendChild(newRow);
-    }
+    const tableBody = document.getElementById('championshipScoreCard');
+    const newRow = document.createElement('tr');
+    const teamName = document.createElement('td');
+    const playinCell = document.createElement('td');
+    const groupACell = document.createElement('td');
+    const groupBCell = document.createElement('td');
+    const playoffCell = document.createElement('td');
+    const totalCell = document.createElement('td');
+    
+    teamName.id = id.shortname
+    playinCell.id = id.shortname
+    groupACell.id = id.shortname
+    groupBCell.id = id.shortname
+    playoffCell.id = id.shortname
+    totalCell.id = id.shortname
+    teamName.textContent = id.name
+    playinCell.textContent = event[id.shortname][0]
+    groupACell.textContent = event[id.shortname][1]
+    groupBCell.textContent = event[id.shortname][2]
+    playoffCell.textContent = event[id.shortname][3]
+    totalCell.textContent = event[id.shortname][4]
+    
+    newRow.appendChild(teamName);
+    newRow.appendChild(playinCell);
+    newRow.appendChild(groupACell);
+    newRow.appendChild(groupBCell);
+    newRow.appendChild(playoffCell);
+    newRow.appendChild(totalCell);
+    
+    tableBody.appendChild(newRow);
   })
 }
-function deployChampPlacements(){
-  for (let i = 0; i < 40; i += 2){
+function deployChampPlacements(event){
+  for (let i = 0; i < 60; i += 3){
     const tableBody = document.getElementById('champ-placements');
     const newRow = document.createElement('tr');
+    const newLink = document.createElement('a');
     const place = document.createElement('td');
     const team = document.createElement('td');
 
-    place.textContent = ChampionshipPlacements['champ'][i]
-    place.id = 'team'
-    team.textContent = ChampionshipPlacements['champ'][i+1]
-    team.id = 'points'
+    team.id = event['Champ'][i+2]
+    newLink.textContent = event['Champ'][i+1]
+    newLink.href = `${path}/profile.html?name=${encodeURIComponent(team.id)}`
+    team.appendChild(newLink)
+    
+    place.textContent = event['Champ'][i+3]
+    place.id = 'points'
 
-    newRow.appendChild(place);
+
     newRow.appendChild(team);
+    newRow.appendChild(place);
     
     tableBody.appendChild(newRow);
   }
 }
-function deployPrize(){
+function deployPrize(pool){
   members.forEach((id) =>{
       const tableBody = document.getElementById('prizeTable');
       const newRow = document.createElement('tr');
@@ -550,10 +599,10 @@ function deployPrize(){
       championshipWinnings.id = id.shortname
       totalWinnings.id = id.shortname
       teamName.textContent = id.name
-      split1Winnings.textContent = "$" + (prizes[id.shortname][0]).toFixed(2)
-      split2Winnings.textContent = "$" + (prizes[id.shortname][1]).toFixed(2)
-      championshipWinnings.textContent = "$" + (prizes[id.shortname][2]).toFixed(2)
-      totalWinnings.textContent = "$" + (prizes[id.shortname][0] +prizes[id.shortname][1] +prizes[id.shortname][2]).toFixed(2)
+      split1Winnings.textContent = "$" + (pool[id.shortname][0]).toFixed(2)
+      split2Winnings.textContent = "$" + (pool[id.shortname][1]).toFixed(2)
+      championshipWinnings.textContent = "$" + (pool[id.shortname][2]).toFixed(2)
+      totalWinnings.textContent = "$" + (pool[id.shortname][0] +pool[id.shortname][1] +pool[id.shortname][2]).toFixed(2)
       
 
       newRow.appendChild(teamName);
@@ -630,7 +679,6 @@ function deployScores(){
     tableBody.appendChild(newRow);
   })
 }
-
 function getRegion(playerData, searchTerm) {
   const player = playerData.find(player => player.name === searchTerm);
   return player ? player.region : null;
@@ -639,4 +687,185 @@ function getTeam(playerData, searchTerm) {
   const player = playerData.find(player => player.name === searchTerm);
   return player ? player.team : null;
 }
+function getTeamShort(searchTerm){
+  const short = teams.find(team => team.name === searchTerm);
+  return short ? short.shortname : null;
+}
+function deploySplitPoints(event, index){
+  for(let i = 0; i < 16; i++){
+    const tableBody = document.getElementById(`split${index}`);
+    const newRow = document.createElement('tr');
+    const regionalPts = document.createElement('td');
+    const majorPts = document.createElement('td');
 
+    regionalPts.textContent = event['Regional'][i]
+    majorPts.textContent = event['Major'][i]
+    
+    newRow.appendChild(regionalPts);
+    newRow.appendChild(majorPts);
+    
+    tableBody.appendChild(newRow);
+  }
+}
+function deploySplitQuals(event, index){
+  event.forEach((id) =>{
+    const tableBody = document.getElementById(`split${index}quals`);
+    const newRow = document.createElement('tr');
+    const newLink = document.createElement('a');
+    const region = document.createElement('td');
+    const team = document.createElement('td');
+    const pts = document.createElement('td');
+
+    region.textContent = id.region
+    team.id = getTeamShort(id.team)
+    newLink.textContent = id.team;
+    newLink.href = `${path}/profile.html?name=${encodeURIComponent(team.id)}`;
+    pts.textContent = id.points
+    team.appendChild(newLink);
+
+    newRow.appendChild(region);
+    newRow.appendChild(team);
+    newRow.appendChild(pts);
+    
+    tableBody.appendChild(newRow);
+  })
+}
+function populatePlayersTable(playersArray, tableBodyId) {
+  const tableBody = document.getElementById(tableBodyId);
+  playersArray.forEach((player) => {
+    if (player.availability != "No"){
+      const newRow = document.createElement('tr');
+      const nameCell = document.createElement('td');
+      const nameLink = document.createElement('a');
+      const watchID = player.watch.toLowerCase()
+      const availCell = document.createElement('td');
+      const availID = player.availability.toLowerCase();
+      const regionCell = document.createElement('td');
+      const regionID = player.region.toLowerCase();
+      const ratingCell = document.createElement('td');
+      const teamCell = document.createElement('td');
+      const newLink = document.createElement('a');
+      const winPercCell = document.createElement('td');
+      const scoreCell = document.createElement('td');
+      const goalsCell = document.createElement('td');
+      const assistsCell = document.createElement('td');
+      const savesCell = document.createElement('td');
+      const shotsCell = document.createElement('td');
+      const teamId = player.shortname;
+      
+      newRow.classList.add('player-data');
+
+      nameLink.href = `${path}/profile.html?name=${encodeURIComponent(player.name)}`;
+      newLink.href = `${path}/profile.html?name=${encodeURIComponent(player.shortname)}`;
+      
+      nameCell.id = watchID;
+      availCell.id = availID;
+      regionCell.id = regionID;
+      teamCell.id = teamId;
+      
+      nameLink.textContent = player.name;
+      availCell.textContent = player.availability;
+      regionCell.textContent = player.region;
+      ratingCell.textContent = player.rating;
+      newLink.textContent = player.team;
+      winPercCell.textContent = player.winPerc + "%";
+      if (player.gp != 0){
+        scoreCell.textContent = (player.score/player.gp).toFixed(0);
+        goalsCell.textContent = (player.goals/player.gp).toFixed(2);
+        assistsCell.textContent = (player.assists/player.gp).toFixed(2);
+        savesCell.textContent = (player.saves/player.gp).toFixed(2);
+        shotsCell.textContent = (player.shots/player.gp).toFixed(2);
+      } else {
+        scoreCell.textContent = 0
+        goalsCell.textContent = 0
+        assistsCell.textContent = 0
+        savesCell.textContent = 0
+        shotsCell.textContent = 0
+      }
+      
+      nameCell.appendChild(nameLink);
+      newRow.appendChild(nameCell);
+      newRow.appendChild(availCell);
+      newRow.appendChild(regionCell);
+      newRow.appendChild(ratingCell);
+      teamCell.appendChild(newLink);
+      newRow.appendChild(teamCell);
+      newRow.appendChild(winPercCell);
+      newRow.appendChild(scoreCell);
+      newRow.appendChild(goalsCell);
+      newRow.appendChild(assistsCell);
+      newRow.appendChild(savesCell);
+      newRow.appendChild(shotsCell);
+
+      tableBody.appendChild(newRow);
+    }
+  });
+}
+function populateTeamsTable(teamsArray, tableBodyId) {
+  const tableBody = document.getElementById(tableBodyId);
+    teamsArray.forEach((team, index) => {
+      const newRow = document.createElement('tr');
+      const teamCell = document.createElement('td');
+      const newLink = document.createElement('a');
+      const teamId = team.shortname;
+      const regionID = team.region.toLowerCase();
+      const regionCell = document.createElement('td');
+      const ratingCell = document.createElement('td');
+      const winPercCell = document.createElement('td');
+      const scoreCell = document.createElement('td');
+      const goalsCell = document.createElement('td');
+      const assistsCell = document.createElement('td');
+      const savesCell = document.createElement('td');
+      const shotsCell = document.createElement('td');
+      const playersOnTeam = players.filter(p => p.shortname === team.shortname);
+      const numOfPlayersCell = document.createElement('td');
+      let countOfPlayers = 0
+
+      newRow.classList.add('player-data');
+      newRow.setAttribute('data-player', `player${index + 1}`);
+      newLink.textContent = team.name;
+      newLink.href = `${path}/profile.html?name=${encodeURIComponent(team.shortname)}`;
+      
+      playersOnTeam.forEach((player) => {
+          if(player){
+            countOfPlayers += 1;
+          } else {
+          }
+    })
+
+    teamCell.appendChild(newLink);
+    teamCell.id = teamId;
+    regionCell.textContent = team.region;
+    regionCell.id = regionID;
+    ratingCell.textContent = team.rating;
+    winPercCell.textContent = team.winPerc;
+    numOfPlayersCell.textContent = countOfPlayers;
+    if (team.gp != 0) {
+      scoreCell.textContent = (team.score/team.gp).toFixed(0);
+      goalsCell.textContent = (team.goals/team.gp).toFixed(2);
+      assistsCell.textContent = (team.assists/team.gp).toFixed(2);
+      savesCell.textContent = (team.saves/team.gp).toFixed(2);
+      shotsCell.textContent = (team.shots/team.gp).toFixed(2);
+    }  else {
+      scoreCell.textContent = 0
+      goalsCell.textContent = 0
+      assistsCell.textContent = 0
+      savesCell.textContent = 0
+      shotsCell.textContent = 0
+    }
+
+    newRow.appendChild(teamCell);
+    newRow.appendChild(regionCell);
+    newRow.appendChild(ratingCell);
+    newRow.appendChild(winPercCell);
+    newRow.appendChild(scoreCell);
+    newRow.appendChild(goalsCell);
+    newRow.appendChild(assistsCell);
+    newRow.appendChild(savesCell);
+    newRow.appendChild(shotsCell);
+    newRow.appendChild(numOfPlayersCell);
+
+    // Add the newly created row to the table body
+    tableBody.appendChild(newRow);
+  });
+}

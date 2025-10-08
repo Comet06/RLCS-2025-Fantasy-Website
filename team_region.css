@@ -34,21 +34,20 @@ td{font-size: 1.2em;}
 #lebo{background-color: #ffd95b;}
 #syn{background-color: #ffd95b;}
 #f4wd{background-color: greenyellow;}
-#start{color: white; background-color: #a52f2f;}
-#asce{color: #73fff8; background-color: black;}
-#jjr{color: white; background-color: black;}
+#start{background-color: #a52f2f;}
+/* #asce{}
+#jjr{} */
 #cali{color: #00d300; background-color: orangered;}
-#stg{background-color: blue;}
-#nom{color: pink; background-color: darkred;}
-#red{background-color: darkred;}
-#rrg{color: yellow; background-color: red;}
-#sick{color: pink; background-color: black;}
-#sel{background-color: #a51073;}
-#bds{color: white; background-color: #ff126d;}
-/* #smok{}
+/* #stg{}
+#nom{}
+#red{}
+#rrg{}
+#sick{}
+#smok{}
 #atom{}
-#dec{}
-#dopa{}
+#dec{} */
+#bds{color: white; background-color: #ff126d;}
+/* #dopa{}
 #bsk{} */
 
 #mena{background-color: orange;}
