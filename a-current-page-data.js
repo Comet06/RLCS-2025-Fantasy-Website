@@ -7,6 +7,41 @@ export const members = [
   {name: 'Skibbideeznuts',  shortname: 'skib'},
   {name: 'Team Canada',  shortname: 'cana'},
 ]
+export let EventSums = { //*****Do not manipulate this data*****
+  // Regionals 1-6
+  'flip' : [0, 0, 0, 0, 0, 0],
+  'doof' : [0, 0, 0, 0, 0, 0],
+  'goof' : [0, 0, 0, 0, 0, 0],
+  'gold' : [0, 0, 0, 0, 0, 0],
+  'skib' : [0, 0, 0, 0, 0, 0],
+  'cana' : [0, 0, 0, 0, 0, 0],
+}
+export let splitSums = { //*****Do not manipulate this data*****
+  // split 1-2, Championship, Grand total
+  'flip' : [0, 0, 0, 0],
+  'doof' : [0, 0, 0, 0],
+  'goof' : [0, 0, 0, 0],
+  'gold' : [0, 0, 0, 0],
+  'skib' : [0, 0, 0, 0],
+  'cana' : [0, 0, 0, 0],
+}
+export let champRounds = { //*****Do not manipulate this data*****
+  // this is for calculating the totals for playin, groupA, groupB, playoffs, total
+  'flip' : [0, 0, 0, 0, 0],
+  'doof' : [0, 0, 0, 0, 0],
+  'goof' : [0, 0, 0, 0, 0],
+  'gold' : [0, 0, 0, 0, 0],
+  'skib' : [0, 0, 0, 0, 0],
+  'cana' : [0, 0, 0, 0, 0],
+}
+export let playerScores = { //*****Do not manipulate this data*****
+    'flip': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'doof': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'goof': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'gold': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'skib': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    'cana': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+};
 export const amtAdded = 70;
 const dist = [.0, .4, .6]
 export const amountPerMajor = ((amtAdded*dist[1])+400)/2;
