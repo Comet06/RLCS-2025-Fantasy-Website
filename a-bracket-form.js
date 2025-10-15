@@ -1,3 +1,138 @@
+let MajorTeams = [
+  {team: 'Gen.G Mobil1 Racing', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Virtus.pro', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'FUT Esports', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'TSM', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'ROC Esports', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Ninjas in Pyjamas', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Shopify Rebellion', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'MIBR', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'NRG', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Karmine Corp', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Twisted Minds', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Team Falcons', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Dignitas', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Team Secret', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Spacestation Gaming', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Wildcard', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+]
+for (let i = 0; i < 16; i++){
+  document.getElementById(`R1seed${i+1}`).innerHTML = `<span class="${MajorTeams[i].team}">${MajorTeams[i].team}</span>`
+}
+
+// document.getElementById(`R1seed${i+1}`).innerHTML = MajorSeeds[i].team
+
+
+// function round1(){
+//     R1seed1.addEventListener('click', handleTeamClick)
+//     R1seed2.addEventListener('click', handleTeamClick)
+//     R1seed3.addEventListener('click', handleTeamClick)
+//     R1seed4.addEventListener('click', handleTeamClick)
+//     R1seed5.addEventListener('click', handleTeamClick)
+//     R1seed6.addEventListener('click', handleTeamClick)
+//     R1seed7.addEventListener('click', handleTeamClick)
+//     R1seed8.addEventListener('click', handleTeamClick)
+//     R1seed9.addEventListener('click', handleTeamClick)
+//     R1seed10.addEventListener('click', handleTeamClick)
+//     R1seed11.addEventListener('click', handleTeamClick)
+//     R1seed12.addEventListener('click', handleTeamClick)
+//     R1seed13.addEventListener('click', handleTeamClick)
+//     R1seed14.addEventListener('click', handleTeamClick)
+//     R1seed15.addEventListener('click', handleTeamClick)
+//     R1seed16.addEventListener('click', handleTeamClick)
+// }
+
+// function handleTeamClick(){
+//   console.log(team)
+// }
+
+// round1()
+
+// Function to update a score based on a team's ID.
+// function updateScore(teamId) {
+//   // Find the team's score element. The HTML structure provided
+//   // suggests the score element is a sibling of the team name.
+//   const teamElement = document.getElementById(teamId);
+//   if (!teamElement) return;
+//   // Assuming the score element is the next sibling after the team name span.
+//   const scoreElement = teamElement.nextElementSibling;
+//   if (!scoreElement || !scoreElement.classList.contains('seriesWin')) return;
+//   let seriesWins = parseInt(scoreElement.innerHTML, 10);
+//   if (isNaN(seriesWins)) {seriesWins = 0;}
+//   seriesWins++;
+//   scoreElement.innerHTML = seriesWins;
+// }
+// window.addEventListener("DOMContentLoaded", e => {
+//   document.querySelectorAll(".swiss_bracket_team").forEach((element) => {
+//     element.addEventListener("click", function(event){
+//       console.log(element)
+//       MajorSeeds.forEach((id)=>{
+//         if (event.target.classList.contains(id.team)) {
+//           console.log(id.team)
+          
+//           const teamId = event.target.id;
+//           updateScore(teamId);
+//           console.log(event.target.seriesWin)
+//         }
+//       })
+//     })
+//   });
+// })
+
+let Round2Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let Round3Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let Round4Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let Round5Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let Round6Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
+let Round1Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let Round2Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let Round3Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let Round4Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let Round5Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let Round6Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+for (let i = 0; i < 16; i++){
+  document.getElementById(`R2seed${i+1}`).innerHTML = `<span class="${Round2Seeds[i]}">${Round2Seeds[i]}</span>`
+}
+for (let i = 0; i < 16; i++){
+  document.getElementById(`R3seed${i+1}`).innerHTML = `<span class="${Round3Seeds[i]}">${Round3Seeds[i]}</span>`
+}
+for (let i = 0; i < 16; i++){
+  document.getElementById(`R4seed${i+1}`).innerHTML = `<span class="${Round3Seeds[i]}">${Round4Seeds[i]}</span>`
+}
+
+function updateGamesScores(advancementForWinner, advancementForLoser, roundID, winner, loser){
+  MajorTeams.forEach((id) =>{
+    if(winner === id.team){
+      id.seriesWin++
+    }
+    if(loser === id.team){
+      id.seriesLoss--
+    }
+  })
+  document.getElementById(advancementForWinner).innerHTML = winner //Injecting winner to position of advancement
+  document.getElementById(advancementForLoser).innerHTML = loser
+  roundID.winner = winner //used for the next round
+  roundID.loser = loser //used for the next round
+}
+function updateGamesScores2(roundID, index, winner, loser){
+  MajorTeams.forEach((id) =>{
+    if(winner === id.team){
+      id.seriesWin++
+    }
+    if(loser === id.team){
+      id.seriesLoss--
+    }
+  })
+  if(roundID.includes('Round3')){
+    document.getElementById(`R3seed${index}`).innerHTML = winner //Injecting winner to position of advancement
+    document.getElementById(`R3seed${17-index}`).innerHTML = loser
+    roundID[index] = winner //used for the next round
+    roundID[index] = loser //used for the next round
+  }
+}
+updateGamesScores2(Round3Seeds, 0, "Geng", "NRG")
+console.log(Round3Seeds[0])
+
 function playin(){
 let winnerPuqfm1 = '';
 let winnerPuqfm2 = '';

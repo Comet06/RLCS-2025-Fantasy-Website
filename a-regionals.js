@@ -18,7 +18,7 @@ export let Regional1Placements = {
 export let Regional1Tops = {
     'score' :   ['Daniel', 10641, 'Atomic', 9766, 'Beastmode', 9725, 'Frosty', 7326, 'Yanxnz', 6821, 'Accro', 6692, 'Tjester', 6614, 'Rehzzy', 6406, 'Kofyr', 6385, 'Drufinho', 6342],
     'goals' :   ['Fiberr', 41, 'Tjester', 38, 'Torsos', 38, 'Atomic', 36, 'Yanxnz', 36, 'Leoro', 35, 'Torres8232', 34, 'Accro', 33, 'Fades', 33, 'Sosa', 33],
-    'assists' : ['Leoro', 32, 'Vksailen', 31, 'Rezears', 30, 'Tjester', 29, 'Suspect', 29, 'Bananahead', 28, 'Mira', 28, 'Daniel', 27, 'Torress8232', 25, 'Beastmode', 25],
+    'assists' : ['Leoro', 32, 'Vksailen', 31, 'Rezears', 30, 'Tjester', 29, 'Suspect', 29, 'Bananahead', 28, 'Mira', 28, 'Daniel', 27, 'Torres8232', 25, 'Beastmode', 25],
     'saves' :   ['Luiisp', 88, 'Frosty', 81, 'Daniel', 71, 'Rehzzy', 69, 'Sweaty', 69, 'Kofyr', 65, 'Tjester', 60, 'Mira', 60, 'Fnsi', 59, 'Accro', 58],
     'shots' :   ['Atomic', 129, 'Daniel', 119, 'Beastmode', 119, 'Fiberr', 113, 'Yanxnz', 110, 'Accro', 109, 'Nass', 106, 'Zen', 104, 'Frosty', 102, 'Vksailen', 100],
 }
@@ -106,17 +106,17 @@ export let Regional5Placements = {
     'eu' : ['Dignitas', 'Karmine Corp', 'Team Vitality', 'Geekay Esports', 'Gentle Mates Alpine', 'Team BSK', 'Caliente', 'F4wd', 'Ninjas in Pyjamas', 'Synergy', 'Dopamine', '$ATM', 'Smokey Bacon Asso.', '100%', 'Bobrito Bandito', 'Chippy Chips'],
     'na' : ['NRG', 'Spacestation Gaming', 'Strictly Business', 'The Boys', 'Team Evo', 'Gen.G Mobil1 Racing', 'Schnitzelhaus', 'The Ultimates', 'Pirates on a Boat', 'Deleted Gaming', 'Lil Step Bros', 'Complexity Gaming', 'Shopify Rebellion', 'Simtawk+1', 'Bubble Sort', 'S.O.S.'],
     'oce' : ['Wildcard', 'PWR', 'Im Fine in the West', 'TSM', 'Skrimzworld', 'Helfie Chiefs', 'Retired', 'Tsurani', 'Run it back', 'R.T.T.', 'Prime Pettys Pups', 'Nookles Pookles', 'Fiburgerbeast', 'Chins up', 'Three Chiches', 'Freshies down under'],
-    'sam' : ['Furia Esports', 'Team Secret', 'Godfidence', 'Amethyst', 'Team Brace Soldiers', 'Corinthians Esports', 'Moonrise', 'Sunset', 'Overlooked', 'True Neutral Black', 'Genesis', 'Papo de Visao', 'TDL', 'Fear of God', 'Gratia', 'Latino Heat'],
+    'sam' : ['Furia Esports', 'Team Secret', 'Godfidence', 'Amethyst', 'Team Brave Soldiers', 'Corinthians Esports', 'Moonrise', 'Sunset', 'Overlooked', 'True Neutral Black', 'Genesis', 'Papo de Visao', 'TDL', 'Fear of God', 'Gratia', 'Latino Heat'],
     'mena' : ['Team Falcons', 'ROC Esports', 'Twisted Minds', 'Team Vision', 'Al Qadsiah', 'Off', 'The Vicious', 'Sleeping', '000', '777', 'EKW', 'We dont know', 'F16 Esports', 'MDW', 'Infamous', 'Be Right Back'],
     'apac' : ['Virtus.pro', 'KOI', 'Dreamstation', 'Kinotrope Gaming', 'Tu-du Verstappen', 'Blue Torch', 'Zen Esports', 'Jungle Juicers', 'God Speed', 'Senza Esports', 'Rounds', 'Name', 'Winter Soldiers', 'Real Adrenaline', 'Pxresss Habibtis', 'Animated Dragons'],
     'ssa' : ['FUT Esports', '77Blocks', 'Limitless', 'Cristobal Colon', 'Le bosh', 'CosmiCo Esports', 'Poney No Jutsu', 'Pominos Dizza', 'GeneSix', 'St1ve Esports', 'hey (with rizz)', 'Antisociales', 'Triple B', 'Well have a loo', 'Relentless', 'We Love Farming'],
 }
 export let Regional5Tops = {
-    'score' :   ['Nwpo', 23944, 'Scrzbbles', 20752, '', 20448, '', 20229, '', 19934, '', 19150, '', 18963, '', 18233, '', 18199, '', 17888],
-    'goals' :   ['', 57, '', 46, '', 45, '', 39, '', 39, '', 38, '', 38, '', 37, '', 36, '', 36],
-    'assists' : ['', 37, '', 34, '', 34, '', 33, '', 33, '', 33, '', 31, '', 30, '', 30, '', 29],
-    'saves' :   ['', 117, '', 108, '', 97, '', 92, '', 91, '', 90, '', 86, '', 82, '', 81, '', 80],
-    'shots' :   ['', 191, '', 178, '', 171, '', 171, '', 158, '', 155, '', 151, '', 151, '', 150, '', 150],
+    'score' :   ['Nwpo', 23944, 'Scrzbbles', 20752, 'Cheese', 20448, 'Trk511', 20229, 'T7lm', 19934, 'Atomik', 19150, 'Beastmode', 18963, 'Rise', 18233, 'Smw', 18199, 'Justin', 17888],
+    'goals' :   ['Nwpo', 57, 'Beastmode', 46, 'Trk511', 45, 'Justin', 39, 'T7lm', 39, 'Firstkiller', 38, 'Kofyr', 38, 'Atomic', 37, 'Atomik', 36, 'Cheese', 36],
+    'assists' : ['Kiileerrz', 37, 'Majicbear', 34, 'Daniel', 34, 'Cheese', 33, 'Rw9', 33, 'Rise', 33, 'Trk511', 31, 'Atomik', 30, 'Aris', 30, 'Leoro', 29],
+    'saves' :   ['Scrzbbles', 117, 'Cheese', 108, 'Nwpo', 97, 'Apparentlyjack', 92, 'Tox', 91, 'Smw', 90, 'M7sn', 86, 'Reveal', 82, 'Atomik', 81, 'T7lm', 80],
+    'shots' :   ['Nwpo', 191, 'Trk511', 178, 'Atomik', 171, 'Kiileerrz', 171, 'Rise', 158, 'Daniel', 155, 'Majicbear', 151, 'Kofyr', 151, 'T7lm', 150, 'Beastmode', 150],
 }
 export let Regional6 = {
   'come' : ['Kiileerrz', 4982, 'Daniel', 2233, 'Atow', 3601],
@@ -136,9 +136,9 @@ export let Regional6Placements = {
     'ssa' : ['FUT Esports', 'hey (with rizz)', 'Limitless', 'Le bosh', 'Traduis Si Tu Pues', '77Blocks', 'GeneSix', 'Death Cloud Esports', 'Poney No Justu', 'Rapaziada 1906', 'St1ve Esports', 'Unity', 'CosmiCo Esports', 'Omen Esports', 'White Rabbit Gaming', 'Team HSK'],
 }
 export let Regional6Tops = {
-    'score' :   ['', 13848, '', 12973, '', 12968, '', 12341, '', 11905, '', 11898, '', 11829, '', 11688, '', 11685, '', 11609],
-    'goals' :   ['', 43, '', 41, '', 31, '', 29, '', 28, '', 27, '', 27, '', 26, '', 26, '', 26],
-    'assists' : ['', 33, '', 33, '', 25, '', 25, '', 25, '', 23, '', 22, '', 22, '', 21, '', 21],
-    'saves' :   ['', 62, '', 62, '', 61, '', 61, '', 59, '', 58, '', 53, '', 50, '', 49, '', 48],
-    'shots' :   ['', 133, '', 106, '', 104, '', 99, '', 97, '', 97, '', 91, '', 91, '', 90, '', 89],
+    'score' :   ['Superlachie', 13848, 'Reysbull', 12973, 'Rezears', 12968, 'Tox', 12341, 'Reveal', 11905, 'Amphis', 11898, 'Brad', 11829, 'Fiberr', 11688, 'Rw9', 11685, 'Nwpo', 11609],
+    'goals' :   ['Leoro', 43, 'Superlachie', 41, 'Vksailen', 31, 'Brad', 29, 'Reysbull', 28, 'Torres8232', 27, 'Yanxnz', 27, 'Nwpo', 26, 'Yazeed', 26, 'Fiberr', 26],
+    'assists' : ['Vksailen', 33, 'Torres8232', 33, 'Amphis', 25, 'O0vvl', 25, 'Swiftt', 25, 'Crr', 23, 'Nwpo', 22, 'Kaka', 22, 'Reysbull', 21, 'Reveal', 21],
+    'saves' :   ['Tox', 62, 'Sczibbles', 62, 'Reveal', 61, 'Juicy', 61, 'Rezears', 59, 'Rw9', 58, 'Drknown', 53, 'Crn', 50, 'Chronic', 49, 'Nwpo', 48],
+    'shots' :   ['Superlachie', 133, 'Reysbull', 106, 'Firstkiller', 104, 'Nwpo', 99, 'Rezears', 97, 'Kiileerrz', 97, 'Amphis', 91, 'Zen', 91, 'Fiberr', 90, 'Tox', 89],
 }
