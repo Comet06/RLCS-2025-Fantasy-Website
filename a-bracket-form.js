@@ -1,425 +1,462 @@
 let MajorTeams = [
-  {team: 'Gen.G Mobil1 Racing', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Virtus.pro', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'FUT Esports', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'TSM', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'ROC Esports', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Ninjas in Pyjamas', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Shopify Rebellion', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'MIBR', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'NRG', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Karmine Corp', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Twisted Minds', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Team Falcons', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Dignitas', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Team Secret', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Spacestation Gaming', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
-  {team: 'Wildcard', seriesWin: 0, seriesLoss: 0, gamesWon: 0, gamesLoss: 0, gameDiff: function(){return this.gamesWon-this.gamesLoss}},
+  {team: 'Gen.G Mobil1 Racing', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Virtus.pro', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'FUT Esports', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'TSM', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'ROC Esports', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Ninjas in Pyjamas', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Shopify Rebellion', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'MIBR', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'NRG', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Karmine Corp', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Twisted Minds', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Team Falcons', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Dignitas', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Team Secret', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Spacestation Gaming', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
+  {team: 'Wildcard', seriesWin: 0, seriesLoss: 0, gameWin: 0, gameLoss: 0},
 ]
-for (let i = 0; i < 16; i++){
-  document.getElementById(`R1seed${i+1}`).innerHTML = `<span class="${MajorTeams[i].team}">${MajorTeams[i].team}</span>`
-}
+// Seeding Average of 2nd major starting seed and ending seed then region rank
+let ChampTeams = ['Karmine Corp', 'Team Falcons', 'NRG', 'Dignitas', 'Furia Esports', 'Twisted Minds', 'Team Vitality', 'Geekay Esports', 'The Ultimates', 'Spacestation Gaming', 'Team Secret', 'Wildcard', 'Seed 1', 'Seed 2', 'Seed 3', 'Seed 4']
+let ChampPlayoffs = ['', '', '', '', '', '', '', '']
+let PlayinTeams = [
+  {team: 'Gen.G Mobil1 Racing', wins: 0, losses: 0, playinSeed: 1},
+  {team: 'Virtus.pro', wins: 0, losses: 0, playinSeed: 2},
+  {team: 'TSM', wins: 0, losses: 0, playinSeed: 3},
+  {team: 'FUT Esports', wins: 0, losses: 0, playinSeed: 4},
+  {team: 'ROC Esports', wins: 0, losses: 0, playinSeed: 5},//LCQ Seed 1
+  {team: 'Ninjas in Pyjamas', wins: 0, losses: 0, playinSeed: 6},//LCQ Seed 2
+  {team: 'Shopify Rebellion', wins: 0, losses: 0, playinSeed: 7},//LCQ Seed 3
+  {team: 'MIBR', wins: 0, losses: 0, playinSeed: 8},//LCQ Seed 4
+]
 
-// document.getElementById(`R1seed${i+1}`).innerHTML = MajorSeeds[i].team
+let R1seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''] //16
+let R2seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let R3seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let R4seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+let R5seeds = ['', '', '', '', '', '', '', '', '', '', '', ''] //12
+let R6seeds = ['', '', '', '', '', ''] //6
 
+let playinQ = ['', '', '', '']//4
+let playinUS = ['', '', '', '']
+let playinLS = ['', '', '', '']
+let playinF = ['', '', '', '']
 
-// function round1(){
-//     R1seed1.addEventListener('click', handleTeamClick)
-//     R1seed2.addEventListener('click', handleTeamClick)
-//     R1seed3.addEventListener('click', handleTeamClick)
-//     R1seed4.addEventListener('click', handleTeamClick)
-//     R1seed5.addEventListener('click', handleTeamClick)
-//     R1seed6.addEventListener('click', handleTeamClick)
-//     R1seed7.addEventListener('click', handleTeamClick)
-//     R1seed8.addEventListener('click', handleTeamClick)
-//     R1seed9.addEventListener('click', handleTeamClick)
-//     R1seed10.addEventListener('click', handleTeamClick)
-//     R1seed11.addEventListener('click', handleTeamClick)
-//     R1seed12.addEventListener('click', handleTeamClick)
-//     R1seed13.addEventListener('click', handleTeamClick)
-//     R1seed14.addEventListener('click', handleTeamClick)
-//     R1seed15.addEventListener('click', handleTeamClick)
-//     R1seed16.addEventListener('click', handleTeamClick)
-// }
+let groupAQ = ['', '', '', '']
+let groupAUS = ['', '', '', '']
+let groupALS = ['', '', '', '']
+let groupAF = ['', '', '', '']
 
-// function handleTeamClick(){
-//   console.log(team)
-// }
+let groupBQ = ['', '', '', '']
+let groupBUS = ['', '', '', '']
+let groupBLS = ['', '', '', '']
+let groupBF = ['', '', '', '']
 
-// round1()
+let playoffsQ = ['', '', '', '']
+let playoffsS = ['', '', '', '']
+let playoffsG = ['', '']
 
-// Function to update a score based on a team's ID.
-// function updateScore(teamId) {
-//   // Find the team's score element. The HTML structure provided
-//   // suggests the score element is a sibling of the team name.
-//   const teamElement = document.getElementById(teamId);
-//   if (!teamElement) return;
-//   // Assuming the score element is the next sibling after the team name span.
-//   const scoreElement = teamElement.nextElementSibling;
-//   if (!scoreElement || !scoreElement.classList.contains('seriesWin')) return;
-//   let seriesWins = parseInt(scoreElement.innerHTML, 10);
-//   if (isNaN(seriesWins)) {seriesWins = 0;}
-//   seriesWins++;
-//   scoreElement.innerHTML = seriesWins;
-// }
-// window.addEventListener("DOMContentLoaded", e => {
-//   document.querySelectorAll(".swiss_bracket_team").forEach((element) => {
-//     element.addEventListener("click", function(event){
-//       console.log(element)
-//       MajorSeeds.forEach((id)=>{
-//         if (event.target.classList.contains(id.team)) {
-//           console.log(id.team)
-          
-//           const teamId = event.target.id;
-//           updateScore(teamId);
-//           console.log(event.target.seriesWin)
-//         }
-//       })
-//     })
-//   });
-// })
+injectGroups()
 
-let Round2Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let Round3Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let Round4Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let Round5Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let Round6Seeds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',]
-let Round1Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-let Round2Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-let Round3Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-let Round4Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-let Round5Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-let Round6Matches = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-for (let i = 0; i < 16; i++){
-  document.getElementById(`R2seed${i+1}`).innerHTML = `<span class="${Round2Seeds[i]}">${Round2Seeds[i]}</span>`
-}
-for (let i = 0; i < 16; i++){
-  document.getElementById(`R3seed${i+1}`).innerHTML = `<span class="${Round3Seeds[i]}">${Round3Seeds[i]}</span>`
-}
-for (let i = 0; i < 16; i++){
-  document.getElementById(`R4seed${i+1}`).innerHTML = `<span class="${Round3Seeds[i]}">${Round4Seeds[i]}</span>`
-}
-
-function updateGamesScores(advancementForWinner, advancementForLoser, roundID, winner, loser){
-  MajorTeams.forEach((id) =>{
-    if(winner === id.team){
-      id.seriesWin++
-    }
-    if(loser === id.team){
-      id.seriesLoss--
-    }
-  })
-  document.getElementById(advancementForWinner).innerHTML = winner //Injecting winner to position of advancement
-  document.getElementById(advancementForLoser).innerHTML = loser
-  roundID.winner = winner //used for the next round
-  roundID.loser = loser //used for the next round
-}
-function updateGamesScores2(roundID, index, winner, loser){
-  MajorTeams.forEach((id) =>{
-    if(winner === id.team){
-      id.seriesWin++
-    }
-    if(loser === id.team){
-      id.seriesLoss--
-    }
-  })
-  if(roundID.includes('Round3')){
-    document.getElementById(`R3seed${index}`).innerHTML = winner //Injecting winner to position of advancement
-    document.getElementById(`R3seed${17-index}`).innerHTML = loser
-    roundID[index] = winner //used for the next round
-    roundID[index] = loser //used for the next round
+injectTeams()
+function injectTeams(){
+  for(let i = 0; i < 16; i++){
+    R1seeds[i] = MajorTeams[i].team
+    document.getElementById(`R1S${i+1}`).innerHTML = MajorTeams[i].team
   }
 }
-updateGamesScores2(Round3Seeds, 0, "Geng", "NRG")
-console.log(Round3Seeds[0])
 
-function playin(){
-let winnerPuqfm1 = '';
-let winnerPuqfm2 = '';
-let winnerPuqfm3 = '';
-let winnerPuqfm4 = '';
-let winnerPusfm1 = '';
-let winnerPusfm2 = '';
-let winnerPlqfm1 = '';
-let winnerPlqfm2 = '';
-let winnerPlsfm1 = '';
-let winnerPlsfm2 = '';
-let loserPuqfm1 = '';
-let loserPuqfm2 = '';
-let loserPuqfm3 = '';
-let loserPuqfm4 = '';
-let loserPusfm1 = '';
-let loserPusfm2 = '';
-function puqfm1(winner, loser){
-  document.getElementById("winner_puqfm1").innerHTML=winner;
-  document.getElementById("loser_puqfm1").innerHTML=loser;
-  winnerPuqfm1 = winner;
-  loserPuqfm1 = loser;
+
+// If Swiss stage
+populateSwissTable()
+function populateSwissTable() {
+  const tableBody = document.getElementById('swissStats');
+  tableBody.innerHTML = '';
+  MajorTeams.forEach((id) => {
+    const newRow = document.createElement('tr');
+    const team = document.createElement('td');
+    const Swins = document.createElement('td');
+    const Sloss = document.createElement('td');
+    const Gwins = document.createElement('td');
+    const Gloss = document.createElement('td');
+
+    const teamLink = document.createElement('a');
+    
+    const teamId = (id.team).toLowerCase().replaceAll(" ","_").replaceAll(".","");
+
+    teamLink.href = `/profile.html?name=${encodeURIComponent(id.team)}`;
+    
+    team.id = teamId;
+    
+    teamLink.textContent = id.team;
+    Swins.textContent = id.seriesWin;
+    Sloss.textContent = id.seriesLoss;
+    Gwins.textContent = id.gameWin;
+    Gloss.textContent = id.gameLoss;
+    
+    team.appendChild(teamLink);
+
+    newRow.appendChild(team);
+    newRow.appendChild(Swins);
+    newRow.appendChild(Sloss);
+    newRow.appendChild(Gwins);
+    newRow.appendChild(Gloss);
+
+    tableBody.appendChild(newRow);
+  });
 }
-function puqfm2(winner, loser){
-  document.getElementById("winner_puqfm2").innerHTML=winner;
-  document.getElementById("loser_puqfm2").innerHTML=loser;
-  winnerPuqfm2 = winner;
-  loserPuqfm2 = loser;
+function updateGamesScores(seeds, roundID, winner, loser, finished){
+  const teamWinner = MajorTeams.find(t => t.team === winner);
+  const teamLoser = MajorTeams.find(t => t.team === loser);
+  let start = 0
+  let end = 16
+  if(roundID === 5){
+    start = 2
+    end = 12
+  } else if(roundID === 6){
+    start = 5
+    end = 12
+  }
+  teamWinner.seriesWin++
+  teamLoser.seriesLoss++
+  sortMajorTeams()
+  w = getIndexOfTeam(teamWinner)
+  l = getIndexOfTeam(teamLoser)
+  addTeamToSeeds(seeds, teamWinner.team, w-start)
+  addTeamToSeeds(seeds, teamLoser.team, l-start)
+  injectTeam(seeds, roundID, end)
+  populateSwissTable()
+  if (finished === 1){
+    injectPlayoffsMajor()
+  }
 }
-function puqfm3(winner, loser){
-  document.getElementById("winner_puqfm3").innerHTML=winner;
-  document.getElementById("loser_puqfm3").innerHTML=loser;
-  winnerPuqfm3 = winner;
-  loserPuqfm3 = loser;
+function injectTeam(seeds, roundID, end){
+  seeds.forEach((id)=>{
+    for(i = 0; i < end; i++){
+      if (i === seeds.indexOf(id)){
+        document.getElementById(`R${roundID}S${i+1}`).innerHTML = id
+      }
+    }
+  })
 }
-function puqfm4(winner, loser){
-  document.getElementById("winner_puqfm4").innerHTML=winner;
-  document.getElementById("loser_puqfm4").innerHTML=loser;
-  winnerPuqfm4 = winner;
-  loserPuqfm4 = loser;
+function addTeamToSeeds(seeds, team, place){
+  seeds[place] = team
 }
-function pusfm1(winner, loser){
-  document.getElementById("winner_pusfm1").innerHTML=winner;
-  document.getElementById("loser_pusfm1").innerHTML=loser;
-  winnerPusfm1 = winner;
-  loserPusfm1 = loser;
+function sortMajorTeams(){
+  MajorTeams.sort((a, b) => b.gameWin - a.gameWin)
+  MajorTeams.sort((a, b) => a.gameLoss - b.gameLoss)
+  MajorTeams.sort((a, b) => b.seriesWin - a.seriesWin)
+  MajorTeams.sort((a, b) => a.seriesLoss - b.seriesLoss)
 }
-function pusfm2(winner, loser){
-  document.getElementById("winner_pusfm2").innerHTML=winner;
-  document.getElementById("loser_pusfm2").innerHTML=loser;
-  winnerPusfm2 = winner;
-  loserPusfm2 = loser;
+function getIndexOfTeam(team){
+  ind = MajorTeams.indexOf(team)
+  return ind
 }
-function plqfm1(winner){
-  document.getElementById("winner_plqfm1").innerHTML=winner;
-  winnerPlqfm1 = winner;
+
+// If Playin
+injectPlayins()
+function injectPlayins(){
+  for(let i = 0; i < 8; i++){
+    document.getElementById(`PIseed${i+1}`).innerHTML = PlayinTeams[i].team
+  }
 }
-function plqfm2(winner){
-  document.getElementById("winner_plqfm2").innerHTML=winner;
-  winnerPlqfm2 = winner;
+function playinUpperQ(match, winner, loser){
+  const teamWinner = PlayinTeams.find(t => t.team === winner);
+  const teamLoser = PlayinTeams.find(t => t.team === loser);
+  teamLoser.losses++
+  teamWinner.wins++
+  playinUS[match-1] = winner
+  playinQ[match-1] = loser
+  injectPlayinVerdicts()
 }
-function plsfm1(winner){
-  document.getElementById("winner_plsfm1").innerHTML=winner;
-  document.getElementById("ps3").innerHTML=winner;
-  winnerPlsfm1 = winner;
+function playinLowerQ(match, winner){
+  const teamWinner = PlayinTeams.find(t => t.team === winner);
+  // const teamLoser = PlayinTeams.find(t => t.team === loser);
+  // teamLoser.losses++
+  teamWinner.wins++
+  if(match === 1){
+    playinLS[1] = winner
+  } else if(match === 2){
+    playinLS[3] = winner
+  }
+  injectPlayinVerdicts()
 }
-function plsfm2(winner){
-  document.getElementById("winner_plsfm2").innerHTML=winner;
-  document.getElementById("ps4").innerHTML=winner;
-  winnerPlsfm2 = winner;
+function playinUpperS(match, winner, loser){
+  const teamWinner = PlayinTeams.find(t => t.team === winner);
+  const teamLoser = PlayinTeams.find(t => t.team === loser);
+  teamLoser.losses++
+  teamWinner.wins++
+  if(match === 1){
+    playinF[0] = winner
+    playinLS[2] = loser
+
+  } else if(match === 2){
+    playinF[1] = winner
+    playinLS[0] = loser
+  }
+  sortPlayins()
+  injectPlayinVerdicts()
 }
+function playinLowerS(match, winner, finished){
+  const teamWinner = PlayinTeams.find(t => t.team === winner);
+  // const teamLoser = PlayinTeams.find(t => t.team === loser);
+  // teamLoser.losses++
+  teamWinner.wins++
+  if(match === 1){
+    playinF[2] = winner
+  } else if(match === 2){
+    playinF[3] = winner
+  }
+  sortPlayins()
+  injectPlayinVerdicts()
+  if(finished === 1){
+    injectGroups()
+  }
 }
-function groupA(){
-    // GROUP A
-let winnerGAuqfm1 = ''
-let winnerGAuqfm2 = ''
-let winnerGAuqfm3 = ''
-let winnerGAuqfm4 = ''
-let winnerGAusfm1 = ''
-let winnerGAusfm2 = ''
-let winnerGAlqfm1 = ''
-let winnerGAlqfm2 = ''
-let winnerGAlsfm1 = ''
-let winnerGAlsfm2 = ''
-let loserGAuqfm1 = ''
-let loserGAuqfm2 = ''
-let loserGAuqfm3 = ''
-let loserGAuqfm4 = ''
-let loserGAusfm1 = ''
-let loserGAusfm2 = ''
-let GAUH = ''
-let GAUL = ''
-let GALH = ''
-let GALL = ''
-function gauqfm1(winner, loser){
-  document.getElementById("winner_gauqfm1").innerHTML=winner;
-  document.getElementById("loser_gauqfm1").innerHTML=loser;
-  winnerGAuqfm1 = winner
-  loserGAuqfm1 = loser
+function sortPlayins(){
+  PlayinTeams.sort((a, b) => a.playinSeed - b.playinSeed)
+  PlayinTeams.sort((a, b) => b.wins - a.wins)
+  PlayinTeams.sort((a, b) => a.losses - b.losses)
 }
-function gauqfm2(winner, loser){
-  document.getElementById("winner_gauqfm2").innerHTML=winner;
-  document.getElementById("loser_gauqfm2").innerHTML=loser;
-  winnerGAuqfm2 = winner
-  loserGAuqfm2 = loser
+function injectPlayinVerdicts(){
+  for(let i = 0; i < 4; i++){
+      playinQ.forEach((id)=>{
+      if (i === playinQ.indexOf(id)){
+        document.getElementById(`piq${i+1}`).innerHTML = id
+      }
+    })
+    playinUS.forEach((id)=>{
+      if (i === playinUS.indexOf(id)){
+        document.getElementById(`pius${i+1}`).innerHTML = id
+      }
+    })
+    playinLS.forEach((id)=>{
+      if (i === playinLS.indexOf(id)){
+        document.getElementById(`pils${i+1}`).innerHTML = id
+      }
+    })
+    playinF.forEach((id)=>{
+      if (i === playinF.indexOf(id)){
+        document.getElementById(`pf${i+1}`).innerHTML = id
+      }
+    })
+  }
+  // console.log(playinQ)
+  // console.log(playinUS)
+  // console.log(playinLS)
+  // console.log(playinF)
+  console.log(PlayinTeams)
 }
-function gauqfm3(winner, loser){
-  document.getElementById("winner_gauqfm3").innerHTML=winner;
-  document.getElementById("loser_gauqfm3").innerHTML=loser;
-  winnerGAuqfm3 = winner
-  loserGAuqfm3 = loser
+// Group Stage
+function injectGroups(){
+  // let ChampTeams = ['Karmine Corp', 'Team Falcons', 'NRG', 'Dignitas', 'Furia Esports', 'Twisted Minds', 'Team Vitality', 'Geekay Esports', 
+  //                   'The Ultimates', 'Spacestation Gaming', 'Team Secret', 'Wildcard', PlayinTeams[0].team, PlayinTeams[1].team, PlayinTeams[2].team, PlayinTeams[3].team]
+  ChampTeams = ['Karmine Corp', 'Team Falcons', 'NRG', 'Dignitas', 'Furia Esports', 'Twisted Minds', 'Team Vitality', 'Geekay Esports', 
+                    'The Ultimates', 'Spacestation Gaming', 'Team Secret', 'Wildcard', 'Ninjas in Pyjamas', 'ROC Esports', 'Gen.G Mobil1 Racing', 'Virtus.pro']
+  for(let i = 0; i < 16; i++){
+    document.getElementById(`Gseed${i+1}`).innerHTML = ChampTeams[i]
+  }
 }
-function gauqfm4(winner, loser){
-  document.getElementById("winner_gauqfm4").innerHTML=winner;
-  document.getElementById("loser_gauqfm4").innerHTML=loser;
-  winnerGAuqfm4 = winner
-  loserGAuqfm4 = loser
+function groupAUpperQ(match, winner, loser){
+  groupAUS[match-1] = winner
+  groupAQ[match-1] = loser
+  injectGroupAVerdicts()
 }
-function gausfm1(winner, loser){
-  document.getElementById("winner_gausfm1").innerHTML=winner;
-  document.getElementById("gauhs").innerHTML=winner;
-  document.getElementById("loser_gausfm1").innerHTML=loser;
-  winnerGAusfm1 = winner
-  loserGAusfm1 = loser
-  GAUH = winner
+function groupALowerQ(match, winner){
+  if(match === 1){
+    groupALS[1] = winner
+  } else if(match === 2){
+    groupALS[3] = winner
+  }
+  injectGroupAVerdicts()
 }
-function gausfm2(winner, loser){
-  document.getElementById("winner_gausfm2").innerHTML=winner;
-  document.getElementById("gauls").innerHTML=winner;
-  document.getElementById("loser_gausfm2").innerHTML=loser;
-  winnerGAusfm2 = winner
-  loserGAusfm2 = loser
-  GAUL = winner
+function groupAUpperS(match, winner, loser){
+  if(match === 1){
+    groupAF[0] = winner
+    groupALS[2] = loser
+    ChampPlayoffs[0] = winner
+  } else if(match === 2){
+    groupAF[1] = winner
+    groupALS[0] = loser
+    ChampPlayoffs[3] = winner
+  }
+  injectGroupAVerdicts()
 }
-function galqfm1(winner){
-  document.getElementById("winner_galqfm1").innerHTML=winner;
-  winnerGAlqfm1 = winner
+function groupALowerS(match, winner){
+  if(match === 1){
+    groupAF[2] = winner
+    ChampPlayoffs[7] = winner
+  } else if(match === 2){
+    groupAF[3] = winner
+    ChampPlayoffs[4] = winner
+  }
+  injectGroupAVerdicts()
 }
-function galqfm2(winner){
-  document.getElementById("winner_galqfm2").innerHTML=winner;
-  winnerGAlqfm2 = winner
+function injectGroupAVerdicts(){
+  for(let i = 0; i < 4; i++){
+      groupAQ.forEach((id)=>{
+      if (i === groupAQ.indexOf(id)){
+        document.getElementById(`gaq${i+1}`).innerHTML = id
+      }
+    })
+    groupAUS.forEach((id)=>{
+      if (i === groupAUS.indexOf(id)){
+        document.getElementById(`gaus${i+1}`).innerHTML = id
+      }
+    })
+    groupALS.forEach((id)=>{
+      if (i === groupALS.indexOf(id)){
+        document.getElementById(`gals${i+1}`).innerHTML = id
+      }
+    })
+    groupAF.forEach((id)=>{
+      if (i === groupAF.indexOf(id)){
+        document.getElementById(`gaf${i+1}`).innerHTML = id
+      }
+    })
+  }
+  // console.log(groupAQ)
+  // console.log(groupAUS)
+  // console.log(groupALS)
+  // console.log(groupAF)
+  // console.log(ChampTeams)
 }
-function galsfm1(winner){
-  document.getElementById("winner_galsfm1").innerHTML=winner;
-  document.getElementById("galhs").innerHTML=winner;
-  winnerGAlsfm1 = winner
-  GALH = winner
+function groupBUpperQ(match, winner, loser){
+  groupBUS[match-1] = winner
+  groupBQ[match-1] = loser
+  injectGroupBVerdicts()
 }
-function galsfm2(winner){
-  document.getElementById("winner_galsfm2").innerHTML=winner;
-  document.getElementById("galls").innerHTML=winner;
-  winnerGAlsfm2 = winner
-  GALL = winner
+function groupBLowerQ(match, winner){
+  if(match === 1){
+    groupBLS[1] = winner
+  } else if(match === 2){
+    groupBLS[3] = winner
+  }
+  injectGroupBVerdicts()
 }
+function groupBUpperS(match, winner, loser){
+  if(match === 1){
+    groupBF[0] = winner
+    groupBLS[2] = loser
+    ChampPlayoffs[2] = winner
+  } else if(match === 2){
+    groupBF[1] = winner
+    groupBLS[0] = loser
+    ChampPlayoffs[1] = winner
+  }
+  injectGroupBVerdicts()
 }
-function groupB(){
-    // GROUP B
-let winnerGBuqfm1 = ''
-let winnerGBuqfm2 = ''
-let winnerGBuqfm3 = ''
-let winnerGBuqfm4 = ''
-let winnerGBusfm1 = ''
-let winnerGBusfm2 = ''
-let winnerGBlqfm1 = ''
-let winnerGBlqfm2 = ''
-let winnerGBlsfm1 = ''
-let winnerGBlsfm2 = ''
-let loserGBuqfm1 = ''
-let loserGBuqfm2 = ''
-let loserGBuqfm3 = ''
-let loserGBuqfm4 = ''
-let loserGBusfm1 = ''
-let loserGBusfm2 = ''
-let GBUH = ''
-let GBUL = ''
-let GBLH = ''
-let GBLL = ''
-function gbuqfm1(winner, loser){
-  document.getElementById("winner_gbuqfm1").innerHTML=winner;
-  document.getElementById("loser_gbuqfm1").innerHTML=loser;
-  winnerGBuqfm1 = winner
-  loserGBuqfm1 = loser
+function groupBLowerS(match, winner, finished){
+  if(match === 1){
+    groupBF[2] = winner
+    ChampPlayoffs[6] = winner
+  } else if(match === 2){
+    groupBF[3] = winner
+    ChampPlayoffs[5] = winner
+  }
+  injectGroupBVerdicts()
+  if(finished === 1){
+    injectPlayoffsChampionship()
+  }
 }
-function gbuqfm2(winner, loser){
-  document.getElementById("winner_gbuqfm2").innerHTML=winner;
-  document.getElementById("loser_gbuqfm2").innerHTML=loser;
-  winnerGBuqfm2 = winner
-  loserGBuqfm2 = loser
+function injectGroupBVerdicts(){
+  for(let i = 0; i < 4; i++){
+      groupBQ.forEach((id)=>{
+      if (i === groupBQ.indexOf(id)){
+        document.getElementById(`gbq${i+1}`).innerHTML = id
+      }
+    })
+    groupBUS.forEach((id)=>{
+      if (i === groupBUS.indexOf(id)){
+        document.getElementById(`gbus${i+1}`).innerHTML = id
+      }
+    })
+    groupBLS.forEach((id)=>{
+      if (i === groupBLS.indexOf(id)){
+        document.getElementById(`gbls${i+1}`).innerHTML = id
+      }
+    })
+    groupBF.forEach((id)=>{
+      if (i === groupBF.indexOf(id)){
+        document.getElementById(`gbf${i+1}`).innerHTML = id
+      }
+    })
+  }
+  // console.log(groupAQ)
+  // console.log(groupAUS)
+  // console.log(groupALS)
+  // console.log(groupAF)
+  // console.log(ChampTeams)
 }
-function gbuqfm3(winner, loser){
-  document.getElementById("winner_gbuqfm3").innerHTML=winner;
-  document.getElementById("loser_gbuqfm3").innerHTML=loser;
-  winnerGBuqfm3 = winner
-  loserGBuqfm3 = loser
+// Playoffs
+function injectPlayoffsMajor(){
+  for(let i = 0; i < 8; i++){
+    document.getElementById(`POseed${i+1}`).innerHTML = MajorTeams[i].team
+  }
 }
-function gbuqfm4(winner, loser){
-  document.getElementById("winner_gbuqfm4").innerHTML=winner;
-  document.getElementById("loser_gbuqfm4").innerHTML=loser;
-  winnerGBuqfm4 = winner
-  loserGBuqfm4 = loser
+function injectPlayoffsChampionship(){
+  // If Playin
+  for(let i = 0; i < 8; i++){
+    document.getElementById(`POseed${i+1}`).innerHTML = ChampPlayoffs[i]
+  }
 }
-function gbusfm1(winner, loser){
-  document.getElementById("winner_gbusfm1").innerHTML=winner;
-  document.getElementById("gbuhs").innerHTML=winner;
-  document.getElementById("loser_gbusfm1").innerHTML=loser;
-  winnerGBusfm1 = winner
-  loserGBusfm1 = loser
-  GBUH = winner
+function upper(match, winner, loser){
+  if(match === 1){
+    playoffsS[2] = winner
+    playoffsQ[0] = loser
+  } else if(match === 2){
+    playoffsS[0] = winner
+    playoffsQ[2] = loser
+  }
+  injectPlayoffVerdicts()
 }
-function gbusfm2(winner, loser){
-  document.getElementById("winner_gbusfm2").innerHTML=winner;
-  document.getElementById("gbuls").innerHTML=winner;
-  document.getElementById("loser_gbusfm2").innerHTML=loser;
-  winnerGBusfm2 = winner
-  loserGBusfm2 = loser
-  GBUL = winner
+function lowerR(match, winner){
+  if(match === 1){
+    playoffsQ[1] = winner
+  } else if(match === 2){
+    playoffsQ[3] = winner
+  }
+  injectPlayoffVerdicts()
 }
-function gblqfm1(winner){
-  document.getElementById("winner_gblqfm1").innerHTML=winner;
-  winnerGBlqfm1 = winner
+function lowerQ(match, winner){
+  if(match === 1){
+    playoffsS[1] = winner
+  } else if(match === 2){
+    playoffsS[3] = winner
+  }
+  injectPlayoffVerdicts()
 }
-function gblqfm2(winner){
-  document.getElementById("winner_gblqfm2").innerHTML=winner;
-  winnerGBlqfm2 = winner
+function lowerS(match, winner){
+  if(match === 1){
+    playoffsG[0] = winner
+  } else if(match === 2){
+    playoffsG[1] = winner
+  }
+  injectPlayoffVerdicts()
 }
-function gblsfm1(winner){
-  document.getElementById("winner_gblsfm1").innerHTML=winner;
-  document.getElementById("gblhs").innerHTML=winner;
-  winnerGBlsfm1 = winner
-  GBLH = winner
+function grand(winner){
+  document.getElementById("winner").innerHTML=winner;
 }
-function gblsfm2(winner){
-  document.getElementById("winner_gblsfm2").innerHTML=winner;
-  document.getElementById("gblls").innerHTML=winner;
-  winnerGBlsfm2 = winner
-  GBLL = winner
-}
-}
-function playoff(){
-    // Playoffs
-let winnerPOuqfm1 = '';
-let winnerPOuqfm2 = '';
-let loserPOuqfm1 = '';
-let loserPOuqfm2 = '';
-let winnerPOlrm1 = '';
-let winnerPOlrm2 = '';
-let winnerPOlqfm1 = '';
-let winnerPOlqfm2 = '';
-let winnerPOlsfm1 = '';
-let winnerPOlsfm2 = '';
-function pouqfm1(winner, loser){
-  document.getElementById("winner_pouqfm1").innerHTML=winner;
-  document.getElementById("loser_pouqfm1").innerHTML=loser;
-  winnerPOuqfm1 = winner;
-  loserPOuqfm1 = loser;
-}
-function pouqfm2(winner, loser){
-  document.getElementById("winner_pouqfm2").innerHTML=winner;
-  document.getElementById("loser_pouqfm2").innerHTML=loser;
-  winnerPOuqfm2 = winner
-  loserPOuqfm2 = loser
-}
-function polrm1(winner){
-  document.getElementById("winner_polrm1").innerHTML=winner;
-  winnerPOlrm1 = winner;
-}
-function polrm2(winner){
-  document.getElementById("winner_polrm2").innerHTML=winner;
-  winnerPOlrm2 = winner;
-}
-function polqfm1(winner){
-  document.getElementById("winner_polqfm1").innerHTML=winner;
-  winnerPOlqfm1 = winner;
-}
-function polqfm2(winner){
-  document.getElementById("winner_polqfm2").innerHTML=winner;
-  winnerPOlqfm2 = winner;
-}
-function polsfm1(winner){
-  document.getElementById("winner_polsfm1").innerHTML=winner;
-  winnerPOlsfm1 = winner
-}
-function polsfm2(winner){
-  document.getElementById("winner_polsfm2").innerHTML=winner;
-  winnerPOlsfm2 = winner
-}
-function finalWinner(winner){
-  document.getElementById("tourneyWinner").innerHTML=winner;
-}
+function injectPlayoffVerdicts(){
+  playoffsQ.forEach((id)=>{
+    for(let i = 0; i < id.length; i++){
+      if (i === playoffsQ.indexOf(id)){
+        document.getElementById(`q${i+1}`).innerHTML = id
+      }
+    }
+  })
+  playoffsS.forEach((id)=>{
+    for(let i = 0; i < id.length; i++){
+      if (i === playoffsS.indexOf(id)){
+        document.getElementById(`s${i+1}`).innerHTML = id
+      }
+    }
+  })
+  playoffsG.forEach((id)=>{
+    for(let i = 0; i < id.length; i++){
+      if (i === playoffsG.indexOf(id)){
+        document.getElementById(`g${i+1}`).innerHTML = id
+      }
+    }
+  })
 }
