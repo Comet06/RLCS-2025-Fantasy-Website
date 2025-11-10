@@ -3,11 +3,13 @@
 .bracket_section {padding:20px 10px;width: fit-content;}
 .bracket_titles{text-align: center; margin-bottom: 10px;}
 
-.stage{padding:20px 10px;width: fit-content;}
+#border_box{border: solid 2px black;}
+.stage{padding:20px 10px;width: fit-content;height: fit-content; color: black; background-color: #e1e1e1e6;}
 .matchup{margin: 0 2.5% 0 0;height: 60px;}
 .upper {height:350px;justify-content: center;display: flex;} /* All upper sections */
 .lower {height: 200px;justify-content: center;display: flex;} /* All lower sections */
-.final{height: 150px;justify-content: center;display: flex;}
+.final{margin-top: 100px; height: 150px;justify-content: center;display: flex;}
+.major_final{height: 150px;justify-content: center;display: flex;}
 
 .quarterfinals {display:flex;flex-direction:column;width: 80%;}
 .quarterfinals .matchup {padding: 20px 0px;} /* All QF matches */
@@ -15,40 +17,40 @@
 .semis_quals .matchup {padding: 55px 0px;} /* All SF matches */
 .lower .matchup {padding: 20px 0px;} /* All lower matches */
 
-.finals_quarterfinals{width: fit-content;}
-.finals_quarterfinals .matchup {margin: 0;}
+.finals_upper_quarterfinals{width: fit-content;}
+.finals_upper_quarterfinals .matchup {margin: 0;}
+.roundOne .matchup{padding: 20px 0px;}
+.roundTwo .matchup{padding: 55px 0px;}
+.finals_lower_quarterfinals{display:flex;flex-direction:column;width: 80%;}
+.finals_lower_semis{display:flex;flex-direction:column;width: 80%;}
+.finals_lower_quarterfinals .matchup{padding: 55px 0px;}
+.finals_lower_semis .matchup{padding: 55px 0px;}
+
+.major_finals_upper_quarterfinals{width: fit-content;}
+.major_finals_upper_quarterfinals .matchup {margin: 0;}
+.major_roundOne .matchup{padding: 20px 0px;}
+.major_finals_lower_quarterfinals{display:flex;flex-direction:column;width: 80%;}
+.major_finals_lower_semis{display:flex;flex-direction:column;width: 80%;}
+.major_finals_lower_quarterfinals .matchup{padding: 20px 0px;}
+.major_finals_lower_semis .matchup{padding: 20px 0px;}
+
 .grand_finals{width: fit-content;}
 .grand_finals .matchup {margin: 0;}
 
 .bracket_team {padding: 0 5px;margin: 3px 0;line-height: 25px;white-space: nowrap;overflow: hidden;
     position: relative;color: white;background-color: #1e1e2f;}
     
-    
 .score {float: right;font-weight: bold;position: absolute;right: 5px;}
 .round-details {min-width:200px;color: #2C7399;text-transform: uppercase;text-align: center;}
 .date {font-size: 10px; letter-spacing: 2px;font-family: 'Istok Web', sans-serif;color:#3F915F;}
-    
-#win {color: black;background-color: #4ceb46;padding: 5px;} /* id="win" */
-#lose {color: black;background-color: #e73535;padding: 5px;} /* id="lose" */
 
-/* Swiss */
-.swiss_rounds{display: flex; flex-wrap: wrap;justify-content: center;}
-.swiss_bracket_team {padding: 0 5px;margin: 3px 2px;line-height: 25px;white-space: nowrap;overflow: hidden;position: relative;color: white;background-color: #1e1e2f;width: 300px;}
-.swiss_matchup{display: flex; margin: 0 2.5% 0 2.5%;}
-.empty_team{padding: 0 5px;margin: 3px 0;line-height: 25px;white-space: nowrap;overflow: hidden;position: relative;color: white;background-color: #1e1e2f00;width: 400px;}
-.swiss_bracket_round {display:flex;flex-direction:column;margin-bottom: 10px;width: 400px;}
-#swiss-round-details{width:400px;color: #2C7399;text-transform: uppercase;text-align: center;}
-#round5 {width: 600px;}
-#round6 {width: 200px;}
-#round5 #swiss-round-details{padding-bottom: 45px; width: 600px;}
-#round6 #swiss-round-details{padding-bottom: 25px; width: 200px;}
-#round1{background-color: #2C7399;}
-#round1Upper{background-color: #3F915F;}
-#round1Lower{color: black; background-color: #d1d143;}
-#roundUpper{background-color: #3F915F;}
-#roundMiddle{color: black; background-color: #d1d143;}
-#roundLower{color: black; background-color: #d14343;}
-#qualified{color: white; background-color:#006d05;}
-#disqualified{color: white; background-color:#5c0000;}
+#win {color: white;background-color: green;} /* id="win" */
+#lose {color: black;background-color: red;} /* id="lose" */
+.win {color: white;background-color: green;} /* id="win" */
+.lose {color: black;background-color: red;} /* id="lose" */
 
 #playinUpper{width: 600px;}
+
+
+.GroupStage{display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;}
+.group{display: flex; flex-direction: column;border: black 2px solid; color: black; background-color: #e1e1e1e6;}

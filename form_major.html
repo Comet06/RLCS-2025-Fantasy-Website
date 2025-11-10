@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="team_region.css"/>
+  <link rel="stylesheet" href="bracket.css"/>
+  <title>RLCS Bracket Form</title>
+</head>
+<body>
+  <header id="Links">
+  </header>
+  <h1 style="text-align: center;">Major</h1>
+  <div id="bracket-container">
+    <div class="brackets">
+      <div class="GroupStage"><!-- Group Stage -->
+        <div class="group">
+          <h1 class="bracket_titles">Group A</h1>
+          <table id="groupA">
+            <tbody>
+              <tr><th>Team</th><th>Series</th><th>Games</th><th>Game Diff.</th></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="group">
+          <h1 class="bracket_titles">Group B</h1>
+          <table id="groupB">
+            <tbody>
+              <tr><th>Team</th><th>Series</th><th>Games</th><th>Game Diff.</th></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="group">
+          <h1 class="bracket_titles">Group C</h1>
+          <table id="groupC">
+            <tbody>
+              <tr><th>Team</th><th>Series</th><th>Games</th><th>Game Diff.</th></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="group">
+          <h1 class="bracket_titles">Group D</h1>
+          <table id="groupD">
+            <tbody>
+              <tr><th>Team</th><th>Series</th><th>Games</th><th>Game Diff.</th></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button id="submitBracket">Submit Groups</button>
+      <div class="stage" id="border_box"><!-- Playoffs -->
+        <h1 class="bracket_titles">Playoffs</h1>
+        <div class="lower" id="Playoff-upper">
+            <div class="finals_upper_quarterfinals">
+              <div class="round-details">Upper Quarterfinals<br/><span class="date">TBD</span></div>
+              <ul class="matchup" data-match-id="1UQ" id="hide_list">
+                <li class="playoffTeam" id="PO1"></li>
+                <li class="playoffTeam" id="PO5"></li>
+              </ul>
+              <ul class="matchup" data-match-id="2UQ" id="hide_list">
+                <li class="playoffTeam" id="PO3"></li>
+                <li class="playoffTeam" id="PO7"></li>
+              </ul>
+            </div>
+        </div>
+        <div class="lower" id="Playoff-lower">
+            <div class="major_roundOne">
+              <div class="round-details">Round 1<br/><span class="date">TBD</span></div>
+              <ul class="matchup" data-match-id="1LR1">
+                <li class="playoffTeam" id="PO2"></li>
+                <li class="playoffTeam" id="PO6"></li>
+              </ul>
+              <ul class="matchup" data-match-id="2LR1">
+                <li class="playoffTeam" id="PO4"></li>
+                <li class="playoffTeam" id="PO8"></li>
+              </ul>
+            </div>
+            <div class="major_finals_lower_quarterfinals">
+              <div class="round-details">Quarterfinals<br/><span class="date">TBD</span></div>
+              <ul class="matchup" data-match-id="1LQ">
+                <li class="bracket_team" data-team-id="" style="font-style: italic;">Loser of UQF 1</li>
+                <li class="bracket_team" data-team-id=""></li>
+              </ul>
+              <ul class="matchup" data-match-id="2LQ">
+                <li class="bracket_team" data-team-id="" style="font-style: italic;">Loser of UQF 2</li>
+                <li class="bracket_team" data-team-id=""></li>
+              </ul>
+            </div>
+            <div class="major_finals_lower_semis">
+              <div class="round-details">Semifinals<br/><span class="date">TBD</span></div>
+              <ul class="matchup" data-match-id="1LS">
+                <li class="bracket_team" data-team-id="" style="font-style: italic;">Winner of UQF 2</li>
+                <li class="bracket_team" data-team-id=""></li>
+              </ul>
+              <ul class="matchup" data-match-id="2LS">
+                <li class="bracket_team" data-team-id="" style="font-style: italic;">Winner of UQF 1</li>
+                <li class="bracket_team" data-team-id=""></li>
+              </ul>
+            </div>
+        </div>
+        <div class="major_final" id="Playoff-lower">
+            <div class="grand_finals">
+                <div class="round-details">Grand Finals<br/><span class="date">TBD</span></div>
+              <ul class="matchup" data-match-id="1GF">
+                <li class="bracket_team" data-team-id=""></li>
+                <li class="bracket_team" data-team-id=""></li>
+              </ul>
+                <div class="round-details">Winner</div>
+              <ul class="matchup" data-match-id="W">
+                <li class="bracket_team" data-team-id="" id="win"></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module" src="main.js"></script>
+<script src="form.js"></script>
+<footer>
+  <p>©Comet Productions.</p>
+  <div id="socials">
+    <p>Socials: </p>
+    <a href="https://www.discord.gg/Tn5a63K">Discord</a>
+    <a href="https://x.com/rlcomet">Twitter</a>
+    <a href="https://www.youtube.com/@iacomet">YouTube</a>
+    <a href="https://www.twitch.tv/iacomet">Twitch</a>
+  </div>
+</footer>
+</html>
